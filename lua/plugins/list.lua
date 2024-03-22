@@ -107,13 +107,13 @@ local plugins = {
     --     config = load_config('lang.autopairs'),
     --     event = 'InsertEnter',
     -- },
-    -- {
-    --     'echasnovski/mini.comment',
-    --     version = '*',
-    --     dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
-    --     config = load_config('lang.comment'),
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
+     {
+         'echasnovski/mini.comment',
+         version = '*',
+         dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
+         config = load_config('lang.comment'),
+         event = { 'BufReadPre', 'BufNewFile' },
+     },
     -- {
     --     'echasnovski/mini.surround',
     --     version = '*',
@@ -225,52 +225,52 @@ local plugins = {
     --     config = load_config('tools.tabout'),
     --     event = 'InsertEnter',
     -- },
-    -- {
-    --     'folke/flash.nvim',
-    --     config = load_config('tools.flash'),
-    --     keys = {
-    --         {
-    --             's',
-    --             mode = { 'n', 'x', 'o' },
-    --             function()
-    --                 require('flash').jump()
-    --             end,
-    --             desc = 'Flash',
-    --         },
-    --         {
-    --             'S',
-    --             mode = { 'n', 'x', 'o' },
-    --             function()
-    --                 require('flash').treesitter()
-    --             end,
-    --             desc = 'Flash Treesitter',
-    --         },
-    --         {
-    --             'r',
-    --             mode = 'o',
-    --             function()
-    --                 require('flash').remote()
-    --             end,
-    --             desc = 'Remote Flash',
-    --         },
-    --         {
-    --             'R',
-    --             mode = { 'o', 'x' },
-    --             function()
-    --                 require('flash').treesitter_search()
-    --             end,
-    --             desc = 'Treesitter Search',
-    --         },
-    --         {
-    --             '<c-s>',
-    --             mode = { 'c' },
-    --             function()
-    --                 require('flash').toggle()
-    --             end,
-    --             desc = 'Toggle Flash Search',
-    --         },
-    --     },
-    -- },
+    {
+        'folke/flash.nvim',
+        config = load_config('tools.flash'),
+        keys = {
+            {
+                's',
+                mode = { 'n', 'x', 'o' },
+                function()
+                    require('flash').jump()
+                end,
+                desc = 'Flash',
+            },
+            {
+                'S',
+                mode = { 'n', 'x', 'o' },
+                function()
+                    require('flash').treesitter()
+                end,
+                desc = 'Flash Treesitter',
+            },
+            {
+                'r',
+                mode = 'o',
+                function()
+                    require('flash').remote()
+                end,
+                desc = 'Remote Flash',
+            },
+            {
+                'R',
+                mode = { 'o', 'x' },
+                function()
+                    require('flash').treesitter_search()
+                end,
+                desc = 'Treesitter Search',
+            },
+            {
+                '<c-s>',
+                mode = { 'c' },
+                function()
+                    require('flash').toggle()
+                end,
+                desc = 'Toggle Flash Search',
+            },
+        },
+    },
     -- {
     --     'aserowy/tmux.nvim',
     --     config = load_config('tools.tmux'),
@@ -311,10 +311,10 @@ local plugins = {
     --     config = load_config('tools.ccc'),
     --     cmd = { 'CccHighlighterToggle', 'CccConvert', 'CccPick' },
     -- },
-    -- {
-    --     '2kabhishek/termim.nvim',
-    --     cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
-    -- },
+     {
+         '2kabhishek/termim.nvim',
+         cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
+     },
     -- {
     --     '2kabhishek/tdo.nvim',
     --     dependencies = 'nvim-telescope/telescope.nvim',
@@ -365,6 +365,7 @@ local plugins = {
     -- },
 
     -- -- Git
+
     -- {
     --     '2kabhishek/co-author.nvim',
     --     dependencies = { 'stevearc/dressing.nvim' },
@@ -375,12 +376,12 @@ local plugins = {
     --     config = load_config('tools.gitlinker'),
     --     keys = '<leader>gy',
     -- },
-    -- {
-    --     'lewis6991/gitsigns.nvim',
-    --     config = load_config('tools.gitsigns'),
-    --     cmd = 'Gitsigns',
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
+    {
+        'lewis6991/gitsigns.nvim',
+        config = load_config('tools.gitsigns'),
+        cmd = 'Gitsigns',
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
     -- {
     --     'tpope/vim-fugitive',
     --     cmd = 'Git',

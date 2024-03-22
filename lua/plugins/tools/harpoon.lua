@@ -45,7 +45,7 @@ vim.keymap.set('n', '<leader>hj', function()
 end, { desc = 'Next Mark' })
 
 for i = 1, 9 do
-    vim.keymap.set('n', '<leader>h' .. i, function()
+    vim.keymap.set('n', '<A-' .. i .. '>', function()
         harpoon:list():select(i)
     end, { desc = 'Mark ' .. i })
 end

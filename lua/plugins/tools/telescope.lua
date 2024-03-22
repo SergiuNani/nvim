@@ -71,7 +71,7 @@ telescope.setup({
 
                 ['<CR>'] = actions.select_default,
                 ['<C-x>'] = actions.select_horizontal,
-                ['<A-v>'] = actions.select_vertical,
+                ['<C-v>'] = actions.select_vertical,
                 ['<C-t>'] = actions.select_tab,
                 ['<C-s>'] = flash,
 

@@ -10,6 +10,14 @@ map('n', '<Space>', '', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+
+
+-----------------==Navigation keymaps==------------------
+map("n", "<a-Right>", "<C-i>", { desc = "Move forward in jumps" })
+map("n", "<a-Left>", "<C-o>", { desc = "Move backwards in jumps" })
+
+
+
 -- Modes
 -- normal_mode = "n", insert_mode = "i", visual_mode = "v",
 -- visual_block_mode = "x", term_mode = "t", command_mode = "c",
