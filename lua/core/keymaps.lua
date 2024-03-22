@@ -10,13 +10,13 @@ map('n', '<Space>', '', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-
-
 -----------------==Navigation keymaps==------------------
 map("n", "<a-Right>", "<C-i>", { desc = "Move forward in jumps" })
 map("n", "<a-Left>", "<C-o>", { desc = "Move backwards in jumps" })
 
 
+------------------==Eazy Life==------------------
+map("n", "J", "", { desc = "Stop concatinating lines" })
 
 -- Modes
 -- normal_mode = "n", insert_mode = "i", visual_mode = "v",
@@ -40,8 +40,10 @@ map({ 'n', 'v', 'x' }, '=', '<C-a>', opts)
 map({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' })
 map({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Beginning of line' })
 
+
+
+
 -- Center Cursors
-map('n', 'J', 'mzJ`z', opts)
 map('n', '<C-d>', '<C-d>zz', opts)
 map('n', '<C-u>', '<C-u>zz', opts)
 map('n', 'n', 'nzzzv', opts)

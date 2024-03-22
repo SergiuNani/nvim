@@ -406,7 +406,7 @@ local no_leader_mappings = {
     ['<C-Left>'] = { '<cmd>vertical resize -10<cr>', 'Decrease window width' },
     ['<C-Right>'] = { '<cmd>vertical resize +10<cr>', 'Increase window width' },
 
-    ['<C-f>'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
+    ['<C-p>'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
     ['<C-g>'] = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
 
     ['['] = {
