@@ -188,7 +188,7 @@ lualine.setup({
     sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { separator, mode(icons.ui.Heart), 'location', progress, filename },
+        lualine_c = { separator,mode(icons.ui.Electric), mode(icons.ui.Fire), 'location', progress, filename },
         lualine_x = { diagnostics, lsp, filetype, filesize, fileformat, encoding, separator },
         lualine_y = {},
         lualine_z = {},

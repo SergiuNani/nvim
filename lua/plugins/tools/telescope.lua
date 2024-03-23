@@ -75,8 +75,8 @@ telescope.setup({
                 ['<C-t>'] = actions.select_tab,
                 ['<C-s>'] = flash,
 
-                ['<A-e>'] = actions.preview_scrolling_up,
-                ['<C-d>'] = actions.preview_scrolling_down,
+                ['<M-e>'] = actions.preview_scrolling_up,
+                ['<M-d>'] = actions.preview_scrolling_down,
 
                 ['<PageUp>'] = actions.results_scrolling_up,
                 ['<PageDown>'] = actions.results_scrolling_down,
@@ -113,8 +113,8 @@ telescope.setup({
                 ['gg'] = actions.move_to_top,
                 ['G'] = actions.move_to_bottom,
 
-                ['<A-e>'] = actions.preview_scrolling_up,
-                ['<A-d>'] = actions.preview_scrolling_down,
+                ['<M-e>'] = actions.preview_scrolling_up,
+                ['<M-d>'] = actions.preview_scrolling_down,
 
                 ['<PageUp>'] = actions.results_scrolling_up,
                 ['<PageDown>'] = actions.results_scrolling_down,

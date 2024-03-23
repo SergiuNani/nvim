@@ -98,6 +98,7 @@ return {
         Edge = '│ ',
         Electric = ' ',
         Fire = ' ',
+        king = "󰆥 ",
         Firefox = ' ',
         Game = ' ',
         Gear = ' ',

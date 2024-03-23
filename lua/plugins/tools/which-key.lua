@@ -104,7 +104,9 @@ for key, name in pairs({ n = 'Next', l = 'Last' }) do
     i[key] = vim.tbl_extend('force', { name = 'Inside ' .. name .. ' textobject' }, ic)
     a[key] = vim.tbl_extend('force', { name = 'Around ' .. name .. ' textobject' }, ac)
 end
-
+function TelescopeFindConfigFiles()
+    require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+end
 local opts = {
     mode = 'n',
     prefix = '<leader>',
@@ -120,6 +122,55 @@ local mappings = {
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     w = { '<cmd>w<cr>', icons.ui.Save .. 'Save' },
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
+        f = {
+        name = icons.ui.Telescope .. 'Find',
+
+        --------------------==Find Files==--------------------
+        b = { '<cmd>Telescope buffers<cr>', '[B]uffers' },
+        f = { '<cmd>lua require("telescope").extensions.menufacture.find_files()<cr>', '[F]ind in Files' },
+        G = { '<cmd>lua require("telescope").extensions.menufacture.git_files()<cr>', 'Find [G]it files' },
+        r = { '<cmd>Telescope oldfiles<cr>', '[R]ecent Files' },
+
+        --------------------==Find Words==--------------------
+        c = { '<cmd>lua require("telescope").extensions.menufacture.grep_string()<cr>', 'Find Word under [c]ursor' },
+        g = { '<cmd>lua require("telescope").extensions.menufacture.live_grep()<cr>', 'Find Grep Text' },
+        s = { '<cmd>Telescope live_grep grep_open_files=true<cr>', 'Find in Open Files' },
+
+        --------------------==Triks==--------------------
+        h = { '<cmd>Telescope help_tags<cr>', 'Help' },
+        k = { '<cmd>Telescope commands<cr>', 'Commands' },
+        K = { '<cmd>Telescope keymaps<cr>', '[K]eymaps' },
+        l = { '<cmd>Telescope resume<cr>', '[R]esume Last Search' },
+        t = { '<cmd>Telescope<cr>', '[T]elescope Commands' },
+        y = { '<cmd>Telescope colorscheme<cr>', 'ColorSchemes' },
+        m = { '<cmd>Telescope marks<cr>', '[M]arks' },
+        n = { '<cmd>:lua TelescopeFindConfigFiles() <cr>', '[N]eovim config files' },
+        v = { '<cmd>Telescope vim_options<cr>', '[V]im Options' },
+
+        e = { '<cmd>Oil<cr>', 'Dir Editor' },--??
+        H = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },--??
+        L = { '<cmd>Telescope loclist<cr>', 'Location List' },--??
+        q = { '<cmd>Telescope quickfix<cr>', 'Quickfix' },--??
+        [','] = { '<cmd>Nerdy<cr>', 'Nerd Glyphs' }, --??
+    },
+    g = {
+        name = icons.git.Octoface .. 'Git',
+        b = { '<cmd>Gitsigns blame_line<cr>', 'Blame' },
+        p = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
+        d = { '<cmd>Gitsigns diffthis HEAD<cr>', 'Diff' },
+        g = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
+        s = { '<cmd>Telescope git_status<cr>', 'Changed files' },
+        t = {
+            name = 'Git Toggle',
+            b = { '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Blame' },
+            d = { '<cmd>Gitsigns toggle_deleted<cr>', 'Deleted' },
+            l = { '<cmd>Gitsigns toggle_linehl<cr>', 'Line HL' },
+            s = { '<cmd>Gitsigns toggle_signs<cr>', 'Signs' },
+        },
+    },
+    h = { name = icons.ui.Bookmark .. 'Harpoon' },
+
+-- ------------------------------------------------------------
     c = {
         name = icons.ui.NeoVim .. 'Config',
         c = { '<cmd>CccConvert<cr>', 'Convert Color' },
@@ -156,57 +207,6 @@ local mappings = {
         S = { '<cmd>lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', 'To JSON' },
         t = { '<cmd>lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', 'To Table' },
     },
-    f = {
-        name = icons.ui.Telescope .. 'Find',
-        b = { '<cmd>Telescope buffers<cr>', 'Buffers' },
-        c = { '<cmd>lua require("telescope").extensions.menufacture.grep_string()<cr>', 'Find Word under [c]ursor' },
-        e = { '<cmd>Oil<cr>', 'Dir Editor' },
-        f = { '<cmd>lua require("telescope").extensions.menufacture.find_files()<cr>', '[F]ind in Files' },
-        G = { '<cmd>lua require("telescope").extensions.menufacture.git_files()<cr>', 'Find [G]it files' },
-        g = { '<cmd>lua require("telescope").extensions.menufacture.live_grep()<cr>', 'Find Text' },
-        h = { '<cmd>Telescope help_tags<cr>', 'Help' },
-        H = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },
-        k = { '<cmd>Telescope commands<cr>', 'Commands' },
-        K = { '<cmd>Telescope keymaps<cr>', 'Keymaps' },
-        l = { '<cmd>Telescope resume<cr>', 'Last Search' },
-        L = { '<cmd>Telescope loclist<cr>', 'Location List' },
-        r = { '<cmd>Telescope oldfiles<cr>', '[R]ecent Files' },
-        t = { '<cmd>Telescope<cr>', '[T]elescope Commands' },
-        q = { '<cmd>Telescope quickfix<cr>', 'Quickfix' },
-        s = { '<cmd>Telescope live_grep grep_open_files=true<cr>', 'Find in Open Files' },
-        u = { '<cmd>Telescope undo<cr>', 'Undo History' },
-        ['"'] = { '<cmd>Telescope registers<cr>', 'Registers' },
-        [','] = { '<cmd>Nerdy<cr>', 'Nerd Glyphs' }, --??
-    },
-    g = {
-        name = icons.git.Octoface .. 'Git',
-        a = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage Hunk' },
-        A = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage Buffer' },
-        b = { '<cmd>Gitsigns blame_line<cr>', 'Blame' },
-        c = { '<cmd>Git<cr>', 'Commit' },
-        C = { '<cmd>CoAuthor<cr>', 'Add Co Author' },
-        d = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
-        D = { '<cmd>Gitsigns diffthis HEAD<cr>', 'Diff' },
-        g = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
-        j = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
-        k = { '<cmd>Gitsigns prev_hunk<cr>', 'Prev Hunk' },
-        r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset Hunk' },
-        R = { '<cmd>Gitsigns reset_buffer<cr>', 'Reset Buffer' },
-        s = { '<cmd>Telescope git_status<cr>', 'Changed files' },
-        S = { '<cmd>Telescope git_stash<cr>', 'Stashed Changes' },
-        t = {
-            name = 'Git Toggle',
-            b = { '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Blame' },
-            d = { '<cmd>Gitsigns toggle_deleted<cr>', 'Deleted' },
-            l = { '<cmd>Gitsigns toggle_linehl<cr>', 'Line HL' },
-            n = { '<cmd>Gitsigns toggle_numhl<cr>', 'Number HL' },
-            s = { '<cmd>Gitsigns toggle_signs<cr>', 'Signs' },
-            w = { '<cmd>Gitsigns toggle_word_diff<cr>', 'Word Diff' },
-        },
-        u = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Undo Stage Hunk' },
-        v = { '<cmd>Gitsigns select_hunk<cr>', 'Select Hunk' },
-    },
-    h = { name = icons.ui.Bookmark .. 'Harpoon' },
     l = {
         name = icons.ui.Gear .. 'LSP',
         a = { '<cmd>Lspsaga code_action<cr>', 'Code Action' },
@@ -402,12 +402,14 @@ local no_leader_mappings = {
     ['<C-Right>'] = { '<cmd>vertical resize +10<cr>', 'Increase window width' },
 
     ['<C-p>'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
+    ['<C-f>'] = { '<cmd>Telescope current_buffer_fuzzy_find<cr>', 'Search in current buffer' },
     ['<C-g>'] = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
 
     ['['] = {
         name = icons.ui.ArrowLeft .. 'Previous',
         b = { '<cmd>bprevious<cr>', 'Buffer' },
         B = { '<cmd>bfirst<cr>', 'First Buffer' },
+        c = { '<cmd>Gitsigns prev_hunk<cr>', 'Previous Hunk' },
         d = { '<cmd>Lspsaga diagnostic_jump_prev<cr>', 'Diagnostic' },
         e = { 'g;', 'Edit' },
         g = { '<cmd>Gitsigns prev_hunk<cr>', 'Git Hunk' },
@@ -417,6 +419,7 @@ local no_leader_mappings = {
         name = icons.ui.ArrowRight .. 'Next',
         b = { '<cmd>bnext<cr>', 'Buffer' },
         B = { '<cmd>blast<cr>', 'Buffer' },
+        c = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
         d = { '<cmd>Lspsaga diagnostic_jump_next<cr>', 'Diagnostic' },
         e = { 'g,', 'Edit' },
         g = { '<cmd>Gitsigns next_hunk<cr>', 'Git Hunk' },

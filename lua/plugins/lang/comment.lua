@@ -17,10 +17,10 @@ comment.setup({
 
     mappings = {
         -- Toggle comment (like `gcip` - comment inner paragraph) for both
-        comment = 'gc',
-        comment_line = 'gcc',
-        comment_visual = 'gc',
+        comment = '<C-_>',
+        comment_line = '<C-_>',
+        comment_visual = '<C-_>',
         -- Define 'comment' textobject (like `dgc` - delete whole comment block)
-        textobject = 'gc',
+        textobject = '<C-_>',
     },
 })

@@ -108,7 +108,9 @@ local plugins = {
     --     event = 'InsertEnter',
     -- },
      {
-        "preservim/nerdcommenter",
+           'echasnovski/mini.comment',
+         version = '*',
+         dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
          config = load_config('lang.comment'),
          event = { 'BufReadPre', 'BufNewFile' },
     },
