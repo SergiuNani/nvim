@@ -108,12 +108,11 @@ local plugins = {
     --     event = 'InsertEnter',
     -- },
      {
-         'echasnovski/mini.comment',
-         version = '*',
-         dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
+        "preservim/nerdcommenter",
          config = load_config('lang.comment'),
          event = { 'BufReadPre', 'BufNewFile' },
-     },
+    },
+
     -- {
     --     'echasnovski/mini.surround',
     --     version = '*',
@@ -127,24 +126,24 @@ local plugins = {
     --     event = { 'BufReadPre', 'BufNewFile' },
     -- },
 
-    -- -- Tresitter
-    -- {
-    --     'nvim-treesitter/nvim-treesitter',
-    --     build = ':TSUpdate',
-    --     dependencies = {
-    --         'nvim-treesitter/nvim-treesitter-refactor',
-    --         'nvim-treesitter/nvim-treesitter-textobjects',
-    --         'RRethy/nvim-treesitter-endwise',
-    --         'RRethy/nvim-treesitter-textsubjects',
-    --         'windwp/nvim-ts-autotag',
-    --     },
-    --     config = load_config('lang.treesitter'),
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
-    -- {
-    --     'ckolkey/ts-node-action',
-    --     dependencies = { 'nvim-treesitter' },
-    -- },
+    -- Tresitter
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-refactor',
+            'nvim-treesitter/nvim-treesitter-textobjects',
+            'RRethy/nvim-treesitter-endwise',
+            'RRethy/nvim-treesitter-textsubjects',
+            'windwp/nvim-ts-autotag',
+        },
+        config = load_config('lang.treesitter'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
+    {
+        'ckolkey/ts-node-action',
+        dependencies = { 'nvim-treesitter' },
+    },
     -- -- LSP
     -- {
     --     'neovim/nvim-lspconfig',
@@ -390,16 +389,9 @@ local plugins = {
 }
 
 local lsp_servers = {
-    'bashls',
-    'elixirls',
     'eslint',
     'jsonls',
     'lua_ls',
-    'rubocop', -- ruby
-    'ruby_ls',
-    'ruff_lsp', -- python
-    'rust_analyzer',
-    'solargraph', -- ruby
     'tsserver',
     'typos_lsp', -- check typos
     'vimls',
@@ -410,25 +402,21 @@ local null_ls_sources = {
 }
 
 local ts_parsers = {
-    'bash',
     'css',
-    'elixir',
     'gitcommit',
-    'go',
+    "javascript",
+    "tsx",
     'html',
-    'java',
+    "xml",
     'javascript',
     'json',
     'lua',
+    "c",
+    "c_sharp",
     'markdown',
     'markdown_inline', -- markdown code blocks
-    'python',
-    'ruby',
-    'rust',
     'typescript',
     'vim',
-    'vimdoc',
-    'yaml',
 }
 
 return {

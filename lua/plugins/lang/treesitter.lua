@@ -29,8 +29,8 @@ treesitter.setup({
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = '<c-space>',
-            node_incremental = '<c-space>',
+            init_selection = '<C-space>',
+            node_incremental = '<C-space>',
             scope_incremental = false,
             node_decremental = '<bs>',
         },
@@ -57,7 +57,7 @@ treesitter.setup({
             enable = true,
             clear_on_cursor_move = true,
         },
-        highlight_current_scope = { enable = true },
+        highlight_current_scope = { enable = false }, --dont enable it
         smart_rename = {
             enable = true,
             keymaps = {

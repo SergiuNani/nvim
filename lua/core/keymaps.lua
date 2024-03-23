@@ -18,13 +18,13 @@ map("n", "<a-Left>", "<C-o>", { desc = "Move backwards in jumps" })
 ------------------==Eazy Life==------------------
 map("n", "J", "", { desc = "Stop concatinating lines" })
 
+map('i', 'jj', '<Esc>', opts)
+map('t', 'JJ', '<C-\\><C-n>', opts)
+map("n", "x", '"_x', { desc = "Stop copying to clipboard" })
+map("n", "c", '"_c', { desc = "Stop copying to clipboard" })
 -- Modes
 -- normal_mode = "n", insert_mode = "i", visual_mode = "v",
 -- visual_block_mode = "x", term_mode = "t", command_mode = "c",
-
--- Use jj as escape
-map('i', 'jj', '<Esc>', opts)
-map('t', 'JJ', '<C-\\><C-n>', opts)
 
 -- Visual overwrite paste
 map({ 'v', 'x' }, 'p', '"_dP', opts)
