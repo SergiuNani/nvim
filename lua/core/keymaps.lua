@@ -38,7 +38,7 @@ map({ 'v', 'x' }, '<A-Up>', ":move '<-2<CR>gv=gv", opts)
 ------------------==Eazy Life==------------------
 map("n", "<leader><leader>", "<cmd>so<cr>", { desc = ":so" })
 map("n", "J", "", { desc = "Stop concatinating lines" })
-
+map("n", "<C-a>", "ggVG", { desc = "Clear search highlights" })
 map('i', 'jj', '<Esc>', opts)
 map("n", "x", '"_x', { desc = "Stop copying to clipboard" })
 map("n", "c", '"_c', { desc = "Stop copying to clipboard" })

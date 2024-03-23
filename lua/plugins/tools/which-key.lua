@@ -170,6 +170,13 @@ local mappings = {
     },
     h = { name = icons.ui.Bookmark .. 'Harpoon' },
 
+    r = {
+        name = icons.diagnostics.Hint .. 'Refactor',
+        w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
+        b = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>", 'Replace Buffer' },
+        s = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
+        -- s = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' }, --dont work ??
+    },
 -- ------------------------------------------------------------
     c = {
         name = icons.ui.NeoVim .. 'Config',
@@ -277,26 +284,6 @@ local mappings = {
         u = { '<cmd>Lazy update<cr>', 'Update' },
         x = { '<cmd>Lazy clean<cr>', 'Clean' },
     },
-    r = {
-        name = icons.diagnostics.Hint .. 'Refactor',
-        b = { "<cmd>lua require('spectre').open_file_search()<cr>", 'Replace Buffer' },
-        e = { "<cmd>lua require('refactoring').refactor('Extract Block')<CR>", 'Extract Block' },
-        f = { "<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", 'Extract To File' },
-        i = { "<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
-        n = { '', 'Swap Next' },
-        p = { '', 'Swap Previous' },
-        r = { '', 'Smart Rename' },
-        d = { '', 'Go To Definition' },
-        h = { '', 'List Definition Head' },
-        l = { '', 'List Definition' },
-        j = { '', 'Next Usage' },
-        k = { '', 'Previous Usage' },
-        R = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
-        S = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
-        s = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' },
-        v = { "<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
-        w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
-    },
     t = {
         name = icons.ui.Terminal .. 'Terminal',
         ['`'] = { '<cmd>Sterm<cr>', 'Horizontal Terminal' },
@@ -360,14 +347,6 @@ local vmappings = {
         name = icons.ui.Gear .. 'LSP',
         a = '<cmd><C-U>Lspsaga range_code_action<CR>',
     },
-    r = {
-        name = icons.diagnostics.Hint .. 'Refactor',
-        r = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", 'Refactor Commands' },
-        e = { "<esc><cmd>lua require('refactoring').refactor('Extract Function')<CR>", 'Extract Function' },
-        f = { "<esc><cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", 'Extract To File' },
-        v = { "<esc><cmd>lua require('refactoring').refactor('Extract Variable')<CR>", 'Extract Variable' },
-        i = { "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<CR>", 'Inline Variable' },
-    },
     s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
@@ -376,6 +355,11 @@ local vmappings = {
         name = icons.ui.Clipboard .. 'Yank',
         g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
     },
+    r = {
+        name = icons.diagnostics.Hint .. 'Refactor',
+        w = { "<esc><cmd>lua require('spectre').open_visual()<CR>", 'Replace Word' },
+    },
+
 }
 
 local no_leader_opts = {

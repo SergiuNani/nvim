@@ -98,10 +98,6 @@ local plugins = {
     --     config = load_config('lang.sniprun'),
     --     cmd = 'SnipRun',
     -- },
-    {
-        'ThePrimeagen/refactoring.nvim',
-        config = load_config('lang.refactoring'),
-    },
     -- {
     --     'windwp/nvim-autopairs',
     --     config = load_config('lang.autopairs'),
@@ -216,11 +212,11 @@ local plugins = {
         config = load_config('tools.nvim-tree'),
         cmd = 'NvimTreeToggle',
     },
-    -- {
-    --     'windwp/nvim-spectre',
-    --     config = load_config('tools.spectre'),
-    --     cmd = 'Spectre',
-    -- },
+    {
+        'windwp/nvim-spectre',
+        config = load_config('tools.spectre'),
+        cmd = 'Spectre',
+    },
     -- {
     --     'abecodes/tabout.nvim',
     --     config = load_config('tools.tabout'),
