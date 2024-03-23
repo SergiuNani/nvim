@@ -3,6 +3,7 @@ local onedark = require('onedark')
 onedark.setup({
     style = 'deep',
     transparent = true,
+    priority = 1000, -- make sure to load this before all the other start plugins
     term_colors = false,
     ending_tildes = false,
     cmp_itemkind_reverse = false,

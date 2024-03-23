@@ -356,6 +356,7 @@ local plugins = {
         'ThePrimeagen/harpoon',
         branch = 'harpoon2',
         config = load_config('tools.harpoon'),
+        priority=1000,
         event = { 'BufReadPre', 'BufNewFile' },
     },
     -- {
