@@ -67,7 +67,7 @@ cmp.setup({
             end
 
             vim_item.menu = ({
-                copilot = '[Copilot]',
+                -- copilot = '[Copilot]',
                 nvim_lsp = '[LSP]',
                 luasnip = '[Snippet]',
                 buffer = '[Buffer]',
@@ -77,7 +77,7 @@ cmp.setup({
         end,
     },
     sources = {
-        { name = 'copilot' },
+        -- { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'nvim_lua' },

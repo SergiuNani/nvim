@@ -45,12 +45,6 @@ dashboard.setup({
                 key = 'g',
             },
             {
-                desc = icons.ui.Note .. 'Todo',
-                group = 'Label',
-                action = 'Tdo',
-                key = 'd',
-            },
-            {
                 desc = icons.ui.Power,
                 group = 'Action',
                 action = 'quit',

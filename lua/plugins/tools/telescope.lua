@@ -3,6 +3,13 @@ local actions = require('telescope.actions')
 local multi_open_mappings = require('plugins.tools.telescope-multiopen')
 local icons = require('lib.icons')
 
+local function Teli_cmd(func_name, Ttype)
+--get_dropdown
+--get_ivy
+--get_cursor
+return string.format("<cmd>:lua require'telescope.builtin'.%s(require('telescope.themes').%s({}))<CR>",func_name,Ttype)
+end
+
 local function flash(prompt_bufnr)
     require('flash').jump({
         pattern = '^',
@@ -152,6 +159,15 @@ telescope.setup({
         },
         menufacture = { mappings = { main_menu = { [{ 'i', 'n' }] = '<C-e>' } } },
     },
+
+vim.keymap.set("n","<leader>f`",Teli_cmd("marks", "get_dropdown"),{ desc = "Lists of vim marks and their values" }),
+vim.keymap.set("n","<leader>fk",Teli_cmd("commands", "get_dropdown"),{ desc = "Telescope Commands" }),
+vim.keymap.set("n", "<leader>fm", Teli_cmd("keymaps", "get_dropdown"), { desc = "Show mappings" }),
+vim.keymap.set("n", "<leader>fh", Teli_cmd("help_tags", "get_dropdown"), { desc = "Serch in HELP" }),
+vim.keymap.set("n","<leader>fy",Teli_cmd("colorscheme", "get_dropdown"),{ desc = "Colorschemes" }),
+vim.keymap.set("n", "<leader>fi", Teli_cmd("vim_options", "get_dropdown"), { desc = "VimOptions" }),
+vim.keymap.set("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" })
+
 })
 
 require('telescope').load_extension('fzf')

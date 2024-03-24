@@ -1,6 +1,5 @@
 local which_key = require('which-key')
 local icons = require('lib.icons')
-
 local setup = {
     plugins = {
         marks = true,
@@ -67,7 +66,6 @@ local setup = {
         v = { 'j', 'j' },
     },
 }
-
 local i = {
     [' '] = 'Whitespace',
     ['"'] = 'Balanced "',
@@ -91,15 +89,12 @@ local i = {
     q = 'Quote `, ", \'',
     t = 'Tag',
 }
-
 local a = vim.deepcopy(i)
 for k, v in pairs(a) do
     a[k] = v:gsub(' including.*', '')
 end
-
 local ic = vim.deepcopy(i)
 local ac = vim.deepcopy(a)
-
 for key, name in pairs({ n = 'Next', l = 'Last' }) do
     i[key] = vim.tbl_extend('force', { name = 'Inside ' .. name .. ' textobject' }, ic)
     a[key] = vim.tbl_extend('force', { name = 'Around ' .. name .. ' textobject' }, ac)
@@ -115,43 +110,30 @@ local opts = {
     noremap = true,
     nowait = true,
 }
-
 local mappings = {
     e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     w = { '<cmd>w<cr>', icons.ui.Save .. 'Save' },
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
-        f = {
+    f = {
         name = icons.ui.Telescope .. 'Find',
-
         --------------------==Find Files==--------------------
         b = { '<cmd>Telescope buffers<cr>', '[B]uffers' },
         f = { '<cmd>lua require("telescope").extensions.menufacture.find_files()<cr>', '[F]ind in Files' },
         G = { '<cmd>lua require("telescope").extensions.menufacture.git_files()<cr>', 'Find [G]it files' },
         r = { '<cmd>Telescope oldfiles<cr>', '[R]ecent Files' },
-
         --------------------==Find Words==--------------------
         c = { '<cmd>lua require("telescope").extensions.menufacture.grep_string()<cr>', 'Find Word under [c]ursor' },
         g = { '<cmd>lua require("telescope").extensions.menufacture.live_grep()<cr>', 'Find Grep Text' },
         s = { '<cmd>Telescope live_grep grep_open_files=true<cr>', 'Find in Open Files' },
-
         --------------------==Triks==--------------------
-        h = { '<cmd>Telescope help_tags<cr>', 'Help' },
-        k = { '<cmd>Telescope commands<cr>', 'Commands' },
-        K = { '<cmd>Telescope keymaps<cr>', '[K]eymaps' },
         l = { '<cmd>Telescope resume<cr>', '[R]esume Last Search' },
-        t = { '<cmd>Telescope<cr>', '[T]elescope Commands' },
-        y = { '<cmd>Telescope colorscheme<cr>', 'ColorSchemes' },
-        m = { '<cmd>Telescope marks<cr>', '[M]arks' },
         n = { '<cmd>:lua TelescopeFindConfigFiles() <cr>', '[N]eovim config files' },
         v = { '<cmd>Telescope vim_options<cr>', '[V]im Options' },
-
         e = { '<cmd>Oil<cr>', 'Dir Editor' },--??
-        H = { '<cmd>Telescope man_pages<cr>', 'Man Pages' },--??
         L = { '<cmd>Telescope loclist<cr>', 'Location List' },--??
-        q = { '<cmd>Telescope quickfix<cr>', 'Quickfix' },--??
-        [','] = { '<cmd>Nerdy<cr>', 'Nerd Glyphs' }, --??
+        q = { '<cmd>Telescope quickfix<cr>', '[Q]uickfix' },--??
     },
     g = {
         name = icons.git.Octoface .. 'Git',
@@ -169,30 +151,38 @@ local mappings = {
         },
     },
     h = { name = icons.ui.Bookmark .. 'Harpoon' },
-
-    r = {
+    r = {--extra work ??
         name = icons.diagnostics.Hint .. 'Refactor',
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
         b = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>", 'Replace Buffer' },
-        s = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
-        -- s = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' }, --dont work ??
+        t = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
+        s = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' }, --dont work ??
     },
--- ------------------------------------------------------------
+    m = {
+        name = icons.kind.Field .. 'Modes',
+        d = { '<cmd>Dashboard<cr>', 'Dashboard' },
+        h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
+        n = { '<cmd>Telescope notify<cr>', 'Notifications' },
+        z = { '<cmd>ZenMode<cr>', 'ZenMode' },
+    },
+    p = {
+        name = icons.ui.Package .. 'Packages',
+        p = { '<cmd>Lazy<cr>', 'Plugins' },
+        m = { '<cmd>Mason<cr>', 'Mason' },
+        s = { '<cmd>Lazy sync<cr>', 'Sync' },
+        u = { '<cmd>Lazy update<cr>', 'Update' },
+    },
     c = {
         name = icons.ui.NeoVim .. 'Config',
-        c = { '<cmd>CccConvert<cr>', 'Convert Color' },
-        d = { '<cmd>RootDir<cr>', 'Root Directory' },
-        e = { '<cmd>e $MYVIMRC<cr>', 'Edit Config' },
-        f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format File' },
-        F = { '<cmd>retab<cr>', 'Fix Tabs' },
+        f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format File' }, -->??
         i = { vim.show_pos, 'Inspect Position' },
         l = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
         n = { '<cmd>set relativenumber!<cr>', 'Relative Numbers' },
-        p = { '<cmd>CccPick<cr>', 'Pick Color' },
         r = { '<cmd>Telescope reloader<cr>', 'Reload Module' },
         R = { '<cmd>ReloadConfig<cr>', 'Reload Configs' },
     },
-    b = {
+-- ------------------------------------------------------------
+    b = {--??
         name = icons.ui.Bug .. 'Debug',
         b = { '<cmd>DapToggleBreakpoint<cr>', 'Breakpoint' },
         c = { '<cmd>DapContinue<cr>', 'Continue' },
@@ -205,15 +195,15 @@ local mappings = {
         t = { '<cmd>DapUIToggle<cr>', 'Debugger' },
         x = { '<cmd>DapTerminate<cr>', 'Exit' },
     },
-    d = {
-        name = icons.ui.Database .. 'Database',
-        b = { '<cmd>DBToggle<cr>', 'DB Explorer' },
-        j = { '<cmd>lua require("dbee").next()<cr>', 'DB Next' },
-        k = { '<cmd>lua require("dbee").prev()<cr>', 'DB Prev' },
-        s = { '<cmd>lua require("dbee").store("csv", "buffer", { extra_arg = 0 })<cr>', 'To CSV' },
-        S = { '<cmd>lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', 'To JSON' },
-        t = { '<cmd>lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', 'To Table' },
-    },
+    -- d = { --maybe in the future
+    --     name = icons.ui.Database .. 'Database',
+    --     b = { '<cmd>DBToggle<cr>', 'DB Explorer' },
+    --     j = { '<cmd>lua require("dbee").next()<cr>', 'DB Next' },
+    --     k = { '<cmd>lua require("dbee").prev()<cr>', 'DB Prev' },
+    --     s = { '<cmd>lua require("dbee").store("csv", "buffer", { extra_arg = 0 })<cr>', 'To CSV' },
+    --     S = { '<cmd>lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', 'To JSON' },
+    --     t = { '<cmd>lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', 'To Table' },
+    -- },
     l = {
         name = icons.ui.Gear .. 'LSP',
         a = { '<cmd>Lspsaga code_action<cr>', 'Code Action' },
@@ -238,89 +228,18 @@ local mappings = {
         t = { '<cmd>Lspsaga peek_type_definition<cr>', 'Peek Type Definition' },
         T = { '<cmd>Lspsaga goto_type_definition<cr>', 'Goto Type Definition' },
     },
-    m = {
-        name = icons.kind.Field .. 'Modes',
-        c = { '<cmd>CccHighlighterToggle<cr>', 'Highlight Colors' },
-        d = { '<cmd>Dashboard<cr>', 'Dashboard' },
-        h = { '<cmd>Hardtime toggle<cr>', 'Hardtime' },
-        m = { '<cmd>MarkdownPreviewToggle<cr>', 'Markdown Preview' },
-        n = { '<cmd>Telescope notify<cr>', 'Notifications' },
-        r = { '<cmd>%SnipRun<cr>', 'Run File' },
-        s = { '<cmd>set spell!<cr>', 'Spellcheck' },
-        z = { '<cmd>ZenMode<cr>', 'ZenMode' },
-        Z = { '<cmd>Twilight<cr>', 'Twilight' },
-    },
-    n = {
-        name = icons.ui.Note .. 'Notes',
-        d = { '<cmd>Tdo<cr>', "Today's Todo" },
-        e = { '<cmd>TdoEntry<cr>', "Today's Entry" },
-        f = { '<cmd>TdoFiles<cr>', 'All Notes' },
-        g = { '<cmd>TdoFind<cr>', 'Find Notes' },
-        h = { '<cmd>Tdo -1<cr>', "Yesterday's Todo" },
-        j = { "<cmd>put =strftime('%a %d %b %r')<cr>", 'Insert Human Date' },
-        J = { "<cmd>put =strftime('%F')<cr>", 'Insert Date' },
-        k = { "<cmd>put =strftime('%r')<cr>", 'Insert Human Time' },
-        K = { "<cmd>put =strftime('%F-%H-%M')<cr>", 'Insert Time' },
-        l = { '<cmd>Tdo 1<cr>', "Tomorrow's Todo" },
-        n = { '<cmd>TdoNote<cr>', 'New Note' },
-        s = {
-            '<cmd>lua require("tdo").run_with("commit " .. vim.fn.expand("%:p")) vim.notify("Committed!")<cr>',
-            'Commit Note',
-        },
-        t = { '<cmd>TdoTodos<cr>', 'Incomplete Todos' },
-        x = { '<cmd>TdoToggle<cr>', 'Toggle Todo' },
-    },
-    p = {
-        name = icons.ui.Package .. 'Packages',
-        c = { '<cmd>Lazy check<cr>', 'Check' },
-        d = { '<cmd>Lazy debug<cr>', 'Debug' },
-        p = { '<cmd>Lazy<cr>', 'Plugins' },
-        P = { '<cmd>Lazy profile<cr>', 'Profile' },
-        m = { '<cmd>Mason<cr>', 'Mason' },
-        i = { '<cmd>Lazy install<cr>', 'Install' },
-        l = { '<cmd>Lazy log<cr>', 'Log' },
-        r = { '<cmd>Lazy restore<cr>', 'Restore' },
-        s = { '<cmd>Lazy sync<cr>', 'Sync' },
-        u = { '<cmd>Lazy update<cr>', 'Update' },
-        x = { '<cmd>Lazy clean<cr>', 'Clean' },
-    },
     t = {
         name = icons.ui.Terminal .. 'Terminal',
-        ['`'] = { '<cmd>Sterm<cr>', 'Horizontal Terminal' },
         n = { '<cmd>Sterm node<cr>', 'Node' },
-        p = { '<cmd>Sterm bpython<cr>', 'Python' },
-        r = { '<cmd>Sterm irb<cr>', 'Ruby' },
-        s = { '<cmd>Sterm<cr>', 'Horizontal Terminal' },
-        t = { '<cmd>Fterm<cr>', 'Terminal' },
-        v = { '<cmd>Vterm<cr>', 'Vertical Terminal' },
-    },
-    T = {
-        name = icons.ui.Test .. 'Test',
-        f = { '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>', 'Run Test' },
-        F = { '<cmd>lua require("neotest").run.run()<cr>', 'Run Current Test' },
-        o = { '<cmd>Neotest output-panel<cr>', 'Test Output' },
-        O = { '<cmd>Neotest summary<cr>', 'Test Summary' },
     },
     s = {
         name = icons.ui.Windows .. 'Split',
-        ['-'] = { '<C-w>s', 'Split Below' },
-        ['\\'] = { '<C-w>v', 'Split Right' },
-        c = { '<cmd>tabclose<cr>', 'Close Tab' },
+         ['-'] = { '<C-w>v', 'Split Right'},
         d = { '<C-w>c', 'Close Window' },
-        f = { '<cmd>tabfirst<cr>', 'First Tab' },
-        h = { '<C-w>h', 'Move Left' },
-        j = { '<C-w>j', 'Move Down' },
-        k = { '<C-w>k', 'Move Up' },
-        l = { '<C-w>l', 'Move Right' },
-        L = { '<cmd>tablast<cr>', 'Last Tab' },
-        o = { '<cmd>tabnext<cr>', 'Next Tab' },
-        O = { '<cmd>tabprevious<cr>', 'Previous Tab' },
         p = { '<C-w>p', 'Previous Window' },
-        q = { '<cmd>bw<cr>', 'Close Current Buf' },
         s = { '<cmd>split<cr>', 'Horizontal Split File' },
         t = { '<cmd>tabnew<cr>', 'New Tab' },
         v = { '<cmd>vsplit<cr>', 'Vertical Split File' },
-        W = { "<cmd>lua require'utils'.sudo_write()<cr>", 'Force Write' },
         w = { '<cmd>w<cr>', 'Write' },
         x = { '<cmd>x<cr>', 'Write and Quit' },
     },
@@ -329,10 +248,8 @@ local mappings = {
         f = { '<cmd>%y+<cr>', 'Copy Whole File' },
         p = { '<cmd>CRpath<cr>', 'Copy Relative Path' },
         P = { '<cmd>CApath<cr>', 'Copy Absolute Path' },
-        g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
     },
 }
-
 local vopts = {
     mode = 'v',
     prefix = '<leader>',
@@ -341,7 +258,6 @@ local vopts = {
     noremap = true,
     nowait = true,
 }
-
 local vmappings = {
     l = {
         name = icons.ui.Gear .. 'LSP',
@@ -351,15 +267,10 @@ local vmappings = {
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
-    y = {
-        name = icons.ui.Clipboard .. 'Yank',
-        g = { '<cmd>lua require"gitlinker".get_buf_range_url()<cr>', 'Copy Git URL' },
-    },
     r = {
         name = icons.diagnostics.Hint .. 'Refactor',
         w = { "<esc><cmd>lua require('spectre').open_visual()<CR>", 'Replace Word' },
     },
-
 }
 
 local no_leader_opts = {
@@ -374,17 +285,14 @@ local no_leader_opts = {
 local no_leader_mappings = {
     ['<S-h>'] = { '<cmd>bprevious<cr>', 'Previous Buffer' },
     ['<S-l>'] = { '<cmd>bnext<cr>', 'Next Buffer' },
-
     ['<C-h>'] = { '<C-w>h', 'Move Left' },
     ['<C-j>'] = { '<C-w>j', 'Move Down' },
     ['<C-k>'] = { '<C-w>k', 'Move Up' },
     ['<C-l>'] = { '<C-w>l', 'Move Right' },
-
     ['<C-Up>'] = { '<cmd>resize +10<cr>', 'Increase window height' },
     ['<C-Down>'] = { '<cmd>resize -10<cr>', 'Decrease window height' },
     ['<C-Left>'] = { '<cmd>vertical resize -10<cr>', 'Decrease window width' },
     ['<C-Right>'] = { '<cmd>vertical resize +10<cr>', 'Increase window width' },
-
     ['<C-p>'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
     ['<C-f>'] = { '<cmd>Telescope current_buffer_fuzzy_find<cr>', 'Search in current buffer' },
     ['<C-g>'] = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
@@ -399,6 +307,7 @@ local no_leader_mappings = {
         g = { '<cmd>Gitsigns prev_hunk<cr>', 'Git Hunk' },
         j = { '<C-o>', 'Jump' },
     },
+
     [']'] = {
         name = icons.ui.ArrowRight .. 'Next',
         b = { '<cmd>bnext<cr>', 'Buffer' },
@@ -409,7 +318,6 @@ local no_leader_mappings = {
         g = { '<cmd>Gitsigns next_hunk<cr>', 'Git Hunk' },
         j = { '<C-i>', 'Jump' },
     },
-
     ['#'] = { '<cmd>edit #<cr>', 'Alternate Buffer' },
     K = { '<cmd>Lspsaga hover_doc<cr>', 'LSP Hover' },
     U = { '<cmd>redo<cr>', 'Redo' },

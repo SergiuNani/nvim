@@ -17,7 +17,7 @@ zen.setup({
     },
     plugins = {
         options = { enabled = true, ruler = true, showcmd = true },
-        twilight = { enabled = true },
+        twilight = { enabled = false },
         gitsigns = { enabled = true },
         tmux = { enabled = true },
         kitty = { enabled = false, font = '+4' },
