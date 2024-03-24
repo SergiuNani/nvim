@@ -263,7 +263,6 @@ local vmappings = {
         name = icons.ui.Gear .. 'LSP',
         a = '<cmd><C-U>Lspsaga range_code_action<CR>',
     },
-    s = { "<esc><cmd>'<,'>SnipRun<cr>", icons.ui.Play .. 'Run Code' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
@@ -295,7 +294,6 @@ local no_leader_mappings = {
     ['<C-Right>'] = { '<cmd>vertical resize +10<cr>', 'Increase window width' },
     ['<C-p>'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
     ['<C-f>'] = { '<cmd>Telescope current_buffer_fuzzy_find<cr>', 'Search in current buffer' },
-    ['<C-g>'] = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
 
     ['['] = {
         name = icons.ui.ArrowLeft .. 'Previous',

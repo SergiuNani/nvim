@@ -67,12 +67,12 @@ local plugins = {
         config = load_config('lang.autopairs'),
         event = 'InsertEnter',
     },
-     {
-           'echasnovski/mini.comment',
-         version = '*',
-         dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
-         config = load_config('lang.comment'),
-         event = { 'BufReadPre', 'BufNewFile' },
+    {
+        'echasnovski/mini.comment',
+        version = '*',
+        dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
+        config = load_config('lang.comment'),
+        event = { 'BufReadPre', 'BufNewFile' },
     },
 
     -- {
@@ -107,41 +107,40 @@ local plugins = {
         dependencies = { 'nvim-treesitter' },
     },
     --  ----------------LSP ----------------
-    -- {
-    --     'neovim/nvim-lspconfig',
-    --     dependencies = {
-    --         'williamboman/mason-lspconfig.nvim',
-    --         'hrsh7th/cmp-nvim-lsp',
-    --     },
-    --     config = load_config('lang.lspconfig'),
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
-    -- {
-    --     'folke/neodev.nvim',
-    --     ft = { 'lua', 'vim' },
-    --     config = load_config('lang.neodev'),
-    -- },
-    -- {
-    --     'nvimdev/lspsaga.nvim',
-    --     config = load_config('lang.lspsaga'),
-    --     event = 'LspAttach',
-    -- },
-    -- {
-    --     'Maan2003/lsp_lines.nvim',
-    --     config = load_config('lang.lsp-lines'),
-    --     event = 'LspAttach',
-    -- },
-    -- {
-    --     'williamboman/mason.nvim',
-    --     config = load_config('lang.mason'),
-    --     cmd = 'Mason',
-    -- },
-    -- {
-    --     'nvimtools/none-ls.nvim',
-    --     dependencies = { 'neovim/nvim-lspconfig', 'jay-babu/mason-null-ls.nvim' },
-    --     config = load_config('lang.null-ls'),
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
+    {
+        'neovim/nvim-lspconfig',
+        dependencies = {
+            { "antosha417/nvim-lsp-file-operations", config = true },
+            { "j-hui/fidget.nvim", opts = {} },
+            { 'hrsh7th/cmp-nvim-lsp',opts={}},
+        },
+        config = load_config('lang.lspconfig'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
+    {
+        'folke/neodev.nvim',
+        ft = { 'lua', 'vim' },
+        config = load_config('lang.neodev'),
+    },
+    {
+        'nvimdev/lspsaga.nvim',
+        config = load_config('lang.lspsaga'),
+        event = 'LspAttach',
+    },
+    {
+        'Maan2003/lsp_lines.nvim',
+        config = load_config('lang.lsp-lines'),
+        event = 'LspAttach',
+    },
+    {
+        'williamboman/mason.nvim',
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
+        config = load_config('lang.mason'),
+        cmd = 'Mason',
+    },
 
     -- ---------------- Completion ----------------
     {
@@ -187,9 +186,9 @@ local plugins = {
 
     -- },
     {
-  "NvChad/nvim-colorizer.lua",
-  event = { "BufReadPre", "BufNewFile" },
-  config = true,
+        "NvChad/nvim-colorizer.lua",
+        event = { "BufReadPre", "BufNewFile" },
+        config = true,
     },
     {
         'folke/flash.nvim',
@@ -245,20 +244,15 @@ local plugins = {
         end,
         cmd = 'Hardtime',
     },
-    -- {
-    --     'chrisgrieser/nvim-spider',
-    --     config = load_config('tools.spider'),
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
     {
         'folke/which-key.nvim',
         config = load_config('tools.which-key'),
         event = 'VeryLazy',
     },
-     {
-         '2kabhishek/termim.nvim',
-         cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
-     },
+    {
+        '2kabhishek/termim.nvim',
+        cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
+    },
 
     -- Telescope
     {
