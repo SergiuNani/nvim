@@ -1,41 +1,36 @@
-    -- import mason
-    local mason = require("mason")
+local mason = require('mason')
 
-    -- import mason-lspconfig
-    local mason_lspconfig = require("mason-lspconfig")
+local icons = require('lib.icons')
+mason.setup({
+    -- - "prepend": Use mason binary, "append": Use system binary
+    PATH = 'append',
 
-    local mason_tool_installer = require("mason-tool-installer")
+    log_level = vim.log.levels.INFO,
+    max_concurrent_installers = 8,
 
-    -- enable mason and configure icons
-    mason.setup({
-      ui = {
+    ui = {
+        check_outdated_packages_on_open = true,
+        border = 'rounded',
+        width = 0.8,
+        height = 0.8,
+
         icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
+            package_installed = icons.ui.Gear,
+            package_pending = icons.ui.Download,
+            package_uninstalled = icons.ui.Plus,
         },
-      },
-    })
 
-    mason_lspconfig.setup({
-      -- list of servers for mason to install
-      ensure_installed = {
-        "tsserver",
-        "html",
-        "cssls",
-        "lua_ls",
-        "emmet_ls",
-      },
-      -- auto-install configured servers (with lspconfig)
-      automatic_installation = true, -- not the same as ensure_installed
-    })
-
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter
-        "eslint_d", -- js linter
-      },
-    })
-
+        keymaps = {
+            toggle_package_expand = '<CR>',
+            install_package = 'i',
+            update_package = 'u',
+            check_package_version = 'c',
+            update_all_packages = 'U',
+            check_outdated_packages = 'C',
+            uninstall_package = 'x',
+            cancel_installation = '<C-c>',
+            apply_language_filter = '<C-f>',
+        },
+    },
+})
 

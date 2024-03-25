@@ -24,7 +24,7 @@ local function toggle_telescope(harpoon_files)
         :find()
 end
 
-vim.keymap.set('n', '<leader>ha', function()
+vim.keymap.set('n', '<leader>a', function()
     harpoon:list():append()
 end, { desc = 'Add Mark' })
 vim.keymap.set('n', '<leader>hh', function()

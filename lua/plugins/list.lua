@@ -290,16 +290,17 @@ local plugins = {
 
 local lsp_servers = {
     'eslint',
+    'emmet_ls',
+    'html',
+    'cssls',
     'jsonls',
     'lua_ls',
     'tsserver',
-    'typos_lsp', -- check typos
-    'vimls',
 }
 
-local null_ls_sources = {
-    'shellcheck', -- bash lint
-}
+-- local null_ls_sources = {
+--     'shellcheck', -- bash lint
+-- }
 
 local ts_parsers = {
     'css',
@@ -314,7 +315,6 @@ local ts_parsers = {
     "c",
     "c_sharp",
     'typescript',
-    'vim',
 }
 
 return {

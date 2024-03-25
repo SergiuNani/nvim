@@ -76,3 +76,8 @@ treesitter.setup({
         },
     },
 })
+
+local keymap = vim.keymap -- for conciseness
+keymap.set("n", "<leader>tt", "<cmd>TSBufToggle highlight<CR>", { desc = "TSBufToggle" })
+keymap.set("n", "<leader>te", "<cmd>TSBufEnable highlight<CR>", { desc = "TSEnable highlight" })
+keymap.set("n", "<leader>td", "<cmd>TSBufDisable highlight<CR>", { desc = "TSBufDisable" })

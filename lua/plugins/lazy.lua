@@ -107,3 +107,4 @@ lazy.setup({
     },
     state = vim.fn.stdpath('state') .. '/lazy/state.json',
 })
+
