@@ -71,7 +71,6 @@ local buffers = {
     'buffers',
     filetype_names = {
         TelescopePrompt = icons.ui.Telescope .. 'Telescope',
-        dashboard = icons.ui.Dashboard .. 'Dashboard',
         lazy = icons.ui.Sleep .. 'Lazy',
         mason = icons.ui.Package .. 'Mason',
         NvimTree = icons.documents.OpenFolder .. 'Files',

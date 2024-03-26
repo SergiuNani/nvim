@@ -6,6 +6,7 @@ vim.opt.showmode = false
 vim.opt.signcolumn = "yes"
 vim.opt.inccommand = "split"
 
+vim.opt.scrolloff = 4 -- is one of my fav
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
