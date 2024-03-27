@@ -36,28 +36,33 @@ local plugins = {
     event = { 'BufReadPre', 'BufNewFile' },
   },
   -- {
-  --   -- "bluz71/vim-nightfly-guicolors",--ehh
-  --   -- "folke/tokyonight.nvim",--ehh
-  --   -- 'olimorris/onedarkpro.nvim',
-  --   -- "rebelot/kanagawa.nvim", --5/10
-  --   -- "ribru17/bamboo.nvim", --6/10
-  --   -- "rose-pine/neovim", --3/10
-  --   -- "ellisonleao/gruvbox.nvim", --7/10
-  --   -- "marko-cerovac/material.nvim", --2/10
-  --   config = load_config('ui.colorscheme'),
-  --   lazy = false,
-  --   priority = 1000,
+  "bluz71/vim-nightfly-guicolors",--ehh
+  "folke/tokyonight.nvim",--ehh
+  'olimorris/onedarkpro.nvim',
+  "rebelot/kanagawa.nvim", --5/10
+  "ribru17/bamboo.nvim", --6/10
+  "rose-pine/neovim", --3/10
+  "ellisonleao/gruvbox.nvim", --7/10
+  "marko-cerovac/material.nvim", --2/10
+  config = load_config('ui.colorscheme'),
+  lazy = false,
+  priority = 1000,
   -- },
   {
     'nvim-lualine/lualine.nvim',
     config = load_config('ui.lualine'),
     event = { 'BufReadPre', 'BufNewFile' },
   },
+  -- {
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   config = load_config('ui.indentline'),
+  --   main = 'ibl',
+  --   event = { 'BufReadPre', 'BufNewFile' },
+  -- },
   {
-    'lukas-reineke/indent-blankline.nvim',
-    config = load_config('ui.indentline'),
-    main = 'ibl',
-    event = { 'BufReadPre', 'BufNewFile' },
+    "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
+    config = load_config('ui.hlchunk'),
   },
   {
     'HiPhish/rainbow-delimiters.nvim',

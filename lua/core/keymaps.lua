@@ -20,7 +20,7 @@ map({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' })
 map({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Beginning of line' })
 map("n", "n", "nzzzv", { desc = "Find next but still stay in the middle" })
 map("n", "N", "Nzzzv", { desc = "Find prev but still stay in the middle" })
-map("n", "`", "%", { desc = "Jump to tag opposite bracket/tag quickly" })
+map("n", "<M-q>", "%", { desc = "Jump to tag opposite bracket/tag quickly" })
 
 -----------------==Editing Options==------------------
 

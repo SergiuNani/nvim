@@ -222,8 +222,6 @@ local mappings = {
         R = { '<cmd>Lspsaga project_replace<cr>', 'Replace' },
         s = { '<cmd>Telescope lsp_document_symbols<cr>', 'Document Symbols' },
         S = { '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Workspace Symbols' },
-        t = { '<cmd>Lspsaga peek_type_definition<cr>', 'Peek Type Definition' },
-        T = { '<cmd>Lspsaga goto_type_definition<cr>', 'Goto Type Definition' },
     },
     t = {
         name = icons.ui.Terminal .. 'Terminal',
