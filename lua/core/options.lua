@@ -1,29 +1,24 @@
 -- -- Highlight tml files like C files
--- vim.cmd("autocmd BufNewFile,BufRead *.tml,*.cfg,*.cp set ft=c")
+vim.cmd("autocmd BufNewFile,BufRead *.tml,*.cfg,*.cp set ft=c")
 
--- vim.g.have_nerd_font = true
--- vim.opt.showmode = false
--- vim.opt.signcolumn = "yes"
--- vim.opt.inccommand = "split"
+vim.g.have_nerd_font = true
+vim.opt.showmode = false
+vim.opt.signcolumn = "yes"
+vim.opt.inccommand = "split"
 
--- vim.opt.scrolloff = 4 -- is one of my fav
--- vim.api.nvim_create_autocmd("TextYankPost", {
--- 	desc = "Highlight when yanking (copying) text",
--- 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
--- 	callback = function()
--- 		vim.highlight.on_yank()
--- 	end,
--- })
-vim.opt.fillchars = { fold = " " }
-vim.opt.foldmethod = "indent"
-vim.opt.foldenable = false
-vim.opt.foldlevel = 99
---vim.opt.undofile = true -- Once you save the file  and close you cannot go further in history , enabling it does the opp
-local opt = vim.opt -- for conciseness
--- line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
-opt.relativenumber = true -- show relative line numbers
+vim.opt.scrolloff = 4 -- is one of my fav
+ local opt = vim.opt -- for conciseness
 
+opt.fillchars = { fold = " " }
+-- BSSSSSSSSSSSSSSSSSSSSS =======================
+opt.foldmethod = "indent"
+opt.foldcolumn = '0'
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
+-- BSSSSSSSSSSSSSSSSSSSSS =======================
+
+opt.undofile = false -- Once you save the file  and close you cannot go further in history , enabling it does the opp
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
