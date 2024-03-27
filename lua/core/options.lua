@@ -16,6 +16,7 @@ opt.foldcolumn = '0'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
+opt.foldopen = block
 -- BSSSSSSSSSSSSSSSSSSSSS =======================
 
 opt.undofile = false -- Once you save the file  and close you cannot go further in history , enabling it does the opp

@@ -12,6 +12,29 @@ local plugins = {
     lazy = false,
     priority = 1000,
   },
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    config = load_config('tools.harpoon'),
+    event = { 'BufReadPre', 'BufNewFile', 'VimEnter' },
+    priority=1000,
+  },
+
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
+    config = load_config('tools.ufo'),
+    event = { 'VimEnter', 'BufNewFile' },
+  },
+  {
+    'echasnovski/mini.comment',
+    version = '*',
+    dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
+    config = load_config('lang.comment'),
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
   -- {
   --   -- "bluz71/vim-nightfly-guicolors",--ehh
   --   -- "folke/tokyonight.nvim",--ehh
@@ -63,34 +86,27 @@ local plugins = {
     cmd = { 'ZenMode' ,'Twilight' },
   },
 
-  --  ---------------- Language ----------------
+  -- --  ---------------- Language ----------------
   {
     'windwp/nvim-autopairs',
     config = load_config('lang.autopairs'),
     event = 'InsertEnter',
   },
-  {
-    'echasnovski/mini.comment',
-    version = '*',
-    dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
-    config = load_config('lang.comment'),
-    event = { 'BufReadPre', 'BufNewFile' },
-  },
 
-  -- {
-  --     'echasnovski/mini.surround',
-  --     version = '*',
-  --     config = load_config('lang.surround'),
-  --     event = { 'BufReadPre', 'BufNewFile' },
-  -- },
-  -- {
-  --     'echasnovski/mini.ai',
-  --     version = '*',
-  --     config = load_config('lang.ai'),
-  --     event = { 'BufReadPre', 'BufNewFile' },
-  -- },
+  -- -- {
+  -- --     'echasnovski/mini.surround',
+  -- --     version = '*',
+  -- --     config = load_config('lang.surround'),
+  -- --     event = { 'BufReadPre', 'BufNewFile' },
+  -- -- },
+  -- -- {
+  -- --     'echasnovski/mini.ai',
+  -- --     version = '*',
+  -- --     config = load_config('lang.ai'),
+  -- --     event = { 'BufReadPre', 'BufNewFile' },
+  -- -- },
 
-  -- ---------------- Tresitter ----------------
+  -- -- ---------------- Tresitter ----------------
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
@@ -108,7 +124,7 @@ local plugins = {
     'ckolkey/ts-node-action',
     dependencies = { 'nvim-treesitter' },
   },
-  --  ----------------LSP ----------------
+  -- --  ----------------LSP ----------------
   {
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -144,7 +160,7 @@ local plugins = {
     cmd = 'Mason',
   },
 
-  -- ---------------- Completion ----------------
+  -- -- ---------------- Completion ----------------
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -168,7 +184,7 @@ local plugins = {
   --     event = 'InsertEnter',
   -- },
 
-  --  ---------------- Tools ----------------
+  -- --  ---------------- Tools ----------------
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = {
@@ -182,11 +198,11 @@ local plugins = {
     config = load_config('tools.spectre'),
     cmd = 'Spectre',
   },
-  -- { --???? to investigate
-  --     "mg979/vim-visual-multi",
-  --     config = load_config('tools.VimVisualMulti'),
+  -- -- { --???? to investigate
+  -- --     "mg979/vim-visual-multi",
+  -- --     config = load_config('tools.VimVisualMulti'),
 
-  -- },
+  -- -- },
   {
     "NvChad/nvim-colorizer.lua",
     event = { "BufReadPre", "BufNewFile" },
@@ -273,15 +289,8 @@ local plugins = {
     config = load_config('tools.telescope'),
     cmd = 'Telescope',
   },
-  {
-    'ThePrimeagen/harpoon',
-    branch = 'harpoon2',
-    config = load_config('tools.harpoon'),
-    event = { 'BufReadPre', 'BufNewFile', 'VimEnter' },
-    priority=1000,
-  },
 
-  -- -- Git
+  -- -- -- Git
   {
     'lewis6991/gitsigns.nvim',
     cmd = 'Gitsigns',
@@ -289,15 +298,6 @@ local plugins = {
     event = { 'BufReadPre', 'BufNewFile' },
   },
 
-  {
-    "kevinhwang91/nvim-ufo",
-    dependencies = {
-      "kevinhwang91/promise-async",
-    },
-    config = load_config('tools.ufo'),
-    event = { 'BufReadPre', 'BufNewFile' },
-
-  }
 
 }
 
