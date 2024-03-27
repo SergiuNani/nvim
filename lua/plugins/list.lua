@@ -284,15 +284,26 @@ local plugins = {
   -- -- Git
   {
     'lewis6991/gitsigns.nvim',
-    config = load_config('tools.gitsigns'),
     cmd = 'Gitsigns',
+    config = load_config('tools.gitsigns'),
     event = { 'BufReadPre', 'BufNewFile' },
   },
+
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
+    config = load_config('tools.ufo'),
+    event = { 'BufReadPre', 'BufNewFile' },
+
+  }
+
 }
 
 local lsp_servers = {
-  'eslint',
-  'emmet_ls',
+  -- 'eslint',
+  -- 'emmet_ls',
   'html',
   'cssls',
   'jsonls',
