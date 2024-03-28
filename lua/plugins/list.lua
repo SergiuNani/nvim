@@ -53,12 +53,12 @@ local plugins = {
     config = load_config('ui.lualine'),
     event = { 'BufReadPre', 'BufNewFile' },
   },
-  -- {
-  --   'lukas-reineke/indent-blankline.nvim',
-  --   config = load_config('ui.indentline'),
-  --   main = 'ibl',
-  --   event = { 'BufReadPre', 'BufNewFile' },
-  -- },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = load_config('ui.indentline'),
+    main = 'ibl',
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
   {
     "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },

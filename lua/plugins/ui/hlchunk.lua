@@ -1,5 +1,6 @@
     require("hlchunk").setup({
       chunk = {
+        -- The one you want
         enable = true,
         notify = true,
         use_treesitter = true,
@@ -23,10 +24,11 @@
       },
 
       indent = {
-        enable = true,
+        enable = false,
         use_treesitter = false,
         chars = {
-          "┊",
+          "│",
+          -- "┊",
         },
         style = {
           { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui") },
@@ -35,17 +37,9 @@
 
       line_num = {
         enable = false,
-        use_treesitter = false,
-        style = "#806d9c",
       },
 
       blank = {
         enable = false,
-        chars = {
-          "․",
-        },
-        style = {
-          vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui"),
-        },
       },
     })
