@@ -1,3 +1,4 @@
+--  Needed for opening  split windows directly from telescope
 local actions = require('telescope.actions')
 local action_state = require('telescope.actions.state')
 local transform_mod = require('telescope.actions.mt').transform_mod
@@ -51,15 +52,15 @@ end
 
 local multi_open_mappings = {
     i = {
-        ['<C-v>'] = stopinsert(custom_actions.multi_selection_open_vertical),
-        ['<C-x>'] = stopinsert(custom_actions.multi_selection_open_horizontal),
-        ['<C-t>'] = stopinsert(custom_actions.multi_selection_open_tab),
+        ['<M-v>'] = stopinsert(custom_actions.multi_selection_open_vertical),
+        ['<M-x>'] = stopinsert(custom_actions.multi_selection_open_horizontal),
+        ['<M-t>'] = stopinsert(custom_actions.multi_selection_open_tab),
         ['<CR>'] = stopinsert(custom_actions.multi_selection_open),
     },
     n = {
-        ['<C-v>'] = custom_actions.multi_selection_open_vertical,
-        ['<C-x>'] = custom_actions.multi_selection_open_horizontal,
-        ['<C-t>'] = custom_actions.multi_selection_open_tab,
+        ['<M-v>'] = custom_actions.multi_selection_open_vertical,
+        ['<M-x>'] = custom_actions.multi_selection_open_horizontal,
+        ['<M-t>'] = custom_actions.multi_selection_open_tab,
         ['<CR>'] = custom_actions.multi_selection_open,
     },
 }

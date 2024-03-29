@@ -12,6 +12,7 @@ local plugins = {
         lazy = false,
         priority = 1000,
     },
+
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
@@ -22,26 +23,10 @@ local plugins = {
                 'nvim-telescope/telescope-fzf-native.nvim',
                 build = 'make',
             },
-            'molecule-man/telescope-menufacture',
-            'debugloop/telescope-undo.nvim',
+            'molecule-man/telescope-menufacture', --?? needs exploration
         },
         config = load_config('tools.telescope'),
         cmd = 'Telescope',
-    },
-
-    --  Tresitter ----------------
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-refactor',
-            'nvim-treesitter/nvim-treesitter-textobjects',
-            'RRethy/nvim-treesitter-endwise',
-            'RRethy/nvim-treesitter-textsubjects',
-            'windwp/nvim-ts-autotag',
-        },
-        config = load_config('lang.treesitter'),
-        event = { 'BufReadPre', 'BufNewFile' },
     },
 
     {
@@ -188,6 +173,34 @@ local plugins = {
 
     -- ======================== Third Priority =======================
     {
+    "folke/tokyonight.nvim",
+    -- "bluz71/vim-nightfly-guicolors",--ehh
+    -- 'olimorris/onedarkpro.nvim',
+    -- "rebelot/kanagawa.nvim", --5/10
+    -- "ribru17/bamboo.nvim", --6/10
+    -- "rose-pine/neovim", --3/10
+    -- "ellisonleao/gruvbox.nvim", --7/10
+    -- "marko-cerovac/material.nvim", --2/10
+    config = load_config('ui.colorscheme'),
+    lazy = false,
+    priority = 1000,
+    },
+    --
+    --  Tresitter ----------------
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-refactor',
+            'nvim-treesitter/nvim-treesitter-textobjects',
+            'RRethy/nvim-treesitter-endwise',
+            'RRethy/nvim-treesitter-textsubjects',
+            'windwp/nvim-ts-autotag',
+        },
+        config = load_config('lang.treesitter'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
+    {
         'folke/zen-mode.nvim',
         dependencies = {
             'folke/twilight.nvim',
@@ -246,14 +259,7 @@ local plugins = {
     -- --     config = load_config('tools.VimVisualMulti'),
 
     -- -- },
-    -- {
-    --     'Maan2003/lsp_lines.nvim', -- IDK about this one
-    --     config = load_config('lang.lsp-lines'),
-    --     event = 'LspAttach',
-    -- },
-
-
-        -- -- {
+    -- -- {
     -- --     'echasnovski/mini.surround',
     -- --     version = '*',
     -- --     config = load_config('lang.surround'),
@@ -275,19 +281,6 @@ local plugins = {
     --     cmd = 'Hardtime',
     -- },
 
-    -- {
-    -- "bluz71/vim-nightfly-guicolors",--ehh
-    -- "folke/tokyonight.nvim",--ehh
-    -- 'olimorris/onedarkpro.nvim',
-    -- "rebelot/kanagawa.nvim", --5/10
-    -- "ribru17/bamboo.nvim", --6/10
-    -- "rose-pine/neovim", --3/10
-    -- "ellisonleao/gruvbox.nvim", --7/10
-    -- "marko-cerovac/material.nvim", --2/10
-    -- config = load_config('ui.colorscheme'),
-    -- lazy = false,
-    -- priority = 1000,
-    -- },
 
 
     -- {
@@ -316,18 +309,18 @@ local lsp_servers = {
 -- }
 
 local ts_parsers = {
-    'css',
-    'gitcommit',
+    -- 'css',
+    -- 'gitcommit',
     "javascript",
     "tsx",
-    'html',
-    "xml",
+    -- 'html',
+    -- "xml",
     'javascript',
-    'json',
+    -- 'json',
     'lua',
     "c",
-    "c_sharp",
-    'typescript',
+    -- "c_sharp",
+    -- 'typescript',
 }
 
 return {

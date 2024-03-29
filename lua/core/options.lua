@@ -83,6 +83,9 @@ local options = {
     wrap = false, -- display lines as one long line
     writebackup = false, -- do not edit backups
 }
+for k, v in pairs(options) do
+    vim.opt[k] = v
+end
 
 vim.cmd([[
      setlocal spell spelllang=en "Set spellcheck language to en
@@ -109,9 +112,6 @@ end
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
-for k, v in pairs(options) do
-    vim.opt[k] = v
-end
 
 vim.cmd('set whichwrap+=<,>,[,],h,l')
 vim.cmd([[set iskeyword+=-]])

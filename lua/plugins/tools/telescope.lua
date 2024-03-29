@@ -4,10 +4,10 @@ local multi_open_mappings = require('plugins.tools.telescope-multiopen')
 local icons = require('lib.icons')
 
 local function Teli_cmd(func_name, Ttype)
---get_dropdown
---get_ivy
---get_cursor
-return string.format("<cmd>:lua require'telescope.builtin'.%s(require('telescope.themes').%s({}))<CR>",func_name,Ttype)
+    --get_dropdown
+    --get_ivy
+    --get_cursor
+    return string.format("<cmd>:lua require'telescope.builtin'.%s(require('telescope.themes').%s({}))<CR>",func_name,Ttype)
 end
 
 local function flash(prompt_bufnr)
@@ -142,36 +142,20 @@ telescope.setup({
             override_file_sorter = true,
             case_mode = 'smart_case',
         },
-        undo = {
-            use_delta = true,
-            use_custom_command = nil,
-            side_by_side = true,
-            diff_context_lines = vim.o.scrolloff,
-            entry_format = 'state #$ID, $STAT, $TIME',
-            -- time_format = '%d %b %H:%M',
-            mappings = {
-                i = {
-                    ['<S-cr>'] = require('telescope-undo.actions').yank_additions,
-                    ['<C-cr>'] = require('telescope-undo.actions').yank_deletions,
-                    ['<cr>'] = require('telescope-undo.actions').restore,
-                },
-            },
-        },
         menufacture = { mappings = { main_menu = { [{ 'i', 'n' }] = '<C-e>' } } },
     },
 
-vim.keymap.set("n","<leader>f`",Teli_cmd("marks", "get_dropdown"),{ desc = "Lists of vim marks and their values" }),
-vim.keymap.set("n","<leader>fk",Teli_cmd("commands", "get_dropdown"),{ desc = "Telescope Commands" }),
-vim.keymap.set("n", "<leader>fm", Teli_cmd("keymaps", "get_dropdown"), { desc = "Show mappings" }),
-vim.keymap.set("n", "<leader>fh", Teli_cmd("help_tags", "get_dropdown"), { desc = "Serch in HELP" }),
-vim.keymap.set("n","<leader>fy",Teli_cmd("colorscheme", "get_dropdown"),{ desc = "Colorschemes" }),
-vim.keymap.set("n", "<leader>fi", Teli_cmd("vim_options", "get_dropdown"), { desc = "VimOptions" }),
-vim.keymap.set("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" })
-
+    vim.keymap.set("n","<leader>f`",Teli_cmd("marks", "get_dropdown"),{ desc = "Lists of vim marks and their values" }),
+    vim.keymap.set("n","<leader>fk",Teli_cmd("commands", "get_dropdown"),{ desc = "Telescope Commands" }),
+    vim.keymap.set("n", "<leader>fm", Teli_cmd("keymaps", "get_dropdown"), { desc = "Show mappings" }),
+    vim.keymap.set("n", "<leader>fh", Teli_cmd("help_tags", "get_dropdown"), { desc = "Serch in HELP" }),
+    vim.keymap.set("n","<leader>fy",Teli_cmd("colorscheme", "get_dropdown"),{ desc = "Colorschemes" }),
+    vim.keymap.set("n", "<leader>fi", Teli_cmd("vim_options", "get_dropdown"), { desc = "VimOptions" }),
+    vim.keymap.set("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" }),
+    vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>" ,{desc = "[U]ndo Tree View"})
 })
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('menufacture')
-require('telescope').load_extension('undo')
 require('telescope').load_extension('harpoon')
 require('telescope').load_extension('notify')

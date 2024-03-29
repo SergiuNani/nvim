@@ -11,7 +11,7 @@ treesitter.setup({
     ensure_installed = installed_parsers,
     sync_install = false,
     ignore_install = {},
-    auto_install = true,
+    auto_install = false,
 
     textobjects = textobjects,
     autopairs = { enable = true },
@@ -29,10 +29,10 @@ treesitter.setup({
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = '<C-space>',
-            node_incremental = '<C-space>',
+            init_selection = '<M-a>',
+            node_incremental = '<M-a>',
             scope_incremental = false,
-            node_decremental = '<bs>',
+            node_decremental = '<M-q>',
         },
     },
 
