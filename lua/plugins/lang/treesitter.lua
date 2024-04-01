@@ -71,8 +71,8 @@ treesitter.setup({
         },
         navigation = {
             enable = true,
-            goto_definition = '<leader>rd',
             keymaps = {
+                goto_definition = '<leader>rd',
                 list_definitions_toc = '<leader>rh',
                 list_definitions = '<leader>rl',
                 goto_next_usage = '<leader>rj',
