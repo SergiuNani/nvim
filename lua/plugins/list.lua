@@ -106,30 +106,6 @@ local plugins = {
                 end,
                 desc = 'Flash Treesitter',
             },
-            {
-                'r',
-                mode = 'o',
-                function()
-                    require('flash').remote()
-                end,
-                desc = 'Remote Flash',
-            },
-            {
-                'R',
-                mode = { 'o', 'x' },
-                function()
-                    require('flash').treesitter_search()
-                end,
-                desc = 'Treesitter Search',
-            },
-            {
-                '<c-s>',
-                mode = { 'c' },
-                function()
-                    require('flash').toggle()
-                end,
-                desc = 'Toggle Flash Search',
-            },
         },
     },
 
@@ -297,11 +273,11 @@ local plugins = {
 local lsp_servers = {
     -- 'eslint',
     -- 'emmet_ls',
-    'html',
-    'cssls',
-    'jsonls',
+    -- 'html',
+    -- 'cssls',
+    -- 'jsonls',
     'lua_ls',
-    'tsserver',
+    -- 'tsserver',
 }
 
 -- local null_ls_sources = {
@@ -311,11 +287,11 @@ local lsp_servers = {
 local ts_parsers = {
     -- 'css',
     -- 'gitcommit',
-    "javascript",
-    "tsx",
+    -- "javascript",
+    -- "tsx",
     -- 'html',
     -- "xml",
-    'javascript',
+    -- 'javascript',
     -- 'json',
     'lua',
     "c",
@@ -326,6 +302,6 @@ local ts_parsers = {
 return {
     plugins = plugins,
     lsp_servers = lsp_servers,
-    null_ls_sources = null_ls_sources,
+    -- null_ls_sources = null_ls_sources,
     ts_parsers = ts_parsers,
 }

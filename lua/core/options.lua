@@ -47,7 +47,6 @@ local options = {
     ignorecase = true, -- ignore case in search patterns
     inccommand = 'split', -- preview incremental substitute
     laststatus = 3,
-    list = true,
     listchars = { trail = '', tab = '', nbsp = '_', extends = '>', precedes = '<' }, -- highlight
     mouse = 'a', -- allow the mouse to be used in neovim
     number = true, -- set numbered lines
@@ -82,19 +81,20 @@ local options = {
     winminwidth = 5, -- Minimum window width
     wrap = false, -- display lines as one long line
     writebackup = false, -- do not edit backups
+    -- list = true, --This is the genius parameter which sets the markings of empty characters etc
 }
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
-vim.cmd([[
-     setlocal spell spelllang=en "Set spellcheck language to en
-     setlocal spell! "Disable spell checks by default
-     filetype plugin indent on
-     if has('win32')
-        let g:python3_host_prog = $HOME . '/scoop/apps/python/current/python.exe'
-     endif
- ]])
+-- vim.cmd([[
+--      setlocal spell spelllang=en "Set spellcheck language to en
+--      setlocal spell! "Disable spell checks by default
+--      filetype plugin indent on
+--      if has('win32')
+--         let g:python3_host_prog = $HOME . '/scoop/apps/python/current/python.exe'
+--      endif
+--  ]])
 
 vim.opt.path:append({ '**' })
 
@@ -102,17 +102,16 @@ vim.opt.path:append({ '**' })
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
-vim.opt.shortmess:append({ W = true, I = true, c = true })
+-- vim.opt.shortmess:append({ W = true, I = true, c = true })
 
-if vim.fn.has('nvim-0.9.0') == 1 then
-    vim.opt.splitkeep = 'screen'
-    vim.opt.shortmess:append({ C = true })
-end
-
+-- if vim.fn.has('nvim-0.9.0') == 1 then
+--     vim.opt.splitkeep = 'screen'
+--     vim.opt.shortmess:append({ C = true })
+-- end
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
-
-vim.cmd('set whichwrap+=<,>,[,],h,l')
-vim.cmd([[set iskeyword+=-]])
+--If you want the arrows to cross the next line , otherwise it will be blocked
+-- vim.cmd('set whichwrap+=<,>,[,],h,l')
+-- vim.cmd([[set iskeyword+=-]])
 
