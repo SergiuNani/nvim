@@ -110,7 +110,11 @@ local plugins = {
     },
 
     -- ======================== Secondary Priority  =======================
-
+    {
+        "rmagatti/auto-session",
+        config = load_config('ui.auto-session'),
+        event = {'VimEnter' },
+    },
     {
         '2kabhishek/termim.nvim', -- For lazyGit
         cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
@@ -185,7 +189,6 @@ local plugins = {
         config = load_config('ui.zen-mode'),
         cmd = { 'ZenMode' ,'Twilight' },
     },
-
     {
         'windwp/nvim-spectre',
         config = load_config('tools.spectre'),

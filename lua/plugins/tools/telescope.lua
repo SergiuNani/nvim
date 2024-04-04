@@ -10,24 +10,6 @@ local function Teli_cmd(func_name, Ttype)
     return string.format("<cmd>:lua require'telescope.builtin'.%s(require('telescope.themes').%s({}))<CR>",func_name,Ttype)
 end
 
-local function flash(prompt_bufnr)
-    require('flash').jump({
-        pattern = '^',
-        label = { after = { 0, 0 } },
-        search = {
-            mode = 'search',
-            exclude = {
-                function(win)
-                    return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= 'TelescopeResults'
-                end,
-            },
-        },
-        action = function(match)
-            local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
-            picker:set_selection(match.pos[1] - 1)
-        end,
-    })
-end
 
 telescope.setup({
     defaults = {
@@ -59,7 +41,7 @@ telescope.setup({
         prompt_prefix = icons.ui.Telescope .. icons.ui.ChevronRight,
         selection_caret = icons.ui.Play,
         multi_icon = icons.ui.Check,
-        path_display = { 'smart' },
+        -- path_display = { 'smart' },
         sorting_strategy = 'ascending',
 
         mappings = {
@@ -80,7 +62,6 @@ telescope.setup({
                 ['<A-x>'] = actions.select_horizontal,
                 ['<A-v>'] = actions.select_vertical,
                 ['<C-t>'] = actions.select_tab,
-                ['<C-s>'] = flash,
 
                 ['<M-e>'] = actions.preview_scrolling_up,
                 ['<M-d>'] = actions.preview_scrolling_down,
@@ -102,7 +83,6 @@ telescope.setup({
                 ['<C-x>'] = actions.select_horizontal,
                 ['<C-v>'] = actions.select_vertical,
                 ['<C-t>'] = actions.select_tab,
-                ['s'] = flash,
 
                 ['<Tab>'] = actions.toggle_selection + actions.move_selection_worse,
                 ['<S-Tab>'] = actions.toggle_selection + actions.move_selection_better,
