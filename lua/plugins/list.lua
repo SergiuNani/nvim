@@ -7,12 +7,29 @@ end
 local plugins = {
     ---- ======================== First Priority  =======================
     {
-        config = load_config('ui.onedark'),
-        'navarasu/onedark.nvim',
+        'iamcco/markdown-preview.nvim',
+        build = function()
+            vim.fn['mkdp#util#install']()
+        end,
+        ft = 'markdown',
+        cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
+    },
+    {
+        "folke/tokyonight.nvim",
+        dependencies={
+            'navarasu/onedark.nvim',
+            -- "bluz71/vim-nightfly-guicolors",--ehh
+            -- 'olimorris/onedarkpro.nvim',
+            -- "rebelot/kanagawa.nvim", --5/10
+            -- "ribru17/bamboo.nvim", --6/10
+            -- "rose-pine/neovim", --3/10
+            -- "ellisonleao/gruvbox.nvim", --7/10
+            -- "marko-cerovac/material.nvim", --2/10
+        },
+        config = load_config('ui.colorscheme'),
         lazy = false,
         priority = 1000,
     },
-
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
@@ -111,8 +128,8 @@ local plugins = {
 
     -- ======================== Secondary Priority  =======================
     {
-        "rmagatti/auto-session",
         config = load_config('ui.auto-session'),
+        "rmagatti/auto-session",
         event = {'VimEnter' },
     },
     {
@@ -152,19 +169,6 @@ local plugins = {
     },
 
     -- ======================== Third Priority =======================
-    {
-    "folke/tokyonight.nvim",
-    -- "bluz71/vim-nightfly-guicolors",--ehh
-    -- 'olimorris/onedarkpro.nvim',
-    -- "rebelot/kanagawa.nvim", --5/10
-    -- "ribru17/bamboo.nvim", --6/10
-    -- "rose-pine/neovim", --3/10
-    -- "ellisonleao/gruvbox.nvim", --7/10
-    -- "marko-cerovac/material.nvim", --2/10
-    config = load_config('ui.colorscheme'),
-    lazy = false,
-    priority = 1000,
-    },
     --
     --  Tresitter ----------------
     {

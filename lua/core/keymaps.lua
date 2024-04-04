@@ -42,7 +42,7 @@ map("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 map("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 map("n", "<Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" })
-
+map("n", "<C-Del>", " <space><esc>ce", { desc = "Delete forward" })
 
 -- map(n",leader>rs",s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],{ desc = "Repace [W]ord in file " })
 
