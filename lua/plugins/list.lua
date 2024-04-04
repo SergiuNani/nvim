@@ -280,6 +280,7 @@ local lsp_servers = {
     -- 'cssls',
     -- 'jsonls',
     'lua_ls',
+    'clangd',
     -- 'tsserver',
 }
 

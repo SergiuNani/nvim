@@ -44,7 +44,7 @@ local options = {
     listchars = { trail = '', tab = '', nbsp = '_', extends = '>', precedes = '<' }, -- highlight
     mouse = 'a', -- allow the mouse to be used in neovim
     number = true, -- set numbered lines
-  relativenumber = true, -- set relative numbered lines
+    relativenumber = true, -- set relative numbered lines
     numberwidth = 4, -- set number column width to 2 {default 4}
     pumblend = 10, -- Popup blen
     pumheight = 10, -- pop up menu height
@@ -76,6 +76,7 @@ local options = {
     wrap = false, -- display lines as one long line
     writebackup = false, -- do not edit backups
     -- list = true, --This is the genius parameter which sets the markings of empty characters etc
+    fileformats='unix,dos',
 }
 for k, v in pairs(options) do
     vim.opt[k] = v
