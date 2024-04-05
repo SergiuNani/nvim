@@ -54,8 +54,6 @@ local conditions = {
         return gitdir and #gitdir > 0 and #gitdir < #filepath
     end,
 }
-local searchcount = { 'searchcount', color = { fg = colors.fg, gui = 'bold' } }
-local selectioncount = { 'selectioncount', color = { fg = colors.fg, gui = 'bold' } }
 local progress = { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 local filetype = { 'filetype', color = { fg = colors.blue, gui = 'bold' } }
 local filesize = { 'filesize', color = { fg = colors.fg, gui = 'bold' }, cond = conditions.buffer_not_empty }
@@ -67,17 +65,17 @@ local filename = {
     color = { fg = colors.magenta, gui = 'bold' },
 }
 
-local buffers = {
-    'buffers',
-    filetype_names = {
-        TelescopePrompt = icons.ui.Telescope .. 'Telescope',
-        lazy = icons.ui.Sleep .. 'Lazy',
-        mason = icons.ui.Package .. 'Mason',
-        NvimTree = icons.documents.OpenFolder .. 'Files',
-        spectre_panel = icons.ui.Search .. 'Spectre',
-    },
-    use_mode_colors = true,
-}
+-- local buffers = { -- If you want tabs here they are
+--     'buffers',
+--     filetype_names = {
+--         TelescopePrompt = icons.ui.Telescope .. 'Telescope',
+--         lazy = icons.ui.Sleep .. 'Lazy',
+--         mason = icons.ui.Package .. 'Mason',
+--         NvimTree = icons.documents.OpenFolder .. 'Files',
+--         spectre_panel = icons.ui.Search .. 'Spectre',
+--     },
+--     use_mode_colors = true,
+-- }
 
 local branch = {
     'branch',
@@ -169,26 +167,12 @@ end
 lualine.setup({
     options = {
         component_separators = '',
-        -- section_separators = '',
-        theme = 'onedark',
-        disabled_filetypes = {
-            'dashboard',
-        },
-    },
-    -- extensions = { 'quickfix', 'man', 'mason', 'lazy', 'toggleterm', 'nvim-tree' },
-    tabline = {
-        lualine_a = {},
-        lualine_b = { mode(), buffers },
-        lualine_c = {},
-        lualine_x = { diff_icons, branch },
-        lualine_y = { searchcount, selectioncount },
-        lualine_z = {},
     },
     sections = {
         lualine_a = {},
         lualine_b = {},
         lualine_c = { separator,mode(icons.ui.Electric), mode(icons.ui.Fire), 'location', progress, filename },
-        lualine_x = { diagnostics, lsp, filetype, filesize, fileformat, encoding, separator },
+        lualine_x = { branch ,diff_icons, diagnostics, lsp, filetype, filesize, fileformat, encoding, separator },
         lualine_y = {},
         lualine_z = {},
     },

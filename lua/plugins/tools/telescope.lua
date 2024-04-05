@@ -46,6 +46,13 @@ telescope.setup({
 
         mappings = {
             i = {
+                ['<A-h>'] = actions.select_horizontal,
+                ['<A-v>'] = actions.select_vertical,
+                ['<C-t>'] = actions.select_tab,
+                ['<M-e>'] = actions.preview_scrolling_up,
+                ['<M-d>'] = actions.preview_scrolling_down,
+
+
                 ['<esc>'] = actions.close,
                 ['<C-n>'] = actions.cycle_history_next,
                 ['<C-p>'] = actions.cycle_history_prev,
@@ -59,16 +66,8 @@ telescope.setup({
                 ['<Up>'] = actions.move_selection_previous,
 
                 ['<CR>'] = actions.select_default,
-                ['<A-x>'] = actions.select_horizontal,
-                ['<A-v>'] = actions.select_vertical,
-                ['<C-t>'] = actions.select_tab,
-
-                ['<M-e>'] = actions.preview_scrolling_up,
-                ['<M-d>'] = actions.preview_scrolling_down,
-
                 ['<PageUp>'] = actions.results_scrolling_up,
                 ['<PageDown>'] = actions.results_scrolling_down,
-
                 ['<Tab>'] = actions.toggle_selection + actions.move_selection_worse,
                 ['<S-Tab>'] = actions.toggle_selection + actions.move_selection_better,
                 ['<C-q>'] = actions.send_to_qflist + actions.open_qflist,
@@ -77,6 +76,9 @@ telescope.setup({
             },
 
             n = {
+                ['<M-e>'] = actions.preview_scrolling_up,
+                ['<M-d>'] = actions.preview_scrolling_down,
+
                 ['q'] = actions.close,
                 ['<esc>'] = actions.close,
                 ['<CR>'] = actions.select_default,
@@ -86,7 +88,6 @@ telescope.setup({
 
                 ['<Tab>'] = actions.toggle_selection + actions.move_selection_worse,
                 ['<S-Tab>'] = actions.toggle_selection + actions.move_selection_better,
-                ['<C-q>'] = actions.send_to_qflist + actions.open_qflist,
                 ['<M-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
 
                 ['j'] = actions.move_selection_next,
@@ -99,9 +100,6 @@ telescope.setup({
                 ['<Up>'] = actions.move_selection_previous,
                 ['gg'] = actions.move_to_top,
                 ['G'] = actions.move_to_bottom,
-
-                ['<M-e>'] = actions.preview_scrolling_up,
-                ['<M-d>'] = actions.preview_scrolling_down,
 
                 ['<PageUp>'] = actions.results_scrolling_up,
                 ['<PageDown>'] = actions.results_scrolling_down,
@@ -132,7 +130,7 @@ telescope.setup({
     vim.keymap.set("n","<leader>fy",Teli_cmd("colorscheme", "get_dropdown"),{ desc = "Colorschemes" }),
     vim.keymap.set("n", "<leader>fi", Teli_cmd("vim_options", "get_dropdown"), { desc = "VimOptions" }),
     vim.keymap.set("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" }),
-    vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>" ,{desc = "[U]ndo Tree View"})
+    vim.keymap.set("n", "<M-f>", Teli_cmd("resume", "get_dropdown"), { desc = "Resume search" }),
 })
 
 require('telescope').load_extension('fzf')

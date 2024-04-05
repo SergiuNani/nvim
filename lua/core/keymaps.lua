@@ -42,9 +42,9 @@ map("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 map("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 map("n", "<Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" })
-map("i", "<C-Del>", " <space><esc>ce", { desc = "Delete forward" })
+map("i", "<C-Del>", "<esc>lce", { desc = "Delete forward" })
 
--- map(n",leader>rs",s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],{ desc = "Repace [W]ord in file " })
+-- map(",s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],{ desc = "Repace [W]ord in file " })
 
 ------------------==Eazy Life==------------------
 map("n", "<leader><leader>", "<cmd>so<cr>", { desc = ":so" })

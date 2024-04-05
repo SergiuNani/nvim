@@ -90,7 +90,7 @@ local plugins = {
         event = 'InsertEnter',
     },
     {
-        "kevinhwang91/nvim-ufo",
+        "kevinhwang91/nvim-ufo", --Folding options
         dependencies = {
             "kevinhwang91/promise-async",
         },
