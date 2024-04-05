@@ -26,7 +26,7 @@ vim.keymap.set('n', '<S-F12>', "<cmd>Telescope lsp_references<cr>", {desc ="Refe
 vim.keymap.set('n', '<M-F12>', "<cmd>Lspsaga peek_definition<cr>", {desc ="Peek Type Definition"})
 vim.keymap.set('n', 'gr', "<cmd>Lspsaga finder<cr>", {desc ="Find references in Telescope"})
 
-
+--LSPsaga Finder: o -open, s-split
 
 
 

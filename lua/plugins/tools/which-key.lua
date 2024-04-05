@@ -27,27 +27,6 @@ local setup = {
         separator = icons.ui.Arrow,
         group = '',
     },
-    -- popup_mappings = {
-    --     scroll_down = '<c-d>',
-    --     scroll_up = '<c-u>',
-    -- },
-    -- window = {
-    --     border = 'shadow',
-    --     position = 'bottom',
-    --     margin = { 0, 0, 0, 0 },
-    --     padding = { 1, 2, 1, 2 },
-    --     winblend = 10,
-    -- },
-    -- layout = {
-    --     height = { min = 4, max = 24 },
-    --     width = { min = 20, max = 50 },
-    --     spacing = 3,
-    --     align = 'center',
-    -- },
-    -- ignore_missing = false,
-    -- hidden = { '<silent>', '<cmd>', '<Cmd>', '<CR>', '^:', '^ ', '^call ', '^lua ' },
-    -- show_help = true,
-    -- show_keys = true,
     triggers = 'auto',
     triggers_nowait = {
         -- marks
@@ -61,45 +40,8 @@ local setup = {
         -- spelling
         'z=',
     },
-    -- triggers_blacklist = {
-    --     i = { 'j', 'j' },
-    --     v = { 'j', 'j' },
-    -- },
 }
 
--- local i = {
---     [' '] = 'Whitespace',
---     ['"'] = 'Balanced "',
---     ["'"] = "Balanced '",
---     ['`'] = 'Balanced `',
---     ['('] = 'Balanced (',
---     [')'] = 'Balanced ) including white-space',
---     ['>'] = 'Balanced > including white-space',
---     ['<lt>'] = 'Balanced <',
---     [']'] = 'Balanced ] including white-space',
---     ['['] = 'Balanced [',
---     ['}'] = 'Balanced } including white-space',
---     ['{'] = 'Balanced {',
---     ['?'] = 'User Prompt',
---     _ = 'Underscore',
---     a = 'Argument',
---     b = 'Balanced ), ], }',
---     c = 'Class',
---     f = 'Function',
---     o = 'Block, conditional, loop',
---     q = 'Quote `, ", \'',
---     t = 'Tag',
--- }
--- local a = vim.deepcopy(i)
--- for k, v in pairs(a) do
---     a[k] = v:gsub(' including.*', '')
--- end
--- local ic = vim.deepcopy(i)
--- local ac = vim.deepcopy(a)
--- for key, name in pairs({ n = 'Next', l = 'Last' }) do
---     i[key] = vim.tbl_extend('force', { name = 'Inside ' .. name .. ' textobject' }, ic)
---     a[key] = vim.tbl_extend('force', { name = 'Around ' .. name .. ' textobject' }, ac)
--- end
 function TelescopeFindConfigFiles()
     require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
 end
@@ -212,8 +154,6 @@ local mappings = {
         L = { '<cmd>LspInfo<cr>', 'LSP Info' },
         r = { '<cmd>Lspsaga rename<cr>', 'Rename' },
         R = { '<cmd>Lspsaga project_replace<cr>', 'Replace' },
-        s = { '<cmd>Telescope lsp_document_symbols<cr>', 'Document Symbols' },
-        S = { '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Workspace Symbols' },
     },
     t = {
         name = icons.ui.Terminal .. 'Terminal',

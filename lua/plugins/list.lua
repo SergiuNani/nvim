@@ -285,7 +285,7 @@ local lsp_servers = {
     -- 'jsonls',
     'lua_ls',
     'clangd',
-    -- 'tsserver',
+    'tsserver',
 }
 
 -- local null_ls_sources = {
@@ -295,11 +295,10 @@ local lsp_servers = {
 local ts_parsers = {
     -- 'css',
     -- 'gitcommit',
-    -- "javascript",
     -- "tsx",
     -- 'html',
     -- "xml",
-    -- 'javascript',
+    'javascript',
     -- 'json',
     'lua',
     "c",

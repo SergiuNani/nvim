@@ -2,11 +2,8 @@
       chunk = {
         -- The one you want
         enable = true,
-        notify = true,
+        -- notify = true,
         use_treesitter = true,
-        -- details about support_filetypes and exclude_filetypes in https://github.com/shellRaining/hlchunk.nvim/blob/main/lua/hlchunk/utils/filetype.lua
-        --support_filetypes = ft.support_filetypes,
-        --exclude_filetypes = ft.exclude_filetypes,
         chars = {
           horizontal_line = "─",
           vertical_line = "│",
@@ -30,9 +27,9 @@
           "│",
           -- "┊",
         },
-        style = {
-          { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui") },
-        },
+        -- style = {
+        --   { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui") },
+        -- },
       },
 
       line_num = {
