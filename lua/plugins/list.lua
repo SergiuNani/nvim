@@ -6,14 +6,14 @@ end
 
 local plugins = {
     ---- ======================== First Priority  =======================
-    {
-        'iamcco/markdown-preview.nvim',
-        build = function()
-            vim.fn['mkdp#util#install']()
-        end,
-        ft = 'markdown',
-        cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
-    },
+    -- {
+    --     'iamcco/markdown-preview.nvim',
+    --     build = function()
+    --         vim.fn['mkdp#util#install']()
+    --     end,
+    --     ft = 'markdown',
+    --     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview' },
+    -- },
     {
         "folke/tokyonight.nvim",
         dependencies={
