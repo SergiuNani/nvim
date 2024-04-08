@@ -1,7 +1,6 @@
 local function augroup(name)
-    return vim.api.nvim_create_augroup('nvim2k_' .. name, { clear = true })
+    return vim.api.nvim_create_augroup('Sergiu' .. name, { clear = true })
 end
-
 -- Strip trailing spaces before write
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
     group = augroup('strip_space'),
@@ -46,38 +45,38 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 
 -- close some filetypes with <q>
-vim.api.nvim_create_autocmd('FileType', {
-    group = augroup('close_with_q'),
-    pattern = {
-        'DressingSelect',
-        'Jaq',
-        'PlenaryTestPopup',
-        'fugitive',
-        'help',
-        'lir',
-        'lspinfo',
-        'man',
-        'notify',
-        'qf',
-        'spectre_panel',
-        'startuptime',
-        'tsplayground',
-    },
-    callback = function(event)
-        vim.bo[event.buf].buflisted = false
-        vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = event.buf, silent = true })
-    end,
-})
+-- vim.api.nvim_create_autocmd('FileType', {
+--     group = augroup('close_with_q'),
+--     pattern = {
+--         'DressingSelect',
+--         'Jaq',
+--         'PlenaryTestPopup',
+--         'fugitive',
+--         'help',
+--         'lir',
+--         'lspinfo',
+--         'man',
+--         'notify',
+--         'qf',
+--         'spectre_panel',
+--         'startuptime',
+--         'tsplayground',
+--     },
+--     callback = function(event)
+--         vim.bo[event.buf].buflisted = false
+--         vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = event.buf, silent = true })
+--     end,
+-- })
 
--- wrap and check for spell in text filetypes
-vim.api.nvim_create_autocmd('FileType', {
-    group = augroup('wrap_spell'),
-    pattern = { 'gitcommit', 'markdown' },
-    callback = function()
-        vim.opt_local.wrap = true
-        vim.opt_local.spell = true
-    end,
-})
+-- -- wrap and check for spell in text filetypes
+-- vim.api.nvim_create_autocmd('FileType', {
+--     group = augroup('wrap_spell'),
+--     pattern = { 'gitcommit', 'markdown' },
+--     callback = function()
+--         vim.opt_local.wrap = true
+--         vim.opt_local.spell = true
+--     end,
+-- })
 
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
@@ -88,9 +87,9 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
     end,
 })
 
--- Set arb filetype
-vim.api.nvim_create_autocmd({ 'BufEnter' }, {
-    group = augroup('set_file_type'),
-    pattern = { '*.arb' },
-    command = require('lib.util').get_file_type('arb'),
-})
+-- -- Set arb filetype
+-- vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+--     group = augroup('set_file_type'),
+--     pattern = { '*.arb' },
+--     command = require('lib.util').get_file_type('arb'),
+-- })
