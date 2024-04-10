@@ -164,10 +164,10 @@ local mappings = {
          ['-'] = { '<C-w>v', 'Split Right'},
         d = { '<C-w>c', 'Close Window' },
         p = { '<C-w>p', 'Previous Window' },
-        h = { '<cmd>split<cr>', 'Horizontal Split File' },
+        -- h = { '<cmd>split<cr>', 'Horizontal Split File' },
         t = { '<cmd>tabnew<cr>', 'New Tab' },
-        v = { '<cmd>vsplit<cr>', 'Vertical Split File' },
-        s = { '<cmd>vsplit<cr>', 'Vertical Split File' },
+        -- v = { '<cmd>vsplit<cr>', 'Vertical Split File' },
+        -- s = { '<cmd>vsplit<cr>', 'Vertical Split File' },
         w = { '<cmd>w<cr>', 'Write' },
         x = { '<cmd>x<cr>', 'Write and Quit' },
     },
@@ -210,18 +210,6 @@ local no_leader_opts = {
 }
 
 local no_leader_mappings = {
-    ['<S-h>'] = { '<cmd>bprevious<cr>', 'Previous Buffer' },
-    ['<S-l>'] = { '<cmd>bnext<cr>', 'Next Buffer' },
-    ['<C-h>'] = { '<C-w>h', 'Move Left' },
-    ['<C-j>'] = { '<C-w>j', 'Move Down' },
-    ['<C-k>'] = { '<C-w>k', 'Move Up' },
-    ['<C-l>'] = { '<C-w>l', 'Move Right' },
-    ['<C-Up>'] = { '<cmd>resize +10<cr>', 'Increase window height' },
-    ['<C-Down>'] = { '<cmd>resize -10<cr>', 'Decrease window height' },
-    ['<C-Left>'] = { '<cmd>vertical resize -10<cr>', 'Decrease window width' },
-    ['<C-Right>'] = { '<cmd>vertical resize +10<cr>', 'Increase window width' },
-    ['<C-p>'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
-    ['<C-f>'] = { '<cmd>Telescope current_buffer_fuzzy_find<cr>', 'Search in current buffer' },
 
     ['['] = {
         name = icons.ui.ArrowLeft .. 'Previous',
