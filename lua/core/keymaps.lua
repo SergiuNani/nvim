@@ -85,7 +85,9 @@ map("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 map("n", "<Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" })
 map("i", "<C-Del>", "<esc>lce", { desc = "Delete forward" })
-
+map("i", "<A-Del>", "<esc>lce", { desc = "Delete forward" })
+map("i", "<A-BS>", "<C-w>", { desc = "Delete forward" })
+-- feajkfjefjeakjfleakf
 -- map(",s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],{ desc = "Repace [W]ord in file " })
 
 
