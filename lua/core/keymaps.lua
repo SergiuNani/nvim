@@ -11,19 +11,24 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 ------------------==Eazy Life==------------------
+map("n", "<leader><leader>", "<cmd>so<cr>", { desc = ":so" })
 map({ 'v', 'x','n'}, "x", '"_x', { desc = "Stop copying to clipboard" })
 map({ 'v', 'x','n'}, "c", '"_c', { desc = "Stop copying to clipboard" })
 map({ 'v', 'x'}, 'p', '"_dP', opts)
-
-
-
-map("n", "<leader><leader>", "<cmd>so<cr>", { desc = ":so" })
-map("n", "J", "", { desc = "Stop concatinating lines" })
 map("n", "<C-a>", "ggVG", { desc = "Clear search highlights" })
+
 map('i', 'jj', '<Esc>', opts)
 map('i', 'kk', '<Esc>', opts)
 
+map("n", "n", "nzzzv", { desc = "Find next but still stay in the middle" })
+map("n", "N", "Nzzzv", { desc = "Find prev but still stay in the middle" })
+
 -----------------==Navigation keymaps==------------------
+
+map("n", "<A-d>", "<C-d>zz", { desc = "Move half screen down" })
+map("n", "<A-e>", "<C-u>zz", { desc = "Move half screen up" })
+map("n", "<a-Right>", "<C-i>", { desc = "Move forward in jumps" })
+map("n", "<a-Left>", "<C-o>", { desc = "Move backwards in jumps" })
 
 map("n", "<s-l>", "$", {desc=  "goto end of line"})
 map("n", "<s-h>", "^", {desc=  "goto beginning of line"})
@@ -38,8 +43,6 @@ map("n", "<leader>ss", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
 map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
 map("n", "<leader>sh", "<cmd>split<cr>", { desc = "Horizontal Split File" })
 
-map("n", "<A-d>", "<C-d>zz", { desc = "Move half screen down" })
-map("n", "<A-e>", "<C-u>zz", { desc = "Move half screen up" })
 
 map("n", "<C-h>", "<C-w>h", { desc = "Move Left" })
 map("n", "<C-j>", "<C-w>j", { desc = "Move Down" })
@@ -51,20 +54,10 @@ map("n", "<C-A-Down>", "<cmd>resize -10<cr>", { desc = "Decrease window height" 
 map("n", "<C-A-Right>", "<cmd>vertical resize +10<cr>", { desc = "Increase window width" })
 map("n", "<C-A-Left>", "<cmd>vertical resize -10<cr>", { desc = "Decrease window width" })
 
-map("n", "<a-Right>", "<C-i>", { desc = "Move forward in jumps" })
-map("n", "<a-Left>", "<C-o>", { desc = "Move backwards in jumps" })
 
-
--- Extra
-
-map({ 'n', 'v', 'x' }, 'gl', '$', { desc = 'End of line' })
-map({ 'n', 'v', 'x' }, 'gh', '^', { desc = 'Beginning of line' })
-map("n", "n", "nzzzv", { desc = "Find next but still stay in the middle" })
-map("n", "N", "Nzzzv", { desc = "Find prev but still stay in the middle" })
-map("n", "<M-t>", "%", { desc = "Jump to tag opposite bracket/tag quickly" })
-    -- ['<C-p>'] = { '<cmd>Telescope find_files<cr>', 'Find Files' },
-    -- ['<C-f>'] = { '<cmd>Telescope current_buffer_fuzzy_find<cr>', 'Search in current buffer' },
 -----------------==Editing Options==------------------
+
+map('n', '<leader>d', "dd", opts)
 
 map('n', '<A-j>', ":m .+1<CR>==", opts)
 map('n', '<A-k>', ":m .-2<CR>==", opts)

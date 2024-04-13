@@ -130,7 +130,11 @@ telescope.setup({
     vim.keymap.set("n","<leader>fy",Teli_cmd("colorscheme", "get_dropdown"),{ desc = "Colorschemes" }),
     vim.keymap.set("n", "<leader>fi", Teli_cmd("vim_options", "get_dropdown"), { desc = "VimOptions" }),
     vim.keymap.set("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" }),
-    vim.keymap.set("n", "<M-f>", Teli_cmd("resume", "get_dropdown"), { desc = "Resume search" }),
+    vim.keymap.set("n", "<M-f>", Teli_cmd("resume", "get_dropdown"), { desc = "Resume svim.keymap.setearch" }),
+
+    vim.keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files" }),
+    vim.keymap.set("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Search in current buffer" })
+
 })
 
 require('telescope').load_extension('fzf')
