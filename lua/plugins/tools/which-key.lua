@@ -148,12 +148,12 @@ local mappings = {
     -- },
     l = {
         name = icons.ui.Gear .. 'LSP',
-        a = { '<cmd>Lspsaga code_action<cr>', 'Code Action' },
-        i = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
-        I = { '<cmd>Lspsaga show_workspace_diagnostics<cr>', 'Workspace Diagnostics' },
-        L = { '<cmd>LspInfo<cr>', 'LSP Info' },
-        r = { '<cmd>Lspsaga rename<cr>', 'Rename' },
-        R = { '<cmd>Lspsaga project_replace<cr>', 'Replace' },
+        -- a = { '<cmd>Lspsaga code_action<cr>', 'Code Action' },
+        -- i = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
+        -- I = { '<cmd>Lspsaga show_workspace_diagnostics<cr>', 'Workspace Diagnostics' },
+        -- L = { '<cmd>LspInfo<cr>', 'LSP Info' },
+        -- r = { '<cmd>Lspsaga rename<cr>', 'Rename' },
+        -- R = { '<cmd>Lspsaga project_replace<cr>', 'Replace' },
     },
     t = {
         name = icons.ui.Terminal .. 'Terminal',
@@ -241,4 +241,4 @@ which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
 which_key.register(no_leader_mappings, no_leader_opts)
-which_key.register({ mode = { 'o', 'x' }, i = i, a = a })
+-- which_key.register({ mode = { 'o', 'x' }, i = i, a = a })
