@@ -1,6 +1,7 @@
 Inspiration: #From nvim 2k
 https://github.com/2KAbhishek/nvim2k
 https://github.com/josean-dev/dev-environment-files
+https://github.com/exosyphon/nvim
 Terminal config:
 Search : NerdFont git, on the right there will be releases
 
@@ -17,6 +18,7 @@ $ choco install make
 $ choco install ripgrep
 $ choco install fzf
 $ choco install fd
+$ choco install sed -- only for Spectre - an plugin to replace stuff
 
 
 
