@@ -33,11 +33,15 @@ map('n', '<S-F12>', "<cmd>Telescope lsp_references<cr>", {desc ="References"})
 map('n', '<M-F12>', "<cmd>Lspsaga peek_definition<cr>", {desc ="Peek Type Definition"})
 map('n', 'gr', "<cmd>Lspsaga finder<cr>", {desc ="Find references in Telescope"})
 
-
+map('n', '<A-i>', vim.lsp.buf.hover, {desc ="Show doc under the cursor"})
 map('n', '<leader>la', "<cmd>Lspsaga code_action<cr>", {desc ="Code Action"})
-map('n', '<leader>ld',"<cmd>Telescope diagnostics<cr>", {desc ="Diagnostics"})
-map('n', '<leader>fd', "<cmd>Lspsaga show_workspace_diagnostics<cr>", {desc ="Workspace Diagnostics"})
 map('n', '<leader>li', "<cmd>LspInfo<cr>", {desc ="LSP Info"})
+map('n', '<leader>fd', "<cmd>Lspsaga show_workspace_diagnostics<cr>", {desc ="Workspace Diagnostics"})
+map('n', '<leader>ld',"<cmd>Telescope diagnostics<cr>", {desc ="Diagnostics"})
+map('n', '[d',vim.diagnostic.goto_prev, {desc ="Jump to prev Diagnostic"})
+map('n', ']d',  vim.diagnostic.goto_next,{desc ="Jump to next Diagnostic"})
+
+
 -- map('n', '<leader>l', "<cmd>Lspsaga rename<cr>", {desc ="Rename"})
 -- map('n', '<leader>l', "<cmd>Lspsaga project_replace<cr>", {desc ="Replace"})
 
