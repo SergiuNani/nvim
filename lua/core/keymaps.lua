@@ -24,7 +24,8 @@ map('i', 'kk', '<Esc>', opts)
 map("n", "n", "nzzzv", { desc = "Find next but still stay in the middle" })
 map("n", "N", "Nzzzv", { desc = "Find prev but still stay in the middle" })
 map("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })
-
+map("v", "<C-c>", "y", { desc = "Copy text" })
+map("n", "<C-c>", 'yy', { desc = "Copy text" })
 -----------------==Navigation keymaps==------------------
 
 map("n", "<A-d>", "<C-d>zz", { desc = "Move half screen down" })
