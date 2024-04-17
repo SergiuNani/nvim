@@ -66,7 +66,7 @@ treesitter.setup({
         smart_rename = {
             enable = true,
             keymaps = {
-                smart_rename = '<leader>rr',
+                smart_rename = '<leader>rx',
             },
         },
         navigation = {

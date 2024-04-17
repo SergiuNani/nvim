@@ -3,6 +3,9 @@ local lspsaga = require('lspsaga')
 local icons = require('lib.icons')
 
 lspsaga.setup({
+    rename={
+        auto_save = true,
+    },
     ui = {
         theme = 'round',
         border = 'rounded',
@@ -41,9 +44,10 @@ map('n', '<leader>ld',"<cmd>Telescope diagnostics<cr>", {desc ="Diagnostics"})
 map('n', '[d',vim.diagnostic.goto_prev, {desc ="Jump to prev Diagnostic"})
 map('n', ']d',  vim.diagnostic.goto_next,{desc ="Jump to next Diagnostic"})
 
+map('n', '<leader>lo', "<cmd>Lspsaga outline<cr>", {desc ="Replace"})
 
--- map('n', '<leader>l', "<cmd>Lspsaga rename<cr>", {desc ="Rename"})
--- map('n', '<leader>l', "<cmd>Lspsaga project_replace<cr>", {desc ="Replace"})
+map('n', '<leader>rw', "<cmd>Lspsaga rename<cr>", {desc ="Rename"})
+map('n', '<leader>rq', "<cmd>Lspsaga project_replace<cr>", {desc ="Replace"})
 
 
 

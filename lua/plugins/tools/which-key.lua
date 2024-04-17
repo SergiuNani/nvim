@@ -96,10 +96,11 @@ local mappings = {
     h = { name = icons.ui.Bookmark .. 'Harpoon' },
     r = {--extra work ??
         name = icons.diagnostics.Hint .. 'Refactor',
-        w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
+        s = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
         b = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>", 'Replace Buffer' },
         t = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
-        s = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' }, --dont work ??
+        p = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' }, --dont work ??
+        o = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' },
     },
     m = {
         name = icons.kind.Field .. 'Modes',
@@ -123,7 +124,7 @@ local mappings = {
         r = { '<cmd>Telescope reloader<cr>', 'Reload Module' },
         R = { '<cmd>ReloadConfig<cr>', 'Reload Configs' },
     },
--- ------------------------------------------------------------
+    -- ------------------------------------------------------------
     -- b = {--??
     --     name = icons.ui.Bug .. 'Debug',
     --     b = { '<cmd>DapToggleBreakpoint<cr>', 'Breakpoint' },
@@ -148,20 +149,15 @@ local mappings = {
     -- },
     l = {
         name = icons.ui.Gear .. 'LSP',
-        -- a = { '<cmd>Lspsaga code_action<cr>', 'Code Action' },
-        -- i = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
-        -- I = { '<cmd>Lspsaga show_workspace_diagnostics<cr>', 'Workspace Diagnostics' },
-        -- L = { '<cmd>LspInfo<cr>', 'LSP Info' },
-        -- r = { '<cmd>Lspsaga rename<cr>', 'Rename' },
-        -- R = { '<cmd>Lspsaga project_replace<cr>', 'Replace' },
     },
+
     t = {
         name = icons.ui.Terminal .. 'Terminal',
         n = { '<cmd>Sterm node<cr>', 'Node' },
     },
     s = {
         name = icons.ui.Windows .. 'Split',
-         ['-'] = { '<C-w>v', 'Split Right'},
+        ['-'] = { '<C-w>v', 'Split Right'},
         d = { '<C-w>c', 'Close Window' },
         p = { '<C-w>p', 'Previous Window' },
         -- h = { '<cmd>split<cr>', 'Horizontal Split File' },
