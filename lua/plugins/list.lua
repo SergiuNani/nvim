@@ -7,6 +7,11 @@ end
 local plugins = {
     ---- ======================== First Priority  =======================
     {
+   "dyng/ctrlsf.vim",
+
+        config = load_config('tools.CtrlSF'),
+    },
+    {
         "folke/tokyonight.nvim",
         dependencies={
             'navarasu/onedark.nvim',
