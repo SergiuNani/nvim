@@ -107,6 +107,6 @@ map('i', ';', ';<c-g>u')
 
 
 -- map("n", "<leader>rr", [[:cdo %s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]])
-map("n", "<leader>rr", [[:cfdo %s/<C-r><C-w>/<C-r><C-w>/g | update | bd]])
-map("n", "<leader>rs", [[:cfdo %s/stringOne/stringTwo/g | update | bd]])
+map("n", "<leader>ra", [[:cfdo %s/<C-r><C-w>/<C-r><C-w>/g | update <C-Left><C-Left><Left><Left><Left>]])
+map("n", "<leader>rr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- map('i', 'jj', 'iiiiiii', opts)
