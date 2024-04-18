@@ -76,7 +76,7 @@ local options = {
     wrap = false, -- display lines as one long line
     writebackup = false, -- do not edit backups
     -- list = true, --This is the genius parameter which sets the markings of empty characters etc
-    fileformats='dos,unix',
+    fileformats='dos',
 }
 for k, v in pairs(options) do
     vim.opt[k] = v

@@ -107,6 +107,7 @@ map('i', ';', ';<c-g>u')
 
 
 -- map("n", "<leader>rr", [[:cdo %s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]])
-map("n", "<leader>ra", [[:cfdo %s/<C-r><C-w>/<C-r><C-w>/g | update <C-Left><C-Left><Left><Left><Left>]])
-map("n", "<leader>rr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>rq", [[:cfdo %s/<C-r><C-w>/<C-r><C-w>/g | update <C-Left><C-Left><Left><Left><Left>]], {desc ="Replace in quickList"})
+map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc="Replace in buffer"})
+map("n", "<leader>rm", [[:%s/^M//g <CR>]], {desc="Remove ^M"})
 -- map('i', 'jj', 'iiiiiii', opts)

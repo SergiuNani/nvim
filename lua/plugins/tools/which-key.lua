@@ -96,10 +96,6 @@ local mappings = {
     h = { name = icons.ui.Bookmark .. 'Harpoon' },
     r = {--extra work ??
         name = icons.diagnostics.Hint .. 'Refactor',
-        -- s = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", 'Replace Word' },
-        -- b = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>", 'Replace Buffer' },
-        -- t = { "<cmd>lua require('spectre').open()<cr>", 'Replace' },
-        -- o = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace Word' },
     },
     m = {
         name = icons.kind.Field .. 'Modes',
@@ -189,10 +185,6 @@ local vmappings = {
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
-    r = {
-        name = icons.diagnostics.Hint .. 'Refactor',
-        w = { "<esc><cmd>lua require('spectre').open_visual()<CR>", 'Replace Word' },
-    },
 }
 
 local no_leader_opts = {

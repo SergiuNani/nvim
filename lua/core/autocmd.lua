@@ -58,7 +58,6 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 --         'man',
 --         'notify',
 --         'qf',
---         'spectre_panel',
 --         'startuptime',
 --         'tsplayground',
 --     },

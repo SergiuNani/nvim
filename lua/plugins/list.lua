@@ -7,11 +7,6 @@ end
 local plugins = {
     ---- ======================== First Priority  =======================
     {
-   "dyng/ctrlsf.vim",
-
-        config = load_config('tools.CtrlSF'),
-    },
-    {
         "folke/tokyonight.nvim",
         dependencies={
             'navarasu/onedark.nvim',
@@ -189,11 +184,6 @@ local plugins = {
         },
         config = load_config('ui.zen-mode'),
         cmd = { 'ZenMode' ,'Twilight' },
-    },
-    {
-        'windwp/nvim-spectre',
-        config = load_config('tools.spectre'),
-        cmd = 'Spectre',
     },
     {
         "NvChad/nvim-colorizer.lua",

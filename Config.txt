@@ -18,7 +18,6 @@ $ choco install make
 $ choco install ripgrep
 $ choco install fzf
 $ choco install fd
-$ choco install sed -- only for Spectre - an plugin to replace stuff
 
 
 
@@ -27,3 +26,8 @@ $ choco install sed -- only for Spectre - an plugin to replace stuff
 Install-Module PsReadLine -Force
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+
+
+
+info:^M see the article
+https://stackoverflow.com/questions/1505978/how-do-i-hide-the-eol-doc-chars-m-in-vim

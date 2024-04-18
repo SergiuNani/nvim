@@ -72,7 +72,6 @@ local filename = {
 --         lazy = icons.ui.Sleep .. 'Lazy',
 --         mason = icons.ui.Package .. 'Mason',
 --         NvimTree = icons.documents.OpenFolder .. 'Files',
---         spectre_panel = icons.ui.Search .. 'Spectre',
 --     },
 --     use_mode_colors = true,
 -- }
