@@ -29,6 +29,8 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
 end
 local opts = { noremap = true, silent = true }
+
+
 --L SPsaga Finder: o -open, s-split
 
 map('n', '<F12>', "<cmd>Lspsaga goto_definition<cr>", {desc ="Goto Type Definition"})
@@ -37,18 +39,16 @@ map('n', '<M-F12>', "<cmd>Lspsaga peek_definition<cr>", {desc ="Peek Type Defini
 map('n', 'gr', "<cmd>Lspsaga finder<cr>", {desc ="Find references in Telescope"})
 
 map('n', '<A-i>', vim.lsp.buf.hover, {desc ="Show doc under the cursor"})
-map('n', '<leader>la', "<cmd>Lspsaga code_action<cr>", {desc ="Code Action"})
-map('n', '<leader>li', "<cmd>LspInfo<cr>", {desc ="LSP Info"})
 map('n', '<leader>fd', "<cmd>Lspsaga show_workspace_diagnostics<cr>", {desc ="Workspace Diagnostics"})
-map('n', '<leader>ld',"<cmd>Telescope diagnostics<cr>", {desc ="Diagnostics"})
 map('n', '[d',vim.diagnostic.goto_prev, {desc ="Jump to prev Diagnostic"})
 map('n', ']d',  vim.diagnostic.goto_next,{desc ="Jump to next Diagnostic"})
 
-map('n', '<leader>lo', "<cmd>Lspsaga outline<cr>", {desc ="Replace"})
 
-map('n', '<leader>rw', "<cmd>Lspsaga rename<cr>", {desc ="Rename"})
-map('n', '<leader>rq', "<cmd>Lspsaga project_replace<cr>", {desc ="Replace"})
-
+-- Not popular
+map('n', '<leader>li', "<cmd>LspInfo<cr>", {desc ="LSP Info"})
+map('n', '<leader>la', "<cmd>Lspsaga code_action<cr>", {desc ="Code Action"})
+map('n', '<leader>ld',"<cmd>Telescope diagnostics<cr>", {desc ="Diagnostics"})
+map('n', '<leader>lo', "<cmd>Lspsaga outline<cr>", {desc ="Show LSP outline"})
 
 
 

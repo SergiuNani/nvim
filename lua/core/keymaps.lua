@@ -76,21 +76,20 @@ map('i', '<A-Up>', "<Esc>:m .-2<CR>==gi", opts)
 map({ 'v', 'x' }, '<A-Down>', ":move '>+1<CR>gv=gv", opts)
 map({ 'v', 'x' }, '<A-Up>', ":move '<-2<CR>gv=gv", opts)
 
-map("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
-map("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 map("n", "<Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" })
 map("i", "<C-Del>", "<esc>lce", { desc = "Delete forward" })
 map("i", "<A-Del>", "<esc>lce", { desc = "Delete forward" })
 map("i", "<A-BS>", "<C-w>", { desc = "Delete forward" })
--- feajkfjefjeakjfleakf
--- map(",s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],{ desc = "Repace [W]ord in file " })
 
+map("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
+map("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
+map('x', '<leader>+', 'g<C-a>',{desc="Increment recursivly in X mode"})
+map('x', '<leader>-', 'g<C-x>',{desc="Decrement recursivly in X mode"})
 
 -- Better up/down
 map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-
 
 -- Clear search, diff update and redraw
 map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
@@ -109,5 +108,13 @@ map('i', ';', ';<c-g>u')
 -- map("n", "<leader>rr", [[:cdo %s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]])
 map("n", "<leader>rq", [[:cfdo %s/<C-r><C-w>/<C-r><C-w>/g | update <C-Left><C-Left><Left><Left><Left>]], {desc ="Replace in quickList"})
 map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc="Replace in buffer"})
-map("n", "<leader>rm", [[:%s/^M//g <CR>]], {desc="Remove ^M"})
+map('n', '<leader>rr', "<cmd>Lspsaga rename<cr>", {desc ="Rename via LSP"})
+map('n', '<leader>re', "<cmd>Lspsaga project_replace<cr>", {desc ="Replace"})
+
+
+map("n", "<leader>rm", "<cmd>e<cr>", {desc="Remove ^M by Updating buffer"})
+-- // Easier would be to :e
 -- map('i', 'jj', 'iiiiiii', opts)
+
+
+

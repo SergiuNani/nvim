@@ -57,29 +57,6 @@ treesitter.setup({
         },
     },
 
-    refactor = {
-        highlight_definitions = {
-            enable = true,
-            clear_on_cursor_move = true,
-        },
-        highlight_current_scope = { enable = false }, --dont enable it
-        smart_rename = {
-            enable = true,
-            keymaps = {
-                smart_rename = '<leader>rx',
-            },
-        },
-        navigation = {
-            enable = true,
-            keymaps = {
-                goto_definition = '<leader>rd',
-                list_definitions_toc = '<leader>rh',
-                list_definitions = '<leader>rl',
-                goto_next_usage = '<leader>rj',
-                goto_previous_usage = '<leader>rk',
-            },
-        },
-    },
 })
 
 local function toggle_treesitter()

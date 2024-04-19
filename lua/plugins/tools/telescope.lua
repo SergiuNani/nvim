@@ -136,8 +136,8 @@ telescope.setup({
     map("n","<leader>fy",Teli_cmd("colorscheme", "get_dropdown"),{ desc = "Colorschemes" }),
     map("n", "<leader>fi", Teli_cmd("vim_options", "get_dropdown"), { desc = "VimOptions" }),
     map("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" }),
-    map("n", "<M-f>", Teli_cmd("resume", "get_dropdown"), { desc = "Resume svim.keymap.setearch" }),
 
+    map("n", "<M-f>", "<cmd>Telescope resume<cr>", { desc = "Resume svim.keymap.setearch" }),
     map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files" }),
     map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Search in current buffer" })
 
