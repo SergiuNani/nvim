@@ -80,21 +80,12 @@ local mappings = {
     },
     g = {
         name = icons.git.Octoface .. 'Git',
-        b = { '<cmd>Gitsigns blame_line<cr>', 'Blame' },
-        p = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Hunk' },
-        d = { '<cmd>Gitsigns diffthis HEAD<cr>', 'Diff' },
-        g = { '<cmd>Fterm lazygit<cr>', 'Lazygit' },
-        s = { '<cmd>Telescope git_status<cr>', 'Changed files' },
         t = {
             name = 'Git Toggle',
-            b = { '<cmd>Gitsigns toggle_current_line_blame<cr>', 'Blame' },
-            d = { '<cmd>Gitsigns toggle_deleted<cr>', 'Deleted' },
-            l = { '<cmd>Gitsigns toggle_linehl<cr>', 'Line HL' },
-            s = { '<cmd>Gitsigns toggle_signs<cr>', 'Signs' },
         },
     },
     h = { name = icons.ui.Bookmark .. 'Harpoon' },
-    r = {--extra work ??
+    r = {
         name = icons.diagnostics.Hint .. 'Refactor',
     },
     m = {
@@ -133,15 +124,6 @@ local mappings = {
     --     t = { '<cmd>DapUIToggle<cr>', 'Debugger' },
     --     x = { '<cmd>DapTerminate<cr>', 'Exit' },
     -- },
-    -- d = { --maybe in the future
-    --     name = icons.ui.Database .. 'Database',
-    --     b = { '<cmd>DBToggle<cr>', 'DB Explorer' },
-    --     j = { '<cmd>lua require("dbee").next()<cr>', 'DB Next' },
-    --     k = { '<cmd>lua require("dbee").prev()<cr>', 'DB Prev' },
-    --     s = { '<cmd>lua require("dbee").store("csv", "buffer", { extra_arg = 0 })<cr>', 'To CSV' },
-    --     S = { '<cmd>lua require("dbee").store("json", "buffer", { extra_arg = 0 })<cr>', 'To JSON' },
-    --     t = { '<cmd>lua require("dbee").store("table", "buffer", { extra_arg = 0 })<cr>', 'To Table' },
-    -- },
     l = {
         name = icons.ui.Gear .. 'LSP',
     },
@@ -155,10 +137,7 @@ local mappings = {
         ['-'] = { '<C-w>v', 'Split Right'},
         d = { '<C-w>c', 'Close Window' },
         p = { '<C-w>p', 'Previous Window' },
-        -- h = { '<cmd>split<cr>', 'Horizontal Split File' },
         t = { '<cmd>tabnew<cr>', 'New Tab' },
-        -- v = { '<cmd>vsplit<cr>', 'Vertical Split File' },
-        -- s = { '<cmd>vsplit<cr>', 'Vertical Split File' },
         w = { '<cmd>w<cr>', 'Write' },
         x = { '<cmd>x<cr>', 'Write and Quit' },
     },
@@ -202,7 +181,7 @@ local no_leader_mappings = {
         name = icons.ui.ArrowLeft .. 'Previous',
         b = { '<cmd>bprevious<cr>', 'Buffer' },
         B = { '<cmd>bfirst<cr>', 'First Buffer' },
-        c = { '<cmd>Gitsigns prev_hunk<cr>', 'Previous Hunk' },
+        -- c = { '<cmd>Gitsigns prev_hunk<cr>', 'Previous Hunk' },
         e = { 'g;', 'Edit' },
         g = { '<cmd>Gitsigns prev_hunk<cr>', 'Git Hunk' },
         j = { '<C-o>', 'Jump' },
@@ -212,7 +191,7 @@ local no_leader_mappings = {
         name = icons.ui.ArrowRight .. 'Next',
         b = { '<cmd>bnext<cr>', 'Buffer' },
         B = { '<cmd>blast<cr>', 'Buffer' },
-        c = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
+        -- c = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
         e = { 'g,', 'Edit' },
         g = { '<cmd>Gitsigns next_hunk<cr>', 'Git Hunk' },
         j = { '<C-i>', 'Jump' },
@@ -226,4 +205,3 @@ which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
 which_key.register(no_leader_mappings, no_leader_opts)
--- which_key.register({ mode = { 'o', 'x' }, i = i, a = a })
