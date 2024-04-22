@@ -13,7 +13,9 @@ vim.g.maplocalleader = ' '
 ------------------==Eazy Life==------------------
 map("n", "<leader><leader>", "<cmd>so<cr>", { desc = ":so" })
 map({ 'v', 'x','n'}, "x", '"_x', { desc = "Stop copying to clipboard" })
+map({ 'v', 'x','n'}, "X", '"_X', { desc = "Stop copying to clipboard" })
 map({ 'v', 'x','n'}, "c", '"_c', { desc = "Stop copying to clipboard" })
+map({ 'v', 'x','n'}, "C", '"_C', { desc = "Stop copying to clipboard" })
 map({ 'v', 'x'}, 'p', '"_dP', opts)
 map("n", "<C-a>", "ggVG", { desc = "Clear search highlights" })
 map("n", "<C-w>", "<cmd>:q!<CR>", { desc = "Close buffer" })

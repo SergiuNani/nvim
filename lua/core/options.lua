@@ -39,9 +39,10 @@ local options = {
     grepprg = 'rg --vimgrep',
     hlsearch = true, -- highlight all matches on previous search pattern
     ignorecase = true, -- ignore case in search patterns
-    inccommand = 'split', -- preview incremental substitute
+    inccommand = 'split',-- preview incremental substitute
     laststatus = 3,
     listchars = { trail = '', tab = '', nbsp = '_', extends = '>', precedes = '<' }, -- highlight
+    list = true, --This is the genius parameter which sets the markings of empty characters etc
     mouse = 'a', -- allow the mouse to be used in neovim
     number = true, -- set numbered lines
     relativenumber = true, -- set relative numbered lines
@@ -75,7 +76,6 @@ local options = {
     winminwidth = 5, -- Minimum window width
     wrap = false, -- display lines as one long line
     writebackup = false, -- do not edit backups
-    -- list = true, --This is the genius parameter which sets the markings of empty characters etc
     fileformats='dos',
 }
 for k, v in pairs(options) do

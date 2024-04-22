@@ -12,7 +12,7 @@ local plugins = {
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = load_config('ui.oil'),
-                event = {'VimEnter' },
+        event = {'VimEnter' },
     },
     {
         "folke/tokyonight.nvim",
@@ -46,14 +46,6 @@ local plugins = {
         cmd = 'Telescope',
     },
 
-    {
-        'nvim-tree/nvim-tree.lua',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-        },
-        config = load_config('tools.nvim-tree'),
-        cmd = 'NvimTreeToggle',
-    },
     --  Completion ----------------
     {
         'hrsh7th/nvim-cmp',
@@ -127,6 +119,15 @@ local plugins = {
     },
 
     -- ======================== Secondary Priority  =======================
+    {
+        'nvim-tree/nvim-tree.lua',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = load_config('tools.nvim-tree'),
+        cmd = 'NvimTreeToggle',
+    },
+
     {
         config = load_config('ui.auto-session'),
         "rmagatti/auto-session",
@@ -221,48 +222,48 @@ local plugins = {
         event = { 'BufReadPre', 'BufNewFile' },
     },
     { --Annoying because for each file it looks for a parser
-        "shellRaining/hlchunk.nvim",
-        event = { "UIEnter" },
-        config = load_config('ui.hlchunk'),
-    },
+    "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
+    config = load_config('ui.hlchunk'),
+},
 
-    -- -- { --???? to investigate
-    -- --     "mg979/vim-visual-multi",
-    -- --     config = load_config('tools.VimVisualMulti'),
+-- -- { --???? to investigate
+-- --     "mg979/vim-visual-multi",
+-- --     config = load_config('tools.VimVisualMulti'),
 
-    -- -- },
-    -- -- {
-    -- --     'echasnovski/mini.surround',
-    -- --     version = '*',
-    -- --     config = load_config('lang.surround'),
-    -- --     event = { 'BufReadPre', 'BufNewFile' },
-    -- -- },
-    -- -- {
-    -- --     'echasnovski/mini.ai',
-    -- --     version = '*',
-    -- --     config = load_config('lang.ai'),
-    -- --     event = { 'BufReadPre', 'BufNewFile' },
-    -- -- },
+-- -- },
+-- -- {
+-- --     'echasnovski/mini.surround',
+-- --     version = '*',
+-- --     config = load_config('lang.surround'),
+-- --     event = { 'BufReadPre', 'BufNewFile' },
+-- -- },
+-- -- {
+-- --     'echasnovski/mini.ai',
+-- --     version = '*',
+-- --     config = load_config('lang.ai'),
+-- --     event = { 'BufReadPre', 'BufNewFile' },
+-- -- },
 
-    -- {
-    --     'm4xshen/hardtime.nvim',
-    --     dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-    --     config = function()
-    --         require('hardtime').setup({ enabled = true })
-    --     end,
-    --     cmd = 'Hardtime',
-    -- },
+-- {
+--     'm4xshen/hardtime.nvim',
+--     dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+--     config = function()
+--         require('hardtime').setup({ enabled = true })
+--     end,
+--     cmd = 'Hardtime',
+-- },
 
 
 
-    -- {
-    --     'zbirenbaum/copilot.lua',
-    --     dependencies = {
-    --         'zbirenbaum/copilot-cmp',
-    --     },
-    --     config = load_config('lang.copilot'),
-    --     event = 'InsertEnter',
-    -- },
+-- {
+--     'zbirenbaum/copilot.lua',
+--     dependencies = {
+--         'zbirenbaum/copilot-cmp',
+--     },
+--     config = load_config('lang.copilot'),
+--     event = 'InsertEnter',
+-- },
 
 }
 
