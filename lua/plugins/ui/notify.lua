@@ -1,3 +1,4 @@
+print("SSSS")
 local notify = require('notify')
 
 local icons = require('lib.icons')

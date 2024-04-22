@@ -105,4 +105,5 @@ nvim_tree.setup({
     number = false,
     relativenumber = false,
   },
+        vim.keymap.set("n", "<C-b>", "<cmd>NvimTreeToggle<cr>", { desc = "Open NvimTree" }),
 })

@@ -36,7 +36,7 @@ gitsigns.setup({
     signcolumn = true,
     numhl = true,
     linehl = false,
-    word_diff = true,
+    word_diff = false,
     watch_gitdir = { interval = 1000, follow_files = true },
     attach_to_untracked = true,
     current_line_blame = false,

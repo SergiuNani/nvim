@@ -7,6 +7,14 @@ end
 local plugins = {
     ---- ======================== First Priority  =======================
     {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = load_config('ui.oil'),
+                event = {'VimEnter' },
+    },
+    {
         "folke/tokyonight.nvim",
         dependencies={
             'navarasu/onedark.nvim',
@@ -163,27 +171,22 @@ local plugins = {
     -- ======================== Third Priority =======================
     --
     --  Tresitter ----------------
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-textobjects',
-            'RRethy/nvim-treesitter-endwise',
-            'RRethy/nvim-treesitter-textsubjects',
-            'windwp/nvim-ts-autotag',
-        },
-        config = load_config('lang.treesitter'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-    {
-        'folke/zen-mode.nvim',
-        dependencies = {
-            'folke/twilight.nvim',
-            config = load_config('ui.twilight'),
-        },
-        config = load_config('ui.zen-mode'),
-        cmd = { 'ZenMode' ,'Twilight' },
-    },
+    -- {
+    --     'nvim-treesitter/nvim-treesitter',
+    --     build = ':TSUpdate',
+    --     dependencies = {
+    --         'nvim-treesitter/nvim-treesitter-textobjects',
+    --         'RRethy/nvim-treesitter-endwise',
+    --         'RRethy/nvim-treesitter-textsubjects',
+    --         'windwp/nvim-ts-autotag',
+    --     },
+    --     config = load_config('lang.treesitter'),
+    --     event = { 'BufReadPre', 'BufNewFile' },
+    -- },
+    -- {
+    --     'folke/zen-mode.nvim',
+    --     config = load_config('ui.zen-mode'),
+    -- },
     {
         "NvChad/nvim-colorizer.lua",
         event = { "BufReadPre", "BufNewFile" },
@@ -201,11 +204,6 @@ local plugins = {
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
-        "shellRaining/hlchunk.nvim",
-        event = { "UIEnter" },
-        config = load_config('ui.hlchunk'),
-    },
-    {
         'HiPhish/rainbow-delimiters.nvim',
         config = load_config('ui.rainbow'),
         event = { 'BufReadPre', 'BufNewFile' },
@@ -221,6 +219,11 @@ local plugins = {
         --Basically wraps UI around renaming/adding files in nvim-tree
         config = load_config('ui.dressing'),
         event = { 'BufReadPre', 'BufNewFile' },
+    },
+    { --Annoying because for each file it looks for a parser
+        "shellRaining/hlchunk.nvim",
+        event = { "UIEnter" },
+        config = load_config('ui.hlchunk'),
     },
 
     -- -- { --???? to investigate

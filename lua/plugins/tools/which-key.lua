@@ -54,7 +54,6 @@ local opts = {
     nowait = true,
 }
 local mappings = {
-    e = { '<cmd>NvimTreeToggle<cr>', icons.documents.OpenFolder .. 'Explorer' },
     q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     w = { '<cmd>w<cr>', icons.ui.Save .. 'Save' },
