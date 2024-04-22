@@ -295,6 +295,5 @@ local ts_parsers = {
 return {
     plugins = plugins,
     lsp_servers = lsp_servers,
-    -- null_ls_sources = null_ls_sources,
     ts_parsers = ts_parsers,
 }

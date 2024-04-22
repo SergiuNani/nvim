@@ -14,7 +14,7 @@ opt.foldcolumn = '0'
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
-opt.foldopen = block
+-- opt.foldopen = block
 -- BSSSSSSSSSSSSSSSSSSSSS =======================
 
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark

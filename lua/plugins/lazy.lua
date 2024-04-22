@@ -23,17 +23,7 @@ lazy.setup({
     root = vim.fn.stdpath('data') .. '/lazy',
     defaults = { lazy = true },
     spec = plugins,
-    lockfile = vim.fn.stdpath('config') .. '/lua/plugins/lock.json',
-    concurrency = 8,
-    dev = { path = '~/Projects/GitHub/', patterns = {}, fallback = false },
-    install = { missing = true, colorscheme = { 'onedark' } },
-
-    git = {
-        log = { '--since=3 days ago' },
-        timeout = 120,
-        url_format = 'https://github.com/%s.git',
-        filter = true,
-    },
+    -- concurrency = 8,
 
     ui = {
         size = { width = 0.9, height = 0.8 },
@@ -62,49 +52,7 @@ lazy.setup({
                 icons.ui.Minus,
             },
         },
-        browser = nil,
-        throttle = 20,
-        custom_keys = {
-            ['<localleader>l'] = function(plugin)
-                require('lazy.util').float_term({ 'lazygit', 'log' }, {
-                    cwd = plugin.dir,
-                })
-            end,
-
-            ['<localleader>t'] = function(plugin)
-                require('lazy.util').float_term(nil, {
-                    cwd = plugin.dir,
-                })
-            end,
-        },
     },
 
-    diff = { cmd = 'git' },
-    checker = { enabled = false, concurrency = nil, notify = true, frequency = 3600 },
-    change_detection = { enabled = true, notify = true },
-    performance = {
-        cache = { enabled = true },
-        reset_packpath = true,
-        rtp = {
-            reset = true,
-            paths = {},
-            disabled_plugins = {
-                'gzip',
-                'tarPlugin',
-                'zipPlugin',
-                'tohtml',
-                -- 'tutor',
-                -- 'matchit',
-                -- 'matchparen',
-                -- 'netrwPlugin',
-            },
-        },
-    },
-    readme = {
-        root = vim.fn.stdpath('state') .. '/lazy/readme',
-        files = { 'README.md', 'lua/**/README.md' },
-        skip_if_doc_exists = true,
-    },
-    state = vim.fn.stdpath('state') .. '/lazy/state.json',
 })
 
