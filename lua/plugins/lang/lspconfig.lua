@@ -50,6 +50,7 @@ require('mason-lspconfig').setup({
         --         capabilities = lsp_capabilities,
         --     })
         -- end
+
     },
 })
 

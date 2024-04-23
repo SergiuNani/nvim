@@ -95,28 +95,28 @@ local plugins = {
         config = load_config('tools.which-key'),
         event = 'VeryLazy',
     },
-    {
-        'folke/flash.nvim',
-        config = load_config('tools.flash'),
-        keys = {
-            {
-                's',
-                mode = { 'n', 'x', 'o' },
-                function()
-                    require('flash').jump()
-                end,
-                desc = 'Flash',
-            },
-            {
-                'S',
-                mode = { 'n', 'x', 'o' },
-                function()
-                    require('flash').treesitter()
-                end,
-                desc = 'Flash Treesitter',
-            },
-        },
-    },
+    -- {
+    --     'folke/flash.nvim',
+    --     config = load_config('tools.flash'),
+    --     keys = {
+    --         {
+    --             's',
+    --             mode = { 'n', 'x', 'o' },
+    --             function()
+    --                 require('flash').jump()
+    --             end,
+    --             desc = 'Flash',
+    --         },
+    --         {
+    --             'S',
+    --             mode = { 'n', 'x', 'o' },
+    --             function()
+    --                 require('flash').treesitter()
+    --             end,
+    --             desc = 'Flash Treesitter',
+    --         },
+    --     },
+    -- },
 
     -- ======================== Secondary Priority  =======================
     {
@@ -171,6 +171,10 @@ local plugins = {
 
     -- ======================== Third Priority =======================
     --
+    {
+        "https://github.com/ThePrimeagen/vim-be-good",
+        event = 'UIEnter',
+    },
     --  Tresitter ----------------
     -- {
     --     'nvim-treesitter/nvim-treesitter',
@@ -278,9 +282,6 @@ local lsp_servers = {
     'tsserver',
 }
 
--- local null_ls_sources = {
---     'shellcheck', -- bash lint
--- }
 
 local ts_parsers = {
     -- 'css',

@@ -42,7 +42,7 @@ local options = {
     inccommand = 'split',-- preview incremental substitute
     laststatus = 3,
     listchars = { trail = '', tab = '', nbsp = '_', extends = '>', precedes = '<' }, -- highlight
-    list = true, --This is the genius parameter which sets the markings of empty characters etc
+    -- list = true, --This is the genius parameter which sets the markings of empty characters etc
     mouse = 'a', -- allow the mouse to be used in neovim
     number = true, -- set numbered lines
     relativenumber = true, -- set relative numbered lines
