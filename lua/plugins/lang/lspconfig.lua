@@ -45,11 +45,11 @@ require('mason-lspconfig').setup({
                 },
             })
         end,
-        tsserver = function ()
-          lspconfig.tsserver.setup({
-                capabilities = lsp_capabilities,
-            })
-        end
+        -- tsserver = function ()
+        --   lspconfig.tsserver.setup({
+        --         capabilities = lsp_capabilities,
+        --     })
+        -- end
     },
 })
 

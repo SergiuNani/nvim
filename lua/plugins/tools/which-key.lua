@@ -196,8 +196,6 @@ local no_leader_mappings = {
         j = { '<C-i>', 'Jump' },
     },
     ['#'] = { '<cmd>edit #<cr>', 'Alternate Buffer' },
-    K = { '<cmd>Lspsaga hover_doc<cr>', 'LSP Hover' },
-    U = { '<cmd>redo<cr>', 'Redo' },
 }
 
 which_key.setup(setup)
