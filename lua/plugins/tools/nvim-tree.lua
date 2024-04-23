@@ -1,4 +1,3 @@
-
 local nvim_tree = require('nvim-tree')
 local icons = require('lib.icons')
 

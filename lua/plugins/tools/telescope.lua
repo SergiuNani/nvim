@@ -1,6 +1,5 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
-local multi_open_mappings = require('plugins.tools.telescope-multiopen')
 local icons = require('lib.icons')
 
 local function map(mode, lhs, rhs, opts)
@@ -54,6 +53,7 @@ telescope.setup({
             i = {
                 ['<A-h>'] = actions.select_horizontal,
                 ['<A-v>'] = actions.select_vertical,
+                ['<A-s>'] = actions.select_vertical,
                 ['<C-t>'] = actions.select_tab,
                 ['<M-e>'] = actions.preview_scrolling_up,
                 ['<M-d>'] = actions.preview_scrolling_down,
@@ -82,15 +82,16 @@ telescope.setup({
             },
 
             n = {
+                ['<A-h>'] = actions.select_horizontal,
+                ['<A-v>'] = actions.select_vertical,
+                ['<A-s>'] = actions.select_vertical,
+                ['<A-t>'] = actions.select_tab,
                 ['<M-e>'] = actions.preview_scrolling_up,
                 ['<M-d>'] = actions.preview_scrolling_down,
 
                 ['q'] = actions.close,
                 ['<esc>'] = actions.close,
                 ['<CR>'] = actions.select_default,
-                ['<C-x>'] = actions.select_horizontal,
-                ['<C-v>'] = actions.select_vertical,
-                ['<C-t>'] = actions.select_tab,
 
                 ['<Tab>'] = actions.toggle_selection + actions.move_selection_worse,
                 ['<S-Tab>'] = actions.toggle_selection + actions.move_selection_better,
@@ -113,11 +114,6 @@ telescope.setup({
                 ['?'] = actions.which_key,
             },
         },
-    },
-    pickers = {
-        find_files = { mappings = multi_open_mappings },
-        git_files = { mappings = multi_open_mappings },
-        oldfiles = { mappings = multi_open_mappings },
     },
     extensions = {
         fzf = {

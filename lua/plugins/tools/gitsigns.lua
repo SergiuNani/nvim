@@ -71,8 +71,8 @@ gitsigns.setup({
         map('n', '<leader>gd', '<cmd>Gitsigns diffthis HEAD<cr>', { desc = 'Diff on current buffer' })
 
         map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<cr>', { desc = 'Preview Hunk' })
-
         map('n', '<leader>gs', '<cmd>Telescope git_status<cr>', { desc = 'Changed files' })
+
         map('n', '<leader>gb', '<cmd>Gitsigns blame_line<cr>', { desc = 'Blame' })
 
         -- //Toggle options

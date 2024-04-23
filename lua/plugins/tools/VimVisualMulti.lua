@@ -1,1 +1,1 @@
-local vimVisualMulti = require("vim-visual-multi")
+-- local vimVisualMulti = require("vim-visual-multi")
