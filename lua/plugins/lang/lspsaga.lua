@@ -47,11 +47,9 @@ map('n', ']d',  vim.diagnostic.goto_next,{desc ="Jump to next Diagnostic"})
 -- Not popular
 map('n', '<leader>li', "<cmd>LspInfo<cr>", {desc ="LSP Info"})
 map('n', '<leader>la', "<cmd>Lspsaga code_action<cr>", {desc ="Code Action"})
-map('n', '<leader>ld',"<cmd>Telescope diagnostics<cr>", {desc ="Diagnostics"})
 map('n', '<leader>lo', "<cmd>Lspsaga outline<cr>", {desc ="Show LSP outline"})
 map('n', '<leader>le', "<cmd>LspStart<cr>", {desc ="Show LSP outline"})
-map('n', '<leader>lx', "<cmd>LspStop<cr>", {desc ="Show LSP outline"})
-
-
+map('n', '<leader>lt',"<cmd>Telescope diagnostics<cr>", {desc ="Diagnostics"})
+map('n', '<leader>ld', "<cmd>LspStop<cr>", {desc ="Show LSP outline"})
 
 

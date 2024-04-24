@@ -7,14 +7,6 @@ end
 local plugins = {
     ---- ======================== First Priority  =======================
     {
-        'stevearc/oil.nvim',
-        opts = {},
-        -- Optional dependencies
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = load_config('ui.oil'),
-        event = {'VimEnter' },
-    },
-    {
         "folke/tokyonight.nvim",
         dependencies={
             'navarasu/onedark.nvim',
@@ -30,6 +22,15 @@ local plugins = {
         lazy = false,
         priority = 1000,
     },
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = load_config('ui.oil'),
+        event = {'VimEnter' },
+    },
+
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
@@ -77,11 +78,6 @@ local plugins = {
     },
 
     {
-        'windwp/nvim-autopairs',
-        config = load_config('lang.autopairs'),
-        event = 'InsertEnter',
-    },
-    {
         "kevinhwang91/nvim-ufo", --Folding options
         dependencies = {
             "kevinhwang91/promise-async",
@@ -95,6 +91,8 @@ local plugins = {
         config = load_config('tools.which-key'),
         event = 'VeryLazy',
     },
+
+    -- ======================== Secondary Priority  =======================
     -- {
     --     'folke/flash.nvim',
     --     config = load_config('tools.flash'),
@@ -118,7 +116,11 @@ local plugins = {
     --     },
     -- },
 
-    -- ======================== Secondary Priority  =======================
+    {
+        'windwp/nvim-autopairs',
+        config = load_config('lang.autopairs'),
+        event = 'InsertEnter',
+    },
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = {
@@ -176,23 +178,23 @@ local plugins = {
         event = 'UIEnter',
     },
     --  Tresitter ----------------
-    -- {
-    --     'nvim-treesitter/nvim-treesitter',
-    --     build = ':TSUpdate',
-    --     dependencies = {
-    --         'nvim-treesitter/nvim-treesitter-textobjects',
-    --         'RRethy/nvim-treesitter-endwise',
-    --         'RRethy/nvim-treesitter-textsubjects',
-    --         'windwp/nvim-ts-autotag',
-    --     },
-    --     config = load_config('lang.treesitter'),
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+            'RRethy/nvim-treesitter-endwise',
+            'RRethy/nvim-treesitter-textsubjects',
+            'windwp/nvim-ts-autotag',
+        },
+        config = load_config('lang.treesitter'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
     -- {
     --     'folke/zen-mode.nvim',
     --     config = load_config('ui.zen-mode'),
     -- },
-    {
+    { -- Search text and if color => show color
         "NvChad/nvim-colorizer.lua",
         event = { "BufReadPre", "BufNewFile" },
         config = true,
@@ -200,12 +202,6 @@ local plugins = {
     {
         'nvim-lualine/lualine.nvim',
         config = load_config('ui.lualine'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-    {
-        'lukas-reineke/indent-blankline.nvim',
-        config = load_config('ui.indentline'),
-        main = 'ibl',
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
@@ -225,12 +221,18 @@ local plugins = {
         config = load_config('ui.dressing'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
-    { --Annoying because for each file it looks for a parser
-    "shellRaining/hlchunk.nvim",
-    event = { "UIEnter" },
-    config = load_config('ui.hlchunk'),
-},
+    {
+        "shellRaining/hlchunk.nvim",
+        event = { "UIEnter" },
+        config = load_config('ui.hlchunk'),
+    },
 
+    -- { -- This or hlchunk not both
+    --     'lukas-reineke/indent-blankline.nvim',
+    --     config = load_config('ui.indentline'),
+    --     main = 'ibl',
+    --     event = { 'BufReadPre', 'BufNewFile' },
+    -- },
 -- -- { --???? to investigate
 -- --     "mg979/vim-visual-multi",
 -- --     config = load_config('tools.VimVisualMulti'),

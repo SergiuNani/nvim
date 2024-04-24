@@ -93,13 +93,6 @@ local mappings = {
         n = { '<cmd>Telescope notify<cr>', 'Notifications' },
         z = { '<cmd>ZenMode<cr>', 'ZenMode' },
     },
-    p = {
-        name = icons.ui.Package .. 'Packages',
-        p = { '<cmd>Lazy<cr>', 'Plugins' },
-        m = { '<cmd>Mason<cr>', 'Mason' },
-        s = { '<cmd>Lazy sync<cr>', 'Sync' },
-        u = { '<cmd>Lazy update<cr>', 'Update' },
-    },
     c = {
         name = icons.ui.NeoVim .. 'Config',
         f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format File' }, -->??
@@ -109,6 +102,14 @@ local mappings = {
         r = { '<cmd>Telescope reloader<cr>', 'Reload Module' },
         R = { '<cmd>ReloadConfig<cr>', 'Reload Configs' },
     },
+        p = {
+        name = icons.ui.Package .. 'Project',
+        -- p = { '<cmd>Lazy<cr>', 'Plugins' },
+        -- m = { '<cmd>Mason<cr>', 'Mason' },
+        -- s = { '<cmd>Lazy sync<cr>', 'Sync' },
+        -- u = { '<cmd>Lazy update<cr>', 'Update' },
+    },
+
     -- ------------------------------------------------------------
     -- b = {--??
     --     name = icons.ui.Bug .. 'Debug',

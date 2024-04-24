@@ -2,26 +2,12 @@
       chunk = {
         -- The one you want
         enable = true,
-        notify = false,
+        notify = false, --important, otherwise ull get a message for all the files you enter in
         use_treesitter = true,
-        -- chars = {
-        --   horizontal_line = "─",
-        --   vertical_line = "│",
-        --   left_top = "╭",
-        --   left_bottom = "╰",
-        --   right_arrow = ">",
-        -- },
-        -- style = {
-        --   { fg = "#806d9c" },
-        --   { fg = "#c21f30" }, -- this fg is used to highlight wrong chunk
-        -- },
-        -- textobject = "",
-        -- max_file_size = 1024 * 1024,
-        -- error_sign = true,
       },
 
       indent = {
-        enable = false,
+        enable = true,
         use_treesitter = false,
         chars = {
           "│",

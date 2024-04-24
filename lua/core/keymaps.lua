@@ -47,12 +47,13 @@ map("n", "J", "<cmd>bnext<cr>", {desc=  "goto next buffer"})
 map("n", "<leader>ss", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
 map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
 map("n", "<leader>sh", "<cmd>split<cr>", { desc = "Horizontal Split File" })
-
+map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
 
 map("n", "<C-h>", "<C-w>h", { desc = "Move Left" })
 map("n", "<C-j>", "<C-w>j", { desc = "Move Down" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move Up" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move Right" })
+map("n", "<leader>rr", [[:cdo %s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]])
 
 map("n", "<C-A-Up>", "<cmd>resize +10<cr>", { desc = "Increase window height" })
 map("n", "<C-A-Down>", "<cmd>resize -10<cr>", { desc = "Decrease window height" })
@@ -90,7 +91,7 @@ map('x', '<leader>+', 'g<C-a>',{desc="Increment recursivly in X mode"})
 map('x', '<leader>-', 'g<C-x>',{desc="Decrement recursivly in X mode"})
 
 -- Better up/down
-map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- in case of wraped text you go line by line
 map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Clear search, diff update and redraw
@@ -107,7 +108,6 @@ map('i', '.', '.<c-g>u')
 map('i', ';', ';<c-g>u')
 
 
--- map("n", "<leader>rr", [[:cdo %s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]])
 map("n", "<leader>rq", [[:cfdo %s/<C-r><C-w>/<C-r><C-w>/g | update <C-Left><C-Left><Left><Left><Left>]], {desc ="Replace in quickList"})
 map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc="Replace in buffer"})
 map('n', '<leader>rr', "<cmd>Lspsaga rename<cr>", {desc ="Rename via LSP"})
