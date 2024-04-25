@@ -93,29 +93,6 @@ local plugins = {
     },
 
     -- ======================== Secondary Priority  =======================
-    -- {
-    --     'folke/flash.nvim',
-    --     config = load_config('tools.flash'),
-    --     keys = {
-    --         {
-    --             's',
-    --             mode = { 'n', 'x', 'o' },
-    --             function()
-    --                 require('flash').jump()
-    --             end,
-    --             desc = 'Flash',
-    --         },
-    --         {
-    --             'S',
-    --             mode = { 'n', 'x', 'o' },
-    --             function()
-    --                 require('flash').treesitter()
-    --             end,
-    --             desc = 'Flash Treesitter',
-    --         },
-    --     },
-    -- },
-
     {
         'windwp/nvim-autopairs',
         config = load_config('lang.autopairs'),
@@ -143,7 +120,7 @@ local plugins = {
         'lewis6991/gitsigns.nvim',
         cmd = 'Gitsigns',
         config = load_config('tools.gitsigns'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = {'VimEnter' },
     },
     -- --  ----------------LSP ----------------
     {
@@ -172,6 +149,30 @@ local plugins = {
     },
 
     -- ======================== Third Priority =======================
+    -- {
+    --     'folke/flash.nvim',
+    --     config = load_config('tools.flash'),
+    --     keys = {
+    --         {
+    --             's',
+    --             mode = { 'n', 'x', 'o' },
+    --             function()
+    --                 require('flash').jump()
+    --             end,
+    --             desc = 'Flash',
+    --         },
+    --         {
+    --             'S',
+    --             mode = { 'n', 'x', 'o' },
+    --             function()
+    --                 require('flash').treesitter()
+    --             end,
+    --             desc = 'Flash Treesitter',
+    --         },
+    --     },
+    -- },
+
+
     --
     {
         "https://github.com/ThePrimeagen/vim-be-good",
@@ -233,43 +234,43 @@ local plugins = {
     --     main = 'ibl',
     --     event = { 'BufReadPre', 'BufNewFile' },
     -- },
--- -- { --???? to investigate
--- --     "mg979/vim-visual-multi",
--- --     config = load_config('tools.VimVisualMulti'),
+    -- { --???? to investigate
+    --     "mg979/vim-visual-multi",
+    --     config = load_config('tools.VimVisualMulti'),
 
--- -- },
--- -- {
--- --     'echasnovski/mini.surround',
--- --     version = '*',
--- --     config = load_config('lang.surround'),
--- --     event = { 'BufReadPre', 'BufNewFile' },
--- -- },
--- -- {
--- --     'echasnovski/mini.ai',
--- --     version = '*',
--- --     config = load_config('lang.ai'),
--- --     event = { 'BufReadPre', 'BufNewFile' },
--- -- },
+    -- },
+    -- {
+    --     'echasnovski/mini.surround',
+    --     version = '*',
+    --     config = load_config('lang.surround'),
+    --     event = { 'BufReadPre', 'BufNewFile' },
+    -- },
+    -- {
+    --     'echasnovski/mini.ai',
+    --     version = '*',
+    --     config = load_config('lang.ai'),
+    --     event = { 'BufReadPre', 'BufNewFile' },
+    -- },
 
--- {
---     'm4xshen/hardtime.nvim',
---     dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
---     config = function()
---         require('hardtime').setup({ enabled = true })
---     end,
---     cmd = 'Hardtime',
--- },
+    -- {
+    --     'm4xshen/hardtime.nvim',
+    --     dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+    --     config = function()
+    --         require('hardtime').setup({ enabled = true })
+    --     end,
+    --     cmd = 'Hardtime',
+    -- },
 
 
 
--- {
---     'zbirenbaum/copilot.lua',
---     dependencies = {
---         'zbirenbaum/copilot-cmp',
---     },
---     config = load_config('lang.copilot'),
---     event = 'InsertEnter',
--- },
+    -- {
+    --     'zbirenbaum/copilot.lua',
+    --     dependencies = {
+    --         'zbirenbaum/copilot-cmp',
+    --     },
+    --     config = load_config('lang.copilot'),
+    --     event = 'InsertEnter',
+    -- },
 
 }
 
