@@ -30,7 +30,6 @@ local setup = {
     triggers = 'auto',
     triggers_nowait = {
         -- marks
-        '`',
         "'",
         'g`',
         "g'",

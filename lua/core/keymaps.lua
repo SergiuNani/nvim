@@ -18,7 +18,7 @@ map({ 'v', 'x','n'}, "c", '"_c', { desc = "Stop copying to clipboard" })
 map({ 'v', 'x','n'}, "C", '"_C', { desc = "Stop copying to clipboard" })
 map({ 'v', 'x'}, 'p', '"_dP', opts)
 map("n", "<C-a>", "ggVG", { desc = "Clear search highlights" })
-map("n", "<C-w>", "<cmd>:q!<CR>", { desc = "Close buffer" })
+-- map("n", "<C-w>", "<cmd>:q!<CR>", { desc = "Close buffer" })
 
 map('i', 'jj', '<Esc>', opts)
 map('i', 'kk', '<Esc>', opts)
