@@ -103,7 +103,7 @@ local mappings = {
     },
         p = {
         name = icons.ui.Package .. 'Project',
-        -- p = { '<cmd>Lazy<cr>', 'Plugins' },
+        l = { '<cmd>Lazy<cr>', 'Plugins' },
         -- m = { '<cmd>Mason<cr>', 'Mason' },
         -- s = { '<cmd>Lazy sync<cr>', 'Sync' },
         -- u = { '<cmd>Lazy update<cr>', 'Update' },

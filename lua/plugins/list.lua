@@ -7,6 +7,17 @@ end
 local plugins = {
     ---- ======================== First Priority  =======================
     {
+        "LintaoAmons/bookmarks.nvim",
+        -- "tomasky/bookmarks.nvim",
+  -- 'crusj/bookmarks.nvim',
+        dependencies = {
+            {"stevearc/dressing.nvim"} -- optional: to have the same UI shown in the GIF
+        },
+        -- branch = 'main',
+        config = load_config('ui.bookmarks'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
+    {
         "folke/tokyonight.nvim",
         dependencies={
             'navarasu/onedark.nvim',
