@@ -81,6 +81,9 @@ map({ 'v', 'x' }, '<A-Up>', ":move '<-2<CR>gv=gv", opts)
 
 
 map("n", "<Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" })
+-- map("n", "<C-Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" }) --Dont work
+-- map("n", "<S-Enter>", "O<ESC>", { desc = "Create new line in normal/insert mode" })
+
 map("i", "<C-Del>", "<esc>lce", { desc = "Delete forward" })
 map("i", "<A-Del>", "<esc>lce", { desc = "Delete forward" })
 map("i", "<A-BS>", "<C-w>", { desc = "Delete forward" })
@@ -108,10 +111,9 @@ map('i', '.', '.<c-g>u')
 map('i', ';', ';<c-g>u')
 
 
-map("n", "<leader>rq", [[:cfdo %s/<C-r><C-w>/<C-r><C-w>/g | update <C-Left><C-Left><Left><Left><Left>]], {desc ="Replace in quickList"})
+map("n", "<leader>rf", [[:cfdo %s/<C-r><C-w>/<C-r><C-w>/g | update <C-Left><C-Left><Left><Left><Left>]], {desc ="Replace in quickList"})
 map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc="Replace in buffer"})
 map('n', '<leader>rr', "<cmd>Lspsaga rename<cr>", {desc ="Rename via LSP"})
-map('n', '<leader>re', "<cmd>Lspsaga project_replace<cr>", {desc ="Replace"})
 
 
 map("n", "<leader>rm", "<cmd>e<cr>", {desc="Remove ^M by Updating buffer"})

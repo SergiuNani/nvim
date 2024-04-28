@@ -11,7 +11,7 @@ local plugins = {
         -- "tomasky/bookmarks.nvim",
   -- 'crusj/bookmarks.nvim',
         dependencies = {
-            {"stevearc/dressing.nvim"} -- optional: to have the same UI shown in the GIF
+            {"stevearc/dressing.nvim"} 
         },
         -- branch = 'main',
         config = load_config('ui.bookmarks'),
