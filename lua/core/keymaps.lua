@@ -121,14 +121,13 @@ map('n', '<leader>rr', "<cmd>Lspsaga rename<cr>", {desc ="Rename via LSP"})
 
 
 -- //Change current file
---
+
 map("n", "<leader>cm", "<cmd>e<cr>", {desc="Remove ^M by Updating buffer"})
 map("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", {desc="Format files"})
-map("n", "<leader>ci", vim.show_pos, {desc="Inspect Position"})
 map("n", "<leader>ce", "<cmd>:g/^\\s*$/d<cr>", {desc="Clean Empty Lines"})
 map("n", "<leader>cn", "<cmd>set relativenumber!<cr>", {desc="Relative Numbers"})
 map("n", "<leader>cr", "<cmd>Telescope reloader<cr>", {desc="Reload Module"})
 map("n", "<leader>cR", "<cmd>ReloadConfig<cr>", {desc="Reload Configs"})
---
---
---
+
+
+
