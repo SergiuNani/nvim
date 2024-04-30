@@ -3,9 +3,7 @@ local textobjects = require('plugins.lang.textobjects')
 
 local disable_function = function(lang)
     local buf_name = vim.fn.expand("%")
-    if lang == "c" and string.find(buf_name, "vars_legacy") then
-        print("I forced this file not to support LSP and TreeSitter")
-        vim.diagnostic.disable()
+    if string.find(buf_name, "vars_legacy") then
         return true
     end
 end

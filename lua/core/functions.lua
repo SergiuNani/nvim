@@ -33,3 +33,21 @@ vim.api.nvim_create_user_command('RootDir', function()
     end
     vim.cmd('lcd ' .. root)
 end, {})
+local function sleep(time)
+    local start = os.clock()
+    while os.clock() - start <= time do end
+end
+
+vim.api.nvim_create_autocmd('LspAttach', {
+    -- This fucntion looks if the name of the file is vars_legacy and disables the LSP
+    callback = function(lang)
+        local buf_name = vim.fn.expand("%")
+        if string.find(buf_name, "vars_legacy") then
+            vim.schedule(function()
+                vim.notify('Max_Performance. TreeSitter and LSP disabled!', vim.log.levels.INFO)
+                vim.diagnostic.disable()
+                vim.cmd(":LspStop")
+            end)
+        end
+    end,
+})
