@@ -1,6 +1,15 @@
 local treesitter = require('nvim-treesitter.configs')
 local textobjects = require('plugins.lang.textobjects')
 
+local disable_function = function(lang)
+    local buf_name = vim.fn.expand("%")
+    if lang == "c" and string.find(buf_name, "vars_legacy") then
+        print("I forced this file not to support LSP and TreeSitter")
+        vim.diagnostic.disable()
+        return true
+    end
+end
+
 local installed_parsers = {}
 local auto_install = require('lib.util').get_user_config('auto_install', true)
 if auto_install then
@@ -21,13 +30,7 @@ treesitter.setup({
 
     highlight = {
         enable = true,
-    --     disable = function(lang, buf)
-    --     local max_filesize = 900 * 1024 -- 100 KB
-    --     local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-    --     if ok and stats and stats.size > max_filesize then
-    --         return true
-    --     end
-    -- end,
+        disable = disable_function,
         additional_vim_regex_highlighting = false,
     },
 
@@ -73,7 +76,6 @@ local function toggle_treesitter()
         vim.cmd(":TSBufDisable refactor ")
         vim.cmd(":TSBufDisable incremental_selection ")
         vim.cmd(":TSBufDisable  textsubjects")
-
     else
         -- Tree-sitter highlighting is disabled, so we want to enable it
         vim.notify('Tree-sitter enabled!', vim.log.levels.INFO)
@@ -85,7 +87,6 @@ local function toggle_treesitter()
         vim.cmd(":TSBufEnable refactor ")
         vim.cmd(":TSBufEnable incremental_selection ")
         vim.cmd(":TSBufEnable  textsubjects")
-
     end
 end
 
@@ -103,7 +104,6 @@ local function Toggle_performance()
         vim.cmd(":TSBufDisable incremental_selection ")
         vim.cmd(":TSBufDisable  textsubjects")
         vim.cmd(":LspStop")
-
     else
         vim.notify('Normal mode. TreeSitter and LSP enabled!', vim.log.levels.INFO)
         vim.cmd(":TSBufEnable highlight ")
@@ -115,7 +115,6 @@ local function Toggle_performance()
         vim.cmd(":TSBufEnable incremental_selection ")
         vim.cmd(":TSBufEnable  textsubjects")
         vim.cmd(":LspStart")
-
     end
 end
 
@@ -126,4 +125,3 @@ keymap.set("n", "<leader>pp", "<cmd>TogglePerformance<CR>", { desc = "Toggle Per
 keymap.set("n", "<leader>tt", "<cmd>ToggleTS<CR>", { desc = "TSBufToggle" })
 keymap.set("n", "<leader>te", "<cmd>TSBufEnable highlight<CR>", { desc = "TSEnable highlight" })
 keymap.set("n", "<leader>td", "<cmd>TSBufDisable highlight<CR>", { desc = "TSBufDisable" })
-

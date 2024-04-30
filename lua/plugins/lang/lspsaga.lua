@@ -38,6 +38,9 @@ map('n', '<S-F12>', "<cmd>Telescope lsp_references<cr>", {desc ="References"})
 map('n', '<M-F12>', "<cmd>Lspsaga peek_definition<cr>", {desc ="Peek Type Definition"})
 map('n', 'gr', "<cmd>Lspsaga finder<cr>", {desc ="Find references in Telescope"})
 
+-- map('n', '<F12>', "<cmd>Lspsaga goto_type_definition<cr>", {desc ="Goto Type Definition"})
+
+
 map('n', '<A-i>', vim.lsp.buf.hover, {desc ="Show doc under the cursor"})
 map('n', '<leader>fd', "<cmd>Lspsaga show_workspace_diagnostics<cr>", {desc ="Workspace Diagnostics"})
 map('n', '[d',vim.diagnostic.goto_prev, {desc ="Jump to prev Diagnostic"})
