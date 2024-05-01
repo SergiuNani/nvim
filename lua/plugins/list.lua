@@ -7,17 +7,6 @@ end
 local plugins = {
     ---- ======================== First Priority  =======================
     {
-        "LintaoAmons/bookmarks.nvim",
-        -- "tomasky/bookmarks.nvim",
-  -- 'crusj/bookmarks.nvim',
-        dependencies = {
-            {"stevearc/dressing.nvim"} 
-        },
-        -- branch = 'main',
-        config = load_config('ui.bookmarks'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-    {
         "folke/tokyonight.nvim",
         dependencies={
             'navarasu/onedark.nvim',
@@ -104,6 +93,16 @@ local plugins = {
     },
 
     -- ======================== Secondary Priority  =======================
+    {
+        "LintaoAmons/bookmarks.nvim",
+        dependencies = {
+            {"stevearc/dressing.nvim"}
+        },
+        -- branch = 'main',
+        config = load_config('ui.bookmarks'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
+
     {
         'windwp/nvim-autopairs',
         config = load_config('lang.autopairs'),
@@ -202,10 +201,12 @@ local plugins = {
         config = load_config('lang.treesitter'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
-    -- {
-    --     'folke/zen-mode.nvim',
-    --     config = load_config('ui.zen-mode'),
-    -- },
+    {
+        'folke/zen-mode.nvim',
+
+        event = { 'BufReadPre', 'BufNewFile' },
+        config = load_config('ui.zen-mode'),
+    },
     { -- Search text and if color => show color
         "NvChad/nvim-colorizer.lua",
         event = { "BufReadPre", "BufNewFile" },
@@ -250,18 +251,12 @@ local plugins = {
     --     config = load_config('tools.VimVisualMulti'),
 
     -- },
-    -- {
-    --     'echasnovski/mini.surround',
-    --     version = '*',
-    --     config = load_config('lang.surround'),
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
-    -- {
-    --     'echasnovski/mini.ai',
-    --     version = '*',
-    --     config = load_config('lang.ai'),
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
+    {
+        'echasnovski/mini.surround',
+        version = '*',
+        config = load_config('lang.surround'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
 
     -- {
     --     'm4xshen/hardtime.nvim',

@@ -44,6 +44,7 @@ local setup = {
 function TelescopeFindConfigFiles()
     require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
 end
+
 local opts = {
     mode = 'n',
     prefix = '<leader>',
@@ -72,9 +73,8 @@ local mappings = {
         l = { '<cmd>Telescope resume<cr>', '[R]esume Last Search' },
         n = { '<cmd>:lua TelescopeFindConfigFiles() <cr>', '[N]eovim config files' },
         v = { '<cmd>Telescope vim_options<cr>', '[V]im Options' },
-        e = { '<cmd>Oil<cr>', 'Dir Editor' },--??
-        L = { '<cmd>Telescope loclist<cr>', 'Location List' },--??
-        q = { '<cmd>Telescope quickfix<cr>', '[Q]uickfix' },--??
+        L = { '<cmd>Telescope loclist<cr>', 'Location List' }, --??
+        q = { '<cmd>Telescope quickfix<cr>', '[Q]uickfix' },   --??
     },
     g = {
         name = icons.git.Octoface .. 'Git',
@@ -92,113 +92,26 @@ local mappings = {
         n = { '<cmd>Telescope notify<cr>', 'Notifications' },
         z = { '<cmd>ZenMode<cr>', 'ZenMode' },
     },
-    c = {
-        name = icons.ui.NeoVim .. 'Config',
-        f = { '<cmd>lua vim.lsp.buf.format({async = true})<cr>', 'Format File' }, -->??
-        i = { vim.show_pos, 'Inspect Position' },
-        l = { '<cmd>:g/^\\s*$/d<cr>', 'Clean Empty Lines' },
-        n = { '<cmd>set relativenumber!<cr>', 'Relative Numbers' },
-        r = { '<cmd>Telescope reloader<cr>', 'Reload Module' },
-        R = { '<cmd>ReloadConfig<cr>', 'Reload Configs' },
-    },
-        p = {
+    p = {
         name = icons.ui.Package .. 'Project',
         l = { '<cmd>Lazy<cr>', 'Plugins' },
-        -- m = { '<cmd>Mason<cr>', 'Mason' },
-        -- s = { '<cmd>Lazy sync<cr>', 'Sync' },
-        -- u = { '<cmd>Lazy update<cr>', 'Update' },
+        s = { '<cmd>Sterm powershell<cr>', 'Node' },
     },
 
-    -- ------------------------------------------------------------
-    -- b = {--??
-    --     name = icons.ui.Bug .. 'Debug',
-    --     b = { '<cmd>DapToggleBreakpoint<cr>', 'Breakpoint' },
-    --     c = { '<cmd>DapContinue<cr>', 'Continue' },
-    --     i = { '<cmd>DapStepInto<cr>', 'Into' },
-    --     l = { "<cmd>lua require'dap'.run_last()<cr>", 'Last' },
-    --     o = { '<cmd>DapStepOver<cr>', 'Over' },
-    --     O = { '<cmd>DapStepOut<cr>', 'Out' },
-    --     r = { '<cmd>DapToggleRepl<cr>', 'Repl' },
-    --     R = { '<cmd>DapRestartFrame<cr>', 'Restart Frame' },
-    --     t = { '<cmd>DapUIToggle<cr>', 'Debugger' },
-    --     x = { '<cmd>DapTerminate<cr>', 'Exit' },
-    -- },
     l = {
         name = icons.ui.Gear .. 'LSP',
     },
 
-    t = {
-        name = icons.ui.Terminal .. 'Terminal',
-        n = { '<cmd>Sterm node<cr>', 'Node' },
-    },
     s = {
         name = icons.ui.Windows .. 'Split',
-        ['-'] = { '<C-w>v', 'Split Right'},
-        d = { '<C-w>c', 'Close Window' },
-        p = { '<C-w>p', 'Previous Window' },
-        t = { '<cmd>tabnew<cr>', 'New Tab' },
-        w = { '<cmd>w<cr>', 'Write' },
-        x = { '<cmd>x<cr>', 'Write and Quit' },
     },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
         f = { '<cmd>%y+<cr>', 'Copy Whole File' },
-        p = { '<cmd>CRpath<cr>', 'Copy Relative Path' },
-        P = { '<cmd>CApath<cr>', 'Copy Absolute Path' },
+        P = { '<cmd>CRpath<cr>', 'Copy Relative Path' },
+        p = { '<cmd>CApath<cr>', 'Copy Absolute Path' },
     },
-}
-local vopts = {
-    mode = 'v',
-    prefix = '<leader>',
-    buffer = nil,
-    silent = true,
-    noremap = true,
-    nowait = true,
-}
-local vmappings = {
-    l = {
-        name = icons.ui.Gear .. 'LSP',
-        a = '<cmd><C-U>Lspsaga range_code_action<CR>',
-    },
-    q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
-    Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
-    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
-}
-
-local no_leader_opts = {
-    mode = 'n',
-    prefix = '',
-    buffer = nil,
-    silent = true,
-    noremap = true,
-    nowait = true,
-}
-
-local no_leader_mappings = {
-
-    ['['] = {
-        name = icons.ui.ArrowLeft .. 'Previous',
-        b = { '<cmd>bprevious<cr>', 'Buffer' },
-        B = { '<cmd>bfirst<cr>', 'First Buffer' },
-        -- c = { '<cmd>Gitsigns prev_hunk<cr>', 'Previous Hunk' },
-        e = { 'g;', 'Edit' },
-        g = { '<cmd>Gitsigns prev_hunk<cr>', 'Git Hunk' },
-        j = { '<C-o>', 'Jump' },
-    },
-
-    [']'] = {
-        name = icons.ui.ArrowRight .. 'Next',
-        b = { '<cmd>bnext<cr>', 'Buffer' },
-        B = { '<cmd>blast<cr>', 'Buffer' },
-        -- c = { '<cmd>Gitsigns next_hunk<cr>', 'Next Hunk' },
-        e = { 'g,', 'Edit' },
-        g = { '<cmd>Gitsigns next_hunk<cr>', 'Git Hunk' },
-        j = { '<C-i>', 'Jump' },
-    },
-    ['#'] = { '<cmd>edit #<cr>', 'Alternate Buffer' },
 }
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
-which_key.register(vmappings, vopts)
-which_key.register(no_leader_mappings, no_leader_opts)
