@@ -116,9 +116,6 @@ map("n", "<leader>rb", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 map('n', '<leader>rr', "<cmd>Lspsaga rename<cr>", {desc ="Rename via LSP"})
 
 
--- // Easier would be to :e
--- map('i', 'jj', 'iiiiiii', opts)
-
 
 -- //Change current file
 
