@@ -8,14 +8,15 @@ local plugins = {
     ---- ======================== First Priority  =======================
     {
         "folke/tokyonight.nvim",
-        dependencies={
+        dependencies = {
             'navarasu/onedark.nvim',
+            "Shatur/neovim-ayu",
             -- "bluz71/vim-nightfly-guicolors",--ehh
             -- 'olimorris/onedarkpro.nvim',
             -- "rebelot/kanagawa.nvim", --5/10
             -- "ribru17/bamboo.nvim", --6/10
             -- "rose-pine/neovim", --3/10
-            -- "ellisonleao/gruvbox.nvim", --7/10
+            "ellisonleao/gruvbox.nvim", --7/10
             -- "marko-cerovac/material.nvim", --2/10
         },
         config = load_config('ui.colorscheme'),
@@ -28,7 +29,7 @@ local plugins = {
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = load_config('ui.oil'),
-        event = {'VimEnter' },
+        event = { 'VimEnter' },
     },
 
     -- Telescope
@@ -67,7 +68,7 @@ local plugins = {
         branch = 'harpoon2',
         config = load_config('tools.harpoon'),
         event = { 'BufReadPre', 'BufNewFile', 'VimEnter' },
-        priority=1000,
+        priority = 1000,
     },
     {
         'echasnovski/mini.comment',
@@ -96,7 +97,7 @@ local plugins = {
     {
         "LintaoAmons/bookmarks.nvim",
         dependencies = {
-            {"stevearc/dressing.nvim"}
+            { "stevearc/dressing.nvim" }
         },
         -- branch = 'main',
         config = load_config('ui.bookmarks'),
@@ -120,7 +121,7 @@ local plugins = {
     {
         config = load_config('ui.auto-session'),
         "rmagatti/auto-session",
-        event = {'VimEnter' },
+        event = { 'VimEnter' },
     },
     {
         '2kabhishek/termim.nvim', -- For lazyGit
@@ -130,7 +131,7 @@ local plugins = {
         'lewis6991/gitsigns.nvim',
         cmd = 'Gitsigns',
         config = load_config('tools.gitsigns'),
-        event = {'VimEnter' },
+        event = { 'VimEnter' },
     },
     -- --  ----------------LSP ----------------
     {
@@ -146,8 +147,8 @@ local plugins = {
         'neovim/nvim-lspconfig',
         dependencies = {
             { "antosha417/nvim-lsp-file-operations", config = true },
-            { "j-hui/fidget.nvim", opts = {} }, -- Right bottom corner when enter it shows the %  of LSP
-            { 'hrsh7th/cmp-nvim-lsp',opts={}},
+            { "j-hui/fidget.nvim",                   opts = {} }, -- Right bottom corner when enter it shows the %  of LSP
+            { 'hrsh7th/cmp-nvim-lsp',                opts = {} },
         },
         config = load_config('lang.lspconfig'),
         event = { 'BufReadPre', 'BufNewFile' },
@@ -157,7 +158,12 @@ local plugins = {
         config = load_config('lang.lspsaga'),
         event = 'LspAttach',
     },
-
+    {
+        "stevearc/conform.nvim",
+        config = load_config('lang.formatter'),
+        event = { 'BufReadPre', 'BufNewFile' },
+  lazy = true,
+    },
     -- ======================== Third Priority =======================
     -- {
     --     'folke/flash.nvim',

@@ -2,6 +2,10 @@ require('onedark').setup {
     style = 'darker',
   --warmer, dark, darker
 }
+
+
+require("gruvbox").setup({})
+require("ayu").setup({})
 -- require('onedark').load()
 
     local bg = "#011628"
@@ -36,7 +40,7 @@ require("tokyonight").setup({
 })
 
 require("tokyonight").setup({})
-vim.cmd([[colorscheme tokyonight]])
+-- vim.cmd([[colorscheme tokyonight]])
 -- vim.cmd([[colorscheme onedark-vivid]]) -- 7/10 a lot of red ehh
 -- vim.cmd([[colorscheme nightfly]]) --ehhh
 -- vim.cmd([[colorscheme tokyonight]]) --ehhh
@@ -44,3 +48,5 @@ vim.cmd([[colorscheme tokyonight]])
 -- vim.cmd([[colorscheme bamboo]]) --6/10
 -- vim.cmd([[colorscheme rose-pine]]) --6/10
 -- vim.cmd([[colorscheme gruvbox]]) --6/10
+vim.cmd([[colorscheme ayu-mirage]]) --6/10
+
