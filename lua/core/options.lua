@@ -1,11 +1,17 @@
 -- -- Highlight tml files like C files
+--
 vim.cmd("autocmd BufNewFile,BufRead *.tml,*.cfg,*.cp set ft=c")
 vim.cmd("let g:netrw_liststyle = 3")
+
+-- vim.cmd(":set relativenumber")
+-- vim.cmd(":set <S-Down>=^[[1;2B")
+
+vim.api.nvim_set_keymap('n', '<C-S-Down>', 'gg', { noremap = true, silent = true })
 
 vim.g.have_nerd_font = true
 vim.opt.showmode = false
 
- local opt = vim.opt -- for conciseness
+local opt = vim.opt -- for conciseness
 opt.fillchars = { fold = " " }
 
 -- BSSSSSSSSSSSSSSSSSSSSS =======================
@@ -24,28 +30,28 @@ local options = {
     autoindent = true,
     autowrite = true,
     backspace = 'indent,eol,start',
-    backup = false, -- creates a backup file
+    backup = false,                        -- creates a backup file
     breakindent = true,
-    clipboard = 'unnamedplus', -- allows neovim to access the system clipboard
-    cmdheight = 1, -- more space in the neovim command line for displaying messages
+    clipboard = 'unnamedplus',             -- allows neovim to access the system clipboard
+    cmdheight = 1,                         -- more space in the neovim command line for displaying messages
     completeopt = 'menu,menuone,noselect', -- mostly just for cmp
     -- conceallevel = 0, -- so that `` is visible in markdown files
-    confirm = true, -- Confirm to save changes before exiting modified buffer
-    cursorline = true, -- highlight the current line
-    expandtab = true, -- convert tabs to spaces
-    fileencoding = 'utf-8', -- the encoding written to a file
-    formatoptions = 'jlnqt', -- set formatoptions, check help fo-table
+    confirm = true,                        -- Confirm to save changes before exiting modified buffer
+    cursorline = true,                     -- highlight the current line
+    expandtab = true,                      -- convert tabs to spaces
+    fileencoding = 'utf-8',                -- the encoding written to a file
+    formatoptions = 'jlnqt',               -- set formatoptions, check help fo-table
     grepformat = '%f:%l:%c:%m',
     grepprg = 'rg --vimgrep',
     hlsearch = true, -- highlight all matches on previous search pattern
     ignorecase = true, -- ignore case in search patterns
-    inccommand = 'split',-- preview incremental substitute
+    inccommand = 'split', -- preview incremental substitute
     laststatus = 3,
     listchars = { trail = '', tab = '', nbsp = '_', extends = '>', precedes = '<' }, -- highlight
     -- list = true, --This is the genius parameter which sets the markings of empty characters etc
     mouse = 'a', -- allow the mouse to be used in neovim
     number = true, -- set numbered lines
-    relativenumber = true, -- set relative numbered lines
+    -- relativenumber = true, -- set relative numbered lines
     numberwidth = 4, -- set number column width to 2 {default 4}
     pumblend = 10, -- Popup blen
     pumheight = 10, -- pop up menu height
@@ -58,25 +64,26 @@ local options = {
     showtabline = 0, -- always show tabs
     si = true,
     sidescrolloff = 8,
-    signcolumn = 'yes', -- always show the sign column, otherwise it would shift the text each time
-    smartcase = false, -- smart case
-    smartindent = true, -- make indenting smarter again
+    signcolumn = 'yes',             -- always show the sign column, otherwise it would shift the text each time
+    smartcase = false,              -- smart case
+    smartindent = true,             -- make indenting smarter again
     smarttab = true,
-    splitbelow = true, -- force all horizontal splits to go below current window
-    splitright = true, -- force all vertical splits to go to the right of current window
-    swapfile = false, -- creates a swapfile
-    tabstop = 4, -- insert 2 spaces for a tab
-    termguicolors = true, -- set term gui colors (most terminals support this)
-    timeoutlen = 300, -- time to wait for a mapped sequence to complete (in milliseconds)
-    undofile = false, -- enable persistent undo
+    splitbelow = true,              -- force all horizontal splits to go below current window
+    splitright = true,              -- force all vertical splits to go to the right of current window
+    swapfile = false,               -- creates a swapfile
+    tabstop = 4,                    -- insert 2 spaces for a tab
+    termguicolors = true,           -- set term gui colors (most terminals support this)
+    timeoutlen = 300,               -- time to wait for a mapped sequence to complete (in milliseconds)
+    undofile = false,               -- enable persistent undo
     undolevels = 10000,
-    updatetime = 750, -- faster completion (4000ms default)
-    wildmenu = true, -- wildmenu
+    updatetime = 750,               -- faster completion (4000ms default)
+    wildmenu = true,                -- wildmenu
     wildmode = 'longest:full,full', -- Command-line completion mode
-    winminwidth = 5, -- Minimum window width
-    wrap = false, -- display lines as one long line
-    writebackup = false, -- do not edit backups
-    fileformats='dos',
+    winminwidth = 5,                -- Minimum window width
+    wrap = false,                   -- display lines as one long line
+    writebackup = false,            -- do not edit backups
+    fileformats = 'dos',
+
 }
 for k, v in pairs(options) do
     vim.opt[k] = v
@@ -110,4 +117,3 @@ vim.g.markdown_recommended_style = 0
 -- vim.cmd('set whichwrap+=<,>,[,],h,l')
 
 -- vim.cmd([[set iskeyword+=-]])
-

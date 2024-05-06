@@ -27,7 +27,7 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
 end
 
 vim.o.foldcolumn = "0" -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 --vim.o.foldenable = true
 
@@ -54,26 +54,40 @@ vim.keymap.set("n", "zp", function()
 end)
 -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
 
-function CloseFoldOpens(opens_level)
-    local lineno = 2
-    local last = vim.fn.line("$")
-    while lineno < last do
-        if vim.fn.foldclosed(lineno) ~= -1 then
-            lineno = vim.fn.foldclosedend(lineno) + 1
-        elseif
-            vim.fn.foldlevel(lineno) > vim.fn.foldlevel(lineno - 1)
-            and vim.fn.foldlevel(lineno) == opens_level
-            then
-                vim.api.nvim_command(tostring(lineno) .. "foldclose")
-                lineno = vim.fn.foldclosedend(lineno) + 1
-            else
-                lineno = lineno + 1
-            end
-        end
-    end
+-- function CloseFoldOpens(opens_level)
+--     local lineno = 2
+--     local last = vim.fn.line("$")
+--     while lineno < last do
+--         if vim.fn.foldclosed(lineno) ~= -1 then
+--             lineno = vim.fn.foldclosedend(lineno) + 1
+--         elseif
+--             vim.fn.foldlevel(lineno) > vim.fn.foldlevel(lineno - 1)
+--             and vim.fn.foldlevel(lineno) == opens_level
+--         then
+--             vim.api.nvim_command(tostring(lineno) .. "foldclose")
+--             lineno = vim.fn.foldclosedend(lineno) + 1
+--         else
+--             lineno = lineno + 1
+--         end
+--     end
+-- end
 
-    vim.api.nvim_set_keymap("n", "z1", ":%foldclose<CR>", { silent = true })
-    vim.api.nvim_set_keymap("n", "z2", ":lua CloseFoldOpens(2)<CR>", { silent = true })
-    vim.api.nvim_set_keymap("n", "z3", ":lua CloseFoldOpens(3)<CR>", { silent = true })
-    vim.api.nvim_set_keymap("n", "z4", ":lua CloseFoldOpens(4)<CR>", { silent = true })
-    vim.api.nvim_set_keymap("n", "z5", ":lua CloseFoldOpens(5)<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "z1", ":%foldclose<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "z2", ":lua CloseFoldOpens(2)<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "z3", ":lua CloseFoldOpens(3)<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "z4", ":lua CloseFoldOpens(4)<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "z5", ":lua CloseFoldOpens(5)<CR>", { silent = true })
+
+
+
+
+vim.api.nvim_set_keymap("n", "<leader>f0", ":set foldlevel=0 <CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f1", ":set foldlevel=1<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f2", ":set foldlevel=2<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f3", ":set foldlevel=3<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f4", ":set foldlevel=4<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f5", ":set foldlevel=5<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f6", ":set foldlevel=6<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f7", ":set foldlevel=7<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f8", ":set foldlevel=8<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f9", ":set foldlevel=9<CR>", { silent = true })
