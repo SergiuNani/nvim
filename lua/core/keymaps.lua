@@ -10,7 +10,9 @@ map('n', '<Space>', '', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-------------------==Eazy Life==------------------
+
+-- ============================== Easy Life ==============================
+--
 map("n", "<leader><leader>", "<cmd>so<cr>", { desc = ":so" })
 map({ 'v', 'x', 'n' }, "x", '"_x', { desc = "Stop copying to clipboard" })
 map({ 'v', 'x', 'n' }, "X", '"_X', { desc = "Stop copying to clipboard" })
@@ -30,7 +32,25 @@ map("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })
 map("v", "<C-c>", "y", { desc = "Copy text" })
 map("n", "<C-c>", 'yy', { desc = "Copy text" })
 
------------------==Navigation keymaps==------------------
+-- ============================== Window Management ==============================
+
+map("n", "<leader>ss", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
+map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
+map("n", "<leader>sh", "<cmd>split<cr>", { desc = "Horizontal Split File" })
+map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+
+map("n", "<C-h>", "<C-w>h", { desc = "Move Left" })
+map("n", "<C-j>", "<C-w>j", { desc = "Move Down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Move Up" })
+map("n", "<C-l>", "<C-w>l", { desc = "Move Right" })
+
+
+map("n", "<C-A-Up>", "<cmd>resize +10<cr>", { desc = "Increase window height" })
+map("n", "<C-A-Down>", "<cmd>resize -10<cr>", { desc = "Decrease window height" })
+map("n", "<C-A-Right>", "<cmd>vertical resize +10<cr>", { desc = "Increase window width" })
+map("n", "<C-A-Left>", "<cmd>vertical resize -10<cr>", { desc = "Decrease window width" })
+
+-- ============================== Navigation Keymaps ==============================
 
 map("n", "<A-d>", "<C-d>zz", { desc = "Move half screen down" })
 map("n", "<A-e>", "<C-u>zz", { desc = "Move half screen up" })
@@ -46,24 +66,13 @@ map("n", "H", "^", { desc = "goto beginning of line" })
 map("n", "K", "<cmd>bprevious<cr>", { desc = "goto prev buffer" })
 map("n", "J", "<cmd>bnext<cr>", { desc = "goto next buffer" })
 
-map("n", "<leader>ss", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
-map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
-map("n", "<leader>sh", "<cmd>split<cr>", { desc = "Horizontal Split File" })
-map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-
-map("n", "<C-h>", "<C-w>h", { desc = "Move Left" })
-map("n", "<C-j>", "<C-w>j", { desc = "Move Down" })
-map("n", "<C-k>", "<C-w>k", { desc = "Move Up" })
-map("n", "<C-l>", "<C-w>l", { desc = "Move Right" })
-map("n", "<leader>rr", [[:cdo %s/\<<C-r><C-w>\>/<C-r><C-w>/g<Left><Left>]])
-
-map("n", "<C-A-Up>", "<cmd>resize +10<cr>", { desc = "Increase window height" })
-map("n", "<C-A-Down>", "<cmd>resize -10<cr>", { desc = "Decrease window height" })
-map("n", "<C-A-Right>", "<cmd>vertical resize +10<cr>", { desc = "Increase window width" })
-map("n", "<C-A-Left>", "<cmd>vertical resize -10<cr>", { desc = "Decrease window width" })
+map("i", "<C-h>", "<Esc>I", { desc = "goto start of line in Insert mode" })
+map("i", "<C-l>", "<Esc>A", { desc = "goto end of line in Insert mode" })
 
 
------------------==Editing Options==------------------
+
+-- ============================== Editing Keymaps ==============================
+
 -- Duplicate line or block
 map('n', '<C-A-j>', "yyp", opts)
 map('n', '<C-A-k>', "yyP", opts)
@@ -88,6 +97,11 @@ map({ 'v', 'x' }, '<A-Up>', ":move '<-2<CR>gv=gv", opts)
 
 
 map("n", "<Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" })
+
+map("n", "<Leader>il", "i<C-O>40i=<ESC>i<Space><Space><C-O>40i=<Esc>b<Left>",
+    { desc = "Insert line of ====" })
+
+
 -- map("n", "<C-Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" }) --Dont work
 -- map("n", "<S-Enter>", "O<ESC>", { desc = "Create new line in normal/insert mode" })
 
@@ -138,7 +152,6 @@ map("n", "<leader>cd", [[<cmd>:%s/^\(.*\)\(\n\1\)\+$/\1<cr>]], { desc = "Reload 
 
 
 
-
 --:%s/\r//g                   : Dellete DOS returns ^M
 --
 --:%s/\r/\r/g                 : Turn DOS returns ^M into real returns
@@ -155,4 +168,3 @@ map("n", "<leader>cd", [[<cmd>:%s/^\(.*\)\(\n\1\)\+$/\1<cr>]], { desc = "Reload 
 --map <leader>sa zg " Add word under cursor to the good words file
 --nnoremap <leader>s? z=  " Suggest correct word for word under the cursor
 -- " Insert commented horizontal line
--- nnoremap <Leader>l i<C-O>79i=<Esc>

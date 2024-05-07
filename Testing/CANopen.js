@@ -51,6 +51,7 @@ export function CobID_who_dis(cob_id) {
         // axis_id = cob_id - 1 + 1
         var a = []
         for (let i = 0; i < 5; i++) {
+
             if (cob_id & (1 << i)) {
                 a.push(`G${i + 1}`)
             }
