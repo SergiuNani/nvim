@@ -29,12 +29,3 @@ todo_comments.setup({
         TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
     },
 })
-
-
---PERF:
---HACK:
---TODO:
---NOTE:
---FIX:
---BUG:
---WARNING:

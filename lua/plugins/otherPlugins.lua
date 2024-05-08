@@ -6,7 +6,6 @@ end
 
 local plugins2 = {
 
-
     -- ======================== UI components  =======================
     {
         'stevearc/dressing.nvim',

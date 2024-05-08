@@ -60,12 +60,12 @@ local opts = { noremap = true, silent = true }
 
 
 
-map("n", "<Leader>c1", [[:colorscheme ayu-mirage<CR>]], { desc = "Colorscheme 1" })
-map("n", "<Leader>c2", [[:colorscheme tokyonight-moon<CR>]], { desc = "Colorscheme 2" })
-map("n", "<Leader>c3", [[:colorscheme tokyonight-night<CR>]], { desc = "Colorscheme 3" })
-map("n", "<Leader>c4", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 4" })
-map("n", "<Leader>c5", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 5" })
+map("n", "<Leader>1", [[:colorscheme ayu-mirage<CR>]], { desc = "Colorscheme 1" })
+map("n", "<Leader>2", [[:colorscheme tokyonight-moon<CR>]], { desc = "Colorscheme 2" })
+map("n", "<Leader>3", [[:colorscheme tokyonight-night<CR>]], { desc = "Colorscheme 3" })
+map("n", "<Leader>4", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 4" })
+map("n", "<Leader>5", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 5" })
 
-map("n", "<Leader>c6", [[:colorscheme gruvbox<CR>]], { desc = "Colorscheme 6" })
-map("n", "<Leader>c7", [[:colorscheme tokyonight-day<CR>]], { desc = "Colorscheme 7" })
-map("n", "<Leader>c8", [[:colorscheme ayu-light<CR>]], { desc = "Colorscheme 8" })
+map("n", "<Leader>6", [[:colorscheme gruvbox<CR>]], { desc = "Colorscheme 6" })
+map("n", "<Leader>7", [[:colorscheme tokyonight-day<CR>]], { desc = "Colorscheme 7" })
+map("n", "<Leader>8", [[:colorscheme ayu-light<CR>]], { desc = "Colorscheme 8" })
