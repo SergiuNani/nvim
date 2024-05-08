@@ -38,6 +38,7 @@ map("n", "<leader>ss", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
 map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
 map("n", "<leader>sh", "<cmd>split<cr>", { desc = "Horizontal Split File" })
 map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+map("n", "<leader>sm", "<cmd>MaximizerToggle<CR>", { desc = "Toggle full zoom split" })
 
 map("n", "<C-h>", "<C-w>h", { desc = "Move Left" })
 map("n", "<C-j>", "<C-w>j", { desc = "Move Down" })

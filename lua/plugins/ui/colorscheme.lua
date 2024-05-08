@@ -1,22 +1,21 @@
 require('onedark').setup {
     style = 'darker',
-  --warmer, dark, darker
+    --warmer, dark, darker
 }
-
 
 require("gruvbox").setup({})
 require("ayu").setup({})
 -- require('onedark').load()
 
-    local bg = "#011628"
-    local bg_dark = "#011423"
-    local bg_highlight = "#143652"
-    local bg_search = "#0A64AC"
-    local bg_visual = "#275378"
-    local fg = "#CBE0F0"
-    local fg_dark = "#B4D0E9"
-    local fg_gutter = "#627E97"
-    local border = "#547998"
+local bg = "#011628"
+local bg_dark = "#011423"
+local bg_highlight = "#143652"
+local bg_search = "#0A64AC"
+local bg_visual = "#275378"
+local fg = "#CBE0F0"
+local fg_dark = "#B4D0E9"
+local fg_gutter = "#627E97"
+local border = "#547998"
 
 require("tokyonight").setup({
     style = "night",
@@ -50,3 +49,23 @@ require("tokyonight").setup({})
 -- vim.cmd([[colorscheme gruvbox]]) --6/10
 vim.cmd([[colorscheme ayu-mirage]]) --6/10
 
+
+
+local function map(mode, lhs, rhs, opts)
+    opts = opts or {}
+    opts.silent = opts.silent ~= false
+    vim.keymap.set(mode, lhs, rhs, opts)
+end
+local opts = { noremap = true, silent = true }
+
+
+
+map("n", "<Leader>c1", [[:colorscheme ayu-mirage<CR>]], { desc = "Colorscheme 1" })
+map("n", "<Leader>c2", [[:colorscheme tokyonight-moon<CR>]], { desc = "Colorscheme 2" })
+map("n", "<Leader>c3", [[:colorscheme tokyonight-night<CR>]], { desc = "Colorscheme 3" })
+map("n", "<Leader>c4", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 4" })
+map("n", "<Leader>c5", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 5" })
+
+map("n", "<Leader>c6", [[:colorscheme gruvbox<CR>]], { desc = "Colorscheme 6" })
+map("n", "<Leader>c7", [[:colorscheme tokyonight-day<CR>]], { desc = "Colorscheme 7" })
+map("n", "<Leader>c8", [[:colorscheme ayu-light<CR>]], { desc = "Colorscheme 8" })

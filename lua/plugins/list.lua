@@ -4,34 +4,11 @@ local function load_config(package)
     end
 end
 
+-- Uncomment the line below to load only the nexessary plugins
+local plugins2 = require('plugins.otherPlugins').plugins2
+-- local plugins2 = {}
 local plugins = {
-    ---- ======================== First Priority  =======================
-    {
-        "folke/tokyonight.nvim",
-        dependencies = {
-            'navarasu/onedark.nvim',
-            "Shatur/neovim-ayu",
-            -- "bluz71/vim-nightfly-guicolors",--ehh
-            -- 'olimorris/onedarkpro.nvim',
-            -- "rebelot/kanagawa.nvim", --5/10
-            -- "ribru17/bamboo.nvim", --6/10
-            -- "rose-pine/neovim", --3/10
-            "ellisonleao/gruvbox.nvim", --7/10
-            -- "marko-cerovac/material.nvim", --2/10
-        },
-        config = load_config('ui.colorscheme'),
-        lazy = false,
-        priority = 1000,
-    },
-    {
-        'stevearc/oil.nvim',
-        opts = {},
-        -- Optional dependencies
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = load_config('ui.oil'),
-        event = { 'VimEnter' },
-    },
-
+    ---- ======================== first priority  =======================
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
@@ -46,6 +23,14 @@ local plugins = {
         },
         config = load_config('tools.telescope'),
         cmd = 'Telescope',
+    },
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = load_config('ui.oil'),
+        event = { 'vimenter' },
     },
 
     --  Completion ----------------
@@ -77,7 +62,6 @@ local plugins = {
         config = load_config('lang.comment'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
-
     {
         "kevinhwang91/nvim-ufo", --Folding options
         dependencies = {
@@ -86,42 +70,34 @@ local plugins = {
         config = load_config('tools.ufo'),
         event = { 'VimEnter', 'BufNewFile' },
     },
-
     {
         'folke/which-key.nvim',
         config = load_config('tools.which-key'),
         event = 'VeryLazy',
     },
-
+    {
+        "folke/tokyonight.nvim",
+        dependencies = {
+            "shatur/neovim-ayu",
+            'navarasu/onedark.nvim',
+            "ellisonleao/gruvbox.nvim", --7/10
+            -- "bluz71/vim-nightfly-guicolors",--ehh
+            -- 'olimorris/onedarkpro.nvim',
+            -- "rebelot/kanagawa.nvim", --5/10
+            -- "ribru17/bamboo.nvim", --6/10
+            -- "rose-pine/neovim", --3/10
+            -- "marko-cerovac/material.nvim", --2/10
+        },
+        config = load_config('ui.colorscheme'),
+        lazy = false,
+        priority = 1000,
+    },
     -- ======================== Secondary Priority  =======================
     {
-        "LintaoAmons/bookmarks.nvim",
-        dependencies = {
-            { "stevearc/dressing.nvim" }
-        },
-        -- branch = 'main',
-        config = load_config('ui.bookmarks'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-
-    {
-        'windwp/nvim-autopairs',
-        config = load_config('lang.autopairs'),
-        event = 'InsertEnter',
-    },
-    {
-        'nvim-tree/nvim-tree.lua',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-        },
-        config = load_config('tools.nvim-tree'),
-        cmd = 'NvimTreeToggle',
-    },
-
-    {
-        config = load_config('ui.auto-session'),
-        "rmagatti/auto-session",
-        event = { 'VimEnter' },
+        'rcarriga/nvim-notify',
+        config = load_config('ui.notify'),
+        event = 'VeryLazy',
+        cmd = 'Notifications',
     },
     {
         '2kabhishek/termim.nvim', -- For lazyGit
@@ -132,6 +108,17 @@ local plugins = {
         cmd = 'Gitsigns',
         config = load_config('tools.gitsigns'),
         event = { 'VimEnter' },
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        config = load_config('ui.lualine'),
+        event = { 'BufReadPre', 'BufNewFile' },
+    },
+    {
+        'echasnovski/mini.surround',
+        version = '*',
+        config = load_config('lang.surround'),
+        event = { 'BufReadPre', 'BufNewFile' },
     },
     -- --  ----------------LSP ----------------
     {
@@ -158,43 +145,7 @@ local plugins = {
         config = load_config('lang.lspsaga'),
         event = 'LspAttach',
     },
-    {
-        "stevearc/conform.nvim",
-        config = load_config('lang.formatter'),
-        event = { 'BufReadPre', 'BufNewFile' },
-  lazy = true,
-    },
     -- ======================== Third Priority =======================
-    -- {
-    --     'folke/flash.nvim',
-    --     config = load_config('tools.flash'),
-    --     keys = {
-    --         {
-    --             's',
-    --             mode = { 'n', 'x', 'o' },
-    --             function()
-    --                 require('flash').jump()
-    --             end,
-    --             desc = 'Flash',
-    --         },
-    --         {
-    --             'S',
-    --             mode = { 'n', 'x', 'o' },
-    --             function()
-    --                 require('flash').treesitter()
-    --             end,
-    --             desc = 'Flash Treesitter',
-    --         },
-    --     },
-    -- },
-
-
-    --
-    {
-        "https://github.com/ThePrimeagen/vim-be-good",
-        event = 'UIEnter',
-    },
-    --  Tresitter ----------------
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
@@ -207,84 +158,14 @@ local plugins = {
         config = load_config('lang.treesitter'),
         event = { 'BufReadPre', 'BufNewFile' },
     },
-    {
-        'folke/zen-mode.nvim',
-
-        event = { 'BufReadPre', 'BufNewFile' },
-        config = load_config('ui.zen-mode'),
-    },
-    { -- Search text and if color => show color
-        "NvChad/nvim-colorizer.lua",
-        event = { "BufReadPre", "BufNewFile" },
-        config = true,
-    },
-    {
-        'nvim-lualine/lualine.nvim',
-        config = load_config('ui.lualine'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-    {
-        'HiPhish/rainbow-delimiters.nvim',
-        config = load_config('ui.rainbow'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-    {
-        'rcarriga/nvim-notify',
-        config = load_config('ui.notify'),
-        event = 'VeryLazy',
-        cmd = 'Notifications',
-    },
-    {
-        'stevearc/dressing.nvim',
-        --Basically wraps UI around renaming/adding files in nvim-tree
-        config = load_config('ui.dressing'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-    {
-        "shellRaining/hlchunk.nvim",
-        event = { "UIEnter" },
-        config = load_config('ui.hlchunk'),
-    },
-
-    -- { -- This or hlchunk not both
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     config = load_config('ui.indentline'),
-    --     main = 'ibl',
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
-    -- { --???? to investigate
-    --     "mg979/vim-visual-multi",
-    --     config = load_config('tools.VimVisualMulti'),
-
-    -- },
-    {
-        'echasnovski/mini.surround',
-        version = '*',
-        config = load_config('lang.surround'),
-        event = { 'BufReadPre', 'BufNewFile' },
-    },
-
-    -- {
-    --     'm4xshen/hardtime.nvim',
-    --     dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-    --     config = function()
-    --         require('hardtime').setup({ enabled = true })
-    --     end,
-    --     cmd = 'Hardtime',
-    -- },
-
-
-
-    -- {
-    --     'zbirenbaum/copilot.lua',
-    --     dependencies = {
-    --         'zbirenbaum/copilot-cmp',
-    --     },
-    --     config = load_config('lang.copilot'),
-    --     event = 'InsertEnter',
-    -- },
 
 }
+
+
+
+for _, plugin in ipairs(plugins2) do
+    table.insert(plugins, plugin)
+end
 
 local lsp_servers = {
     -- 'eslint',

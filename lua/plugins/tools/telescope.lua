@@ -12,7 +12,8 @@ local function Teli_cmd(func_name, Ttype)
     --get_dropdown
     --get_ivy
     --get_cursor
-    return string.format("<cmd>:lua require'telescope.builtin'.%s(require('telescope.themes').%s({}))<CR>",func_name,Ttype)
+    return string.format("<cmd>:lua require'telescope.builtin'.%s(require('telescope.themes').%s({}))<CR>", func_name,
+        Ttype)
 end
 
 
@@ -125,11 +126,11 @@ telescope.setup({
         menufacture = { mappings = { main_menu = { [{ 'i', 'n' }] = '<C-e>' } } },
     },
 
-    map("n","<leader>f`",Teli_cmd("marks", "get_dropdown"),{ desc = "Lists of vim marks and their values" }),
-    map("n","<leader>fk",Teli_cmd("commands", "get_dropdown"),{ desc = "Telescope Commands" }),
-    map("n", "<leader>fm", Teli_cmd("keymaps", "get_dropdown"), { desc = "Show mappings" }),
+    map("n", "<leader>f`", Teli_cmd("marks", "get_dropdown"), { desc = "Lists of vim marks and their values" }),
+    -- map("n","<leader>fk",Teli_cmd("commands", "get_dropdown"),{ desc = "Telescope Commands" }),
+    map("n", "<leader>fk", Teli_cmd("keymaps", "get_dropdown"), { desc = "Show mappings" }),
     map("n", "<leader>fh", Teli_cmd("help_tags", "get_dropdown"), { desc = "Serch in HELP" }),
-    map("n","<leader>fy",Teli_cmd("colorscheme", "get_dropdown"),{ desc = "Colorschemes" }),
+    map("n", "<leader>fy", Teli_cmd("colorscheme", "get_dropdown"), { desc = "Colorschemes" }),
     map("n", "<leader>fi", Teli_cmd("vim_options", "get_dropdown"), { desc = "VimOptions" }),
     map("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" }),
 
