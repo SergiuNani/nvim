@@ -100,16 +100,6 @@ local plugins = {
         cmd = 'Notifications',
     },
     {
-        '2kabhishek/termim.nvim', -- For lazyGit
-        cmd = { 'Fterm', 'FTerm', 'Sterm', 'STerm', 'Vterm', 'VTerm' },
-    },
-    {
-        'lewis6991/gitsigns.nvim',
-        cmd = 'Gitsigns',
-        config = load_config('tools.gitsigns'),
-        event = { 'VimEnter' },
-    },
-    {
         'nvim-lualine/lualine.nvim',
         config = load_config('ui.lualine'),
         event = { 'BufReadPre', 'BufNewFile' },
