@@ -53,6 +53,10 @@ map("n", "<C-A-Left>", "<cmd>vertical resize -10<cr>", { desc = "Decrease window
 
 -- ============================== Navigation Keymaps ==============================
 
+map("n", "gh", "H", { desc = "go High" })
+map("n", "gl", "L", { desc = "go Low" })
+map("n", "gm", "M", { desc = "go Middle" })
+
 map("n", "<A-d>", "<C-d>zz", { desc = "Move half screen down" })
 map("n", "<A-e>", "<C-u>zz", { desc = "Move half screen up" })
 map("n", "<a-Right>", "<C-i>", { desc = "Move forward in jumps" })
@@ -80,7 +84,7 @@ map('n', '<C-A-k>', "yyP", opts)
 map('v', '<C-A-j>', "yPgv", opts)
 map('v', '<C-A-k>', "yPgv", opts)
 
-map('n', '<leader>d', "dd", opts)
+map('n', '<leader>d', "cc<ESC>", opts)
 
 map('n', '<A-j>', ":m .+1<CR>==", opts)
 map('n', '<A-k>', ":m .-2<CR>==", opts)
@@ -106,7 +110,8 @@ map("n", "<Leader>il", "i<C-O>40i=<ESC>i<Space><Space><C-O>40i=<Esc>b<Left>",
 -- map("n", "<C-Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" }) --Dont work
 -- map("n", "<S-Enter>", "O<ESC>", { desc = "Create new line in normal/insert mode" })
 
-map("i", "<C-Del>", "<esc>lce", { desc = "Delete forward" })
+-- map("i", "<C-Del>", "<esc>hce", { desc = "Delete forward" })
+-- map("i", "<BS>", "gg", { desc = "Delete forward" })
 map("i", "<A-Del>", "<esc>lce", { desc = "Delete forward" })
 map("i", "<A-BS>", "<C-w>", { desc = "Delete forward" })
 
