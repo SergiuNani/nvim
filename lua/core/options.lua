@@ -45,6 +45,7 @@ local options = {
     grepprg = 'rg --vimgrep',
     hlsearch = true, -- highlight all matches on previous search pattern
     ignorecase = true, -- ignore case in search patterns
+    smartcase = false, -- smart case
     inccommand = 'split', -- preview incremental substitute
     laststatus = 3,
     listchars = { trail = '', tab = '', nbsp = '_', extends = '>', precedes = '<' }, -- highlight
@@ -65,7 +66,6 @@ local options = {
     si = true,
     sidescrolloff = 8,
     signcolumn = 'yes',             -- always show the sign column, otherwise it would shift the text each time
-    smartcase = false,              -- smart case
     smartindent = true,             -- make indenting smarter again
     smarttab = true,
     splitbelow = true,              -- force all horizontal splits to go below current window

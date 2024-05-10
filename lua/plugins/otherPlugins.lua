@@ -70,7 +70,6 @@ local plugins2 = {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = { "nvim-lua/plenary.nvim" },
         config = load_config('ui.todo-comments'),
-
     },
     -- ======================== Tricks  =======================
     --

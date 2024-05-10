@@ -56,6 +56,7 @@ map("n", "<C-A-Left>", "<cmd>vertical resize -10<cr>", { desc = "Decrease window
 map("n", "gh", "H", { desc = "go High" })
 map("n", "gl", "L", { desc = "go Low" })
 map("n", "gm", "M", { desc = "go Middle" })
+map("n", "gt", "%", { desc = "goto tag" })
 
 map("n", "<A-d>", "<C-d>zz", { desc = "Move half screen down" })
 map("n", "<A-e>", "<C-u>zz", { desc = "Move half screen up" })
@@ -155,6 +156,7 @@ map("n", "<leader>cr", "<cmd>Telescope reloader<cr>", { desc = "Reload Module" }
 map("n", "<leader>cR", "<cmd>ReloadConfig<cr>", { desc = "Reload Configs" })
 map("n", "<leader>cd", [[<cmd>:%s/^\(.*\)\(\n\1\)\+$/\1<cr>]], { desc = "Reload Configs" })
 
+map("n", "<leader>mm", "<cmd>MaximizerToggle<CR>", { desc = "Toggle current window in full view" })
 
 
 

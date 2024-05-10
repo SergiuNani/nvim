@@ -54,10 +54,10 @@ local opts = {
     nowait = true,
 }
 local mappings = {
-    q = { '<cmd>q<cr>', icons.ui.Close .. 'Quit' },
+    q = { '<cmd>x<cr>', icons.ui.Close .. 'Quit' },
     Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
     w = { '<cmd>w<cr>', icons.ui.Save .. 'Save' },
-    x = { '<cmd>x<cr>', icons.ui.Pencil .. 'Write and Quit' },
+    x = { '<cmd>q<cr>', icons.ui.Pencil .. 'Write and Quit' },
     f = {
         name = icons.ui.Telescope .. 'Find',
         --------------------==Find Files==--------------------
