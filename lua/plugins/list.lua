@@ -105,11 +105,17 @@ local plugins = {
         event = { 'BufReadPre', 'BufNewFile' },
     },
     {
-        'echasnovski/mini.surround',
+        'kylechui/nvim-surround',
         version = '*',
         config = load_config('lang.surround'),
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = "VeryLazy",
     },
+    -- {
+    --     'echasnovski/mini.surround',
+    --     version = '*',
+    --     config = load_config('lang.surround'),
+    --     event = { 'BufReadPre', 'BufNewFile' },
+    -- },
     -- --  ----------------LSP ----------------
     {
         'williamboman/mason.nvim',

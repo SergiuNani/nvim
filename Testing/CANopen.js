@@ -274,7 +274,7 @@ function extractDATAfromROW(row, index, original) {
     var potentialLength = row[index + 1]
     var potentialLengthinDec = hexToDec(potentialLength, 8)
     if (potentialLength == undefined) {
-        return 'invalid'
+        return ('"<invalid>"')
     }
     for (var aa = index + 2; aa < row.length; aa++) {
         //putting the tail together without the cobID and potential message length

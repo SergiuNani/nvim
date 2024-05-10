@@ -6,8 +6,6 @@ vim.cmd("let g:netrw_liststyle = 3")
 -- vim.cmd(":set relativenumber")
 -- vim.cmd(":set <S-Down>=^[[1;2B")
 
-vim.api.nvim_set_keymap('n', '<C-S-Down>', 'gg', { noremap = true, silent = true })
-
 vim.g.have_nerd_font = true
 vim.opt.showmode = false
 

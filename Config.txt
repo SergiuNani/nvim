@@ -4,14 +4,11 @@ https://github.com/josean-dev/dev-environment-files
 https://github.com/exosyphon/nvim
 
 
-
 Terminal config:
 Search : NerdFont git, on the right there will be releases
 
-
 ColorScheme: Cambell
 Font face: JetBrainsMonoNL Nerd Font mono
-
 
 -- What to install prior to NVIM run:
 $ choco install mingw
@@ -21,11 +18,8 @@ $ choco install fzf
 $ choco install fd
 
 
-
 --OH-MY-POSH
-
 Install-Module PsReadLine -Force
-
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 
 

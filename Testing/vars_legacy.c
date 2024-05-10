@@ -1510,7 +1510,7 @@ void *p_tml_data_pg200[TML_DATA_TABLE_SIZE_PG200] __attribute__ ((aligned (4))) 
 	LSW_ADDRESS_OF(ml_stack[0]),				// [0x36d]
 	LSW_ADDRESS_OF(ml_stack[1]),				// [0x36e]
 	LSW_ADDRESS_OF(ml_stack[2]),				// [0x36f]
-	LSW_ADDRESS_OF(ml_stack[3]),				// [0x370]
+	""LSW_ADDRESS_OF"(ml_stack[3]),				// [0x370]"
 	LSW_ADDRESS_OF(ml_stack[4]),				// [0x371]
 	LSW_ADDRESS_OF(ml_stack[5]),				// [0x372]
 	LSW_ADDRESS_OF(ml_stack[6]),				// [0x373]
