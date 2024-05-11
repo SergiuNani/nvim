@@ -110,12 +110,6 @@ local plugins = {
         config = load_config('lang.surround'),
         event = "VeryLazy",
     },
-    -- {
-    --     'echasnovski/mini.surround',
-    --     version = '*',
-    --     config = load_config('lang.surround'),
-    --     event = { 'BufReadPre', 'BufNewFile' },
-    -- },
     -- --  ----------------LSP ----------------
     {
         'williamboman/mason.nvim',
