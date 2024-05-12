@@ -54,27 +54,12 @@ local opts = {
     nowait = true,
 }
 local mappings = {
-    q = { '<cmd>x<cr>', icons.ui.Close .. 'Quit' },
-    Q = { '<cmd>qa!<cr>', icons.ui.Power .. 'Force Quit!' },
-    w = { '<cmd>w<cr>', icons.ui.Save .. 'Save' },
-    x = { '<cmd>q<cr>', icons.ui.Pencil .. 'Write and Quit' },
     f = {
         name = icons.ui.Telescope .. 'Find',
-        --------------------==Find Files==--------------------
-        b = { '<cmd>Telescope buffers<cr>', '[B]uffers' },
-        f = { '<cmd>lua require("telescope").extensions.menufacture.find_files()<cr>', '[F]ind in Files' },
-        G = { '<cmd>lua require("telescope").extensions.menufacture.git_files()<cr>', 'Find [G]it files' },
-        r = { '<cmd>Telescope oldfiles<cr>', '[R]ecent Files' },
-        --------------------==Find Words==--------------------
-        c = { '<cmd>lua require("telescope").extensions.menufacture.grep_string()<cr>', 'Find Word under [c]ursor' },
-        g = { '<cmd>lua require("telescope").extensions.menufacture.live_grep()<cr>', 'Find Grep Text' },
-        s = { '<cmd>Telescope live_grep grep_open_files=true<cr>', 'Find in Open Files' },
+        -- --------------------==Find Words==--------------------
+        -- q = { '<cmd>lua require("telescope").extensions.menufacture.grep_string()<cr>', 'Find Word under [c]ursor' },
+        -- w = { '<cmd>lua require("telescope").extensions.menufacture.live_grep()<cr>', 'Find Grep Text' },
         --------------------==Triks==--------------------
-        l = { '<cmd>Telescope resume<cr>', '[R]esume Last Search' },
-        n = { '<cmd>:lua TelescopeFindConfigFiles() <cr>', '[N]eovim config files' },
-        v = { '<cmd>Telescope vim_options<cr>', '[V]im Options' },
-        L = { '<cmd>Telescope loclist<cr>', 'Location List' }, --??
-        q = { '<cmd>Telescope quickfix<cr>', '[Q]uickfix' },   --??
     },
     g = {
         name = icons.git.Octoface .. 'Git',

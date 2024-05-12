@@ -5,6 +5,7 @@ require('onedark').setup {
 
 require("gruvbox").setup({})
 require("ayu").setup({})
+-- require("vim-colors-xcode").setup({})
 -- require('onedark').load()
 
 local bg = "#011628"
@@ -47,7 +48,8 @@ require("tokyonight").setup({})
 -- vim.cmd([[colorscheme bamboo]]) --6/10
 -- vim.cmd([[colorscheme rose-pine]]) --6/10
 -- vim.cmd([[colorscheme gruvbox]]) --6/10
-vim.cmd([[colorscheme ayu-mirage]]) --6/10
+vim.cmd([[colorscheme ayu-mirage]])  --6/10
+vim.cmd([[colorscheme xcodedarkhc]]) --6/10
 
 
 
@@ -62,6 +64,8 @@ local opts = { noremap = true, silent = true }
 
 map("n", "<Leader>1", [[:colorscheme ayu-mirage<CR>]], { desc = "Colorscheme 1" })
 map("n", "<Leader>2", [[:colorscheme tokyonight-moon<CR>]], { desc = "Colorscheme 2" })
+map("n", "<Leader>2", [[:colorscheme xcodedarkhc <CR>]], { desc = "Colorscheme 2" })
+
 map("n", "<Leader>3", [[:colorscheme tokyonight-night<CR>]], { desc = "Colorscheme 3" })
 map("n", "<Leader>4", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 4" })
 map("n", "<Leader>5", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 5" })

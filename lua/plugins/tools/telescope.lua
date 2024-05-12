@@ -1,7 +1,8 @@
 local telescope = require('telescope')
+local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 local icons = require('lib.icons')
-
+local lga_actions = require("telescope-live-grep-args.actions")
 local function map(mode, lhs, rhs, opts)
     opts = opts or {}
     opts.silent = opts.silent ~= false
@@ -121,28 +122,98 @@ telescope.setup({
             fuzzy = true,
             override_generic_sorter = true,
             override_file_sorter = true,
-            case_mode = 'smart_case',
+            case_mode = 'ignore_case',
         },
         menufacture = { mappings = { main_menu = { [{ 'i', 'n' }] = '<C-e>' } } },
+        live_grep_args = {
+            auto_quoting = true, -- enable/disable auto-quoting
+            -- define mappings, e.g.
+            mappings = {         -- extend mappings
+                i = {
+                    ["<C-q>"] = lga_actions.quote_prompt(),
+                    ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                },
+            },
+            -- ... also accepts theme settings, for example:
+            -- theme = "dropdown", -- use dropdown theme
+            -- theme = { }, -- use own theme spec
+            -- layout_config = { mirror=true }, -- mirror preview pane
+        },
+        -- vimgrep_arguments = {
+        --     -- "--no-heading",
+        --     -- "--with-filename",
+        --     -- "--line-number",
+        --     -- "--column",
+        --     "--ignore-case",
+        --     "--fixed-strings",
+        -- },
     },
 
-    map("n", "<leader>f`", Teli_cmd("marks", "get_dropdown"), { desc = "Lists of vim marks and their values" }),
-    -- map("n","<leader>fk",Teli_cmd("commands", "get_dropdown"),{ desc = "Telescope Commands" }),
-    map("n", "<leader>fk", Teli_cmd("keymaps", "get_dropdown"), { desc = "Show mappings" }),
-    map("n", "<leader>fh", Teli_cmd("help_tags", "get_dropdown"), { desc = "Serch in HELP" }),
-    map("n", "<leader>fy", Teli_cmd("colorscheme", "get_dropdown"), { desc = "Colorschemes" }),
-    map("n", "<leader>fi", Teli_cmd("vim_options", "get_dropdown"), { desc = "VimOptions" }),
-    -- map("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" }),
-
-    map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find [T]odo-comments" }),
-    map("n", "<M-f>", "<cmd>Telescope resume<cr>", { desc = "Resume svim.keymap.setearch" }),
-    map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files" }),
-    map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Search in current buffer" })
-
 })
+
+--------------------==Find Files==--------------------
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
+map("n", "<leader>fn", "<cmd>:lua TelescopeFindConfigFiles() <cr>", { desc = "Find NVIM config" })
+
+map("n", "<leader>fG", "<cmd>Telescope git_files<cr>", { desc = "Find Files" })
+map("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Find Old Files" })
+
+
+map("n", "<leader>fb", Teli_cmd("buffers", "get_dropdown"), { desc = "Show mappings" })
+map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
+
+
+
+
+--------------------==Find Words==--------------------
+--
+map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Search in current buffer" })
+map('n', '<leader>fw', function()
+    local word = vim.fn.expand("<cword>")
+    builtin.grep_string({ search = word })
+end, { desc = "Find word under cursor" })
+map('n', '<leader>fW', function()
+    local word = vim.fn.expand("<cWORD>")
+    builtin.grep_string({ search = word })
+end, { desc = "Find united words under cursor" })
+
+vim.keymap.set('n', '<leader>fs', function()
+    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end, { desc = "Find string literal" })
+
+map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find word under cursor" })
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Find Grep Text" })
+
+
+
+--------------------==Tricks==--------------------
+map("n", "<M-f>", "<cmd>Telescope resume<cr>", { desc = "Resume svim.keymap.setearch" })
+
+map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find [T]odo-comments" })
+map("n", "<leader>fk", Teli_cmd("keymaps", "get_dropdown"), { desc = "Show mappings" })
+map("n", "<leader>fy", Teli_cmd("colorscheme", "get_dropdown"), { desc = "Colorschemes" })
+
+map("n", "<leader>f`", Teli_cmd("marks", "get_dropdown"), { desc = "Lists of vim marks and their values" })
+map("n", "<leader>fi", Teli_cmd("vim_options", "get_dropdown"), { desc = "VimOptions" })
+
+map("n", "<leader>fh", Teli_cmd("help_tags", "get_dropdown"), { desc = "Serch in HELP" })
+map("n", "<leader>fq", Teli_cmd("quickfix", "get_dropdown"), { desc = "Serch in HELP" })
+-- map("n","<leader>fk",Teli_cmd("commands", "get_dropdown"),{ desc = "Telescope Commands" }),
+-- map("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" }),
+--
+
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('menufacture')
 require('telescope').load_extension('harpoon')
 require('telescope').load_extension('notify')
--- require('telescope').load_extension('bookmarks')
+require("telescope").load_extension("live_grep_args")
+
+
+-- -======================================= How to Search =========================================-
+--
+--**REGEX
+--partOfWord\w+ - Search all instances where partOfWord is found
+--
+--\w+ means "one or more word-like characters"
+--'\d\d\d'  -  match three digits

@@ -1,0 +1,88 @@
+
+!!!!!!!!!!!!!!#Potential issues
+ 1. In the code, in order to find out the resolution of the Registers im looking
+ at  Registers_THS.BitInfo[0].bit property - THE first one - so if you wanna add
+ the option to edit those Registers In real time you might put the first column to
+ last because if pure code bs, so be careful what objects you will be creating.
+
+
+
+
+
+ The 'Register Bit Representation' window is useful when trying to visualize any register from the CANopen CiA (DSP) 402 v4.0  Standard (Drives and motion control device profile) or a TML Registers from Technosoft.
+
+A register is a fundamental component of a computer's central processing unit (CPU) and is used to store and manage data temporarily during the execution of instructions. Registers are typically divided into bits, where each bit corresponds to a specific action or represents a unit of information.
+
+The main advantage of this interface is that the user does not need to open up the CiA standard or Technosoft HELP menu to look one specific register.
+Usually, the user has two pieces of information, the register name and its value. Next the user needs to open up a standard or a help menu to look that specific register and find out the description of each of its bits. Next the user needs to transform the register value from hexadecimal/decimal to binary and associate each each bit to the description of the register and understand what this infortaion is all about. This application is here to reduce the amount of time which is spend doing that.
+
+Basic overview of the Register Tool:
+
+1)The first component of this tool is the autocomplete seach bar which searches for all the available registers. This search bar can be activated by clicking on it and there will be a dropdown menu with all the registers available within this tool. For the tool to make the necessary updates its not enough only to type the name of the register but to either click on it with the mouse or navigate throught the list with up and down arrows and then click ENTER. Once the register will be selected you can see that the tool will generate a visual interface which contains rows of information for each bit separately.
+
+
+2) Next component is a button which toggles between HEX and DEC and the purpose of it is the next input field of the tool where the user will need to specify the value of the register. So either the user can type the value of the register either in hexadecimal or decimal.
+
+3) The Value input bar where the user can specify the data of the register either in decimal or hexadecimal based on the previous button.
+The visual representation of the register will be updated on the fly by changing this input value.
+
+4) The forth component is another button which toggles between "CANopen" and "Technosoft". The meaning behind this button is that the two types of register the CiA registers and Technosoft TML registers are separated and depending on which register the user is looking for he can toggle between the two options.
+
+5) The fifth button "+" can clone the current tool up to three tools in general. All three clones have the same functionality and are working separately from each other. The idea behind it is that if the user has to query multiple registers or he wants to compere them between each other the tool can facilitate this option as well. The clones of the Register tool can also be deleted at any point by clicking on the 'X' close button. Adding another clone right after deleating the previous one will not memorize the previous data.
+
+6) the sixth component is The generated Register  itself. It contains multiple lines each line representing the number of bit , their description and the value of the bit itself. Try clicking on the box which contains the value of one specific bit and you see that the value changes in the opposite value and it also updates the value field (3) of the register. THis can be useful when you want to achieve a  certain functionality from the register but don`t know what value it needs to have so that the desired bit will be set or unset.
+
+
+--- CAN DECODER
+
+PDO MAPPING:
+The program will fastforward in the code and look for all the mapping that is done via SDO and then it will update the PDOs.
+If the "Set compatible objects for all" or leave empty for all is selected ,its OK even if u select for because the code will look through all the mapping and if he detects anything then he gon put the correct value.If there are multiple SDO messages setting the same PDO then the last value will be selected.
+
+
+
+
+mouseOver
+mouseUnder
+mouseUnderiiiii
+imouse
+iMOuse
+mouAAA
+mouBBB
+mou
+mouN
+mouNN
+mou2
+mou23
+123
+1234
+
+run
+RUN
+run1
+run22
+
+//TEST AGAIN WITH DRIVE:
+06 00 20 A1 66 00 21 4E //?TML var_i1
+06 00 20 A5 68 00 21 54 //?TML VAr_lf
+08 00 21 A9 66 00 20 12 34 9E // TML var_i1 ==0x1234
+0A 00 21 AD 68 00 20 56 78 12 34 74 // TML var_lf ==0x12345678
+
+
+
+
+TIPS:
+   '& .MuiDialog-paper': {
+          backgroundColor: `${colors.primary[100]}`
+          // borderRadius: '1rem',
+          // boxShadow: 'none !important',
+          // backgroundImage: `none`
+        }
+        ----- doar o clasa si make sure ca exista spatiul intre & si .
+
+
+
+   BUGS for THS:
+   1. Binary code viewer:  for PING , if the axis destinator is 4 or 5 the pong  generated message is the same
+   2.   initcam 0X1122 , 0X4545  - the opCode dont exist in the PDF description
+

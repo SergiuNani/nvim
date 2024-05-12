@@ -33,6 +33,11 @@ map("v", "<C-c>", "y", { desc = "Copy text" })
 map("n", "<C-c>", 'yy', { desc = "Copy text" })
 
 -- ============================== Window Management ==============================
+map("n", "<leader>q", "<cmd>x<cr>", { desc = "Quit and save" })
+map("n", "<leader>Q", "<cmd>qa!<cr>", { desc = "Force quit and dont save" })
+map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
+map("n", "<leader>x", "<cmd>q<cr>", { desc = "Quit, don`t save" })
+
 
 map("n", "<leader>ss", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })
 map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical Split File" })

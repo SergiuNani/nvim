@@ -20,6 +20,7 @@ local plugins = {
                 build = 'make',
             },
             'molecule-man/telescope-menufacture', --?? needs exploration
+            "nvim-telescope/telescope-live-grep-args.nvim",
         },
         config = load_config('tools.telescope'),
         cmd = 'Telescope',
@@ -81,6 +82,7 @@ local plugins = {
             "shatur/neovim-ayu",
             'navarasu/onedark.nvim',
             "ellisonleao/gruvbox.nvim", --7/10
+            "lunacookies/vim-colors-xcode",
             -- "bluz71/vim-nightfly-guicolors",--ehh
             -- 'olimorris/onedarkpro.nvim',
             -- "rebelot/kanagawa.nvim", --5/10
