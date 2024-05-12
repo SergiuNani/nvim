@@ -158,12 +158,8 @@ map("n", "<leader>fn", "<cmd>:lua TelescopeFindConfigFiles() <cr>", { desc = "Fi
 map("n", "<leader>fG", "<cmd>Telescope git_files<cr>", { desc = "Find Files" })
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Find Old Files" })
 
-
 map("n", "<leader>fb", Teli_cmd("buffers", "get_dropdown"), { desc = "Show mappings" })
 map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
-
-
-
 
 --------------------==Find Words==--------------------
 --
