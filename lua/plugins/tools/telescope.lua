@@ -134,23 +134,12 @@ telescope.setup({
                     ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
                 },
             },
-            -- ... also accepts theme settings, for example:
-            -- theme = "dropdown", -- use dropdown theme
-            -- theme = { }, -- use own theme spec
-            -- layout_config = { mirror=true }, -- mirror preview pane
         },
-        -- vimgrep_arguments = {
-        --     -- "--no-heading",
-        --     -- "--with-filename",
-        --     -- "--line-number",
-        --     -- "--column",
-        --     "--ignore-case",
-        --     "--fixed-strings",
-        -- },
     },
 
 })
 
+-- require 'telescope'.extensions.project.project { display_type = 'full' }
 --------------------==Find Files==--------------------
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
 map("n", "<leader>fn", "<cmd>:lua TelescopeFindConfigFiles() <cr>", { desc = "Find NVIM config" })
@@ -159,7 +148,7 @@ map("n", "<leader>fG", "<cmd>Telescope git_files<cr>", { desc = "Find Files" })
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Find Old Files" })
 
 map("n", "<leader>fb", Teli_cmd("buffers", "get_dropdown"), { desc = "Show mappings" })
-map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
+-- map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
 
 --------------------==Find Words==--------------------
 --
@@ -197,7 +186,6 @@ map("n", "<leader>fq", Teli_cmd("quickfix", "get_dropdown"), { desc = "Serch in 
 -- map("n","<leader>fk",Teli_cmd("commands", "get_dropdown"),{ desc = "Telescope Commands" }),
 -- map("n", "<leader>ft", Teli_cmd("builtin", "get_dropdown"), { desc = "[F]ind [Q]select Telescope" }),
 --
-
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('menufacture')

@@ -26,6 +26,11 @@ local plugins = {
         cmd = 'Telescope',
     },
     {
+        'charludo/projectmgr.nvim',
+        lazy = false, -- important!
+        config = load_config('tools.projectManager'),
+    },
+    {
         'stevearc/oil.nvim',
         opts = {},
         -- optional dependencies

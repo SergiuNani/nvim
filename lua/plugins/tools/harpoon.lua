@@ -1,7 +1,7 @@
 local harpoon = require('harpoon')
 harpoon:setup({
-    settings={
-    save_on_toggle = true,
+    settings = {
+        save_on_toggle = true,
     }
 })
 
@@ -25,7 +25,7 @@ local function toggle_telescope(harpoon_files)
 end
 
 vim.keymap.set('n', '<leader>a', function()
-    harpoon:list():append()
+    harpoon:list():add()
 end, { desc = 'Add Mark' })
 vim.keymap.set('n', '<leader>hh', function()
     toggle_telescope(harpoon:list())
