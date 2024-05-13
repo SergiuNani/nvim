@@ -48,8 +48,8 @@ require("tokyonight").setup({})
 -- vim.cmd([[colorscheme bamboo]]) --6/10
 -- vim.cmd([[colorscheme rose-pine]]) --6/10
 -- vim.cmd([[colorscheme gruvbox]]) --6/10
-vim.cmd([[colorscheme ayu-mirage]])  --6/10
-vim.cmd([[colorscheme xcodedarkhc]]) --6/10
+vim.cmd([[colorscheme ayu-mirage]]) --6/10
+-- vim.cmd([[colorscheme xcodedarkhc]]) --6/10
 
 
 

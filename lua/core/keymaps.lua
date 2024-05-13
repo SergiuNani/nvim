@@ -56,6 +56,13 @@ map("n", "<C-A-Down>", "<cmd>resize -10<cr>", { desc = "Decrease window height" 
 map("n", "<C-A-Right>", "<cmd>vertical resize +10<cr>", { desc = "Increase window width" })
 map("n", "<C-A-Left>", "<cmd>vertical resize -10<cr>", { desc = "Decrease window width" })
 
+--WorkSpace
+map("n", "<C-n>", "<cmd>tabnew<cr>", { desc = "Create a new file/workingspace" })
+map("n", "<C-M-q>", "<cmd>tabclose<cr>", { desc = "Close current workspace" })
+map("n", "J", "<cmd>tabnext<cr>", { desc = "Next working space" })
+map("n", "K", "<cmd>tabprevious<cr>", { desc = "Next working space" })
+map("n", "<s-j>", "<cmd>tabnext<cr>", { desc = "goto prev buffer" })
+map("n", "<s-k>", "<cmd>tabprevious<cr>", { desc = "goto next buffer" })
 -- ============================== Navigation Keymaps ==============================
 
 map("n", "gh", "H", { desc = "go High" })
@@ -70,12 +77,8 @@ map("n", "<a-Left>", "<C-o>", { desc = "Move backwards in jumps" })
 
 map("n", "<s-l>", "$", { desc = "goto end of line" })
 map("n", "<s-h>", "^", { desc = "goto beginning of line" })
-map("n", "<s-k>", "<cmd>bprevious<cr>", { desc = "goto prev buffer" })
-map("n", "<s-j>", "<cmd>bnext<cr>", { desc = "goto next buffer" })
 map("n", "L", "$", { desc = "goto end of line" })
 map("n", "H", "^", { desc = "goto beginning of line" })
-map("n", "K", "<cmd>bprevious<cr>", { desc = "goto prev buffer" })
-map("n", "J", "<cmd>bnext<cr>", { desc = "goto next buffer" })
 
 map("i", "<C-h>", "<Esc>I", { desc = "goto start of line in Insert mode" })
 map("i", "<C-l>", "<Esc>A", { desc = "goto end of line in Insert mode" })
