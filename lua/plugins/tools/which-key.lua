@@ -80,7 +80,7 @@ local mappings = {
     p = {
         name = icons.ui.Package .. 'Project',
         l = { '<cmd>Lazy<cr>', 'Plugins' },
-        s = { '<cmd>Sterm powershell<cr>', 'Node' },
+        s = { '<cmd>Sterm powershell<cr>', 'Powershell terminal' },
     },
 
     l = {
@@ -92,9 +92,6 @@ local mappings = {
     },
     y = {
         name = icons.ui.Clipboard .. 'Yank',
-        f = { '<cmd>%y+<cr>', 'Copy Whole File' },
-        P = { '<cmd>CRpath<cr>', 'Copy Relative Path' },
-        p = { '<cmd>CApath<cr>', 'Copy Absolute Path' },
     },
 }
 

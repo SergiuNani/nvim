@@ -32,6 +32,10 @@ map("n", "<A-z>", "<cmd>set wrap!<CR>", { desc = "Toggle Word Wrap" })
 map("v", "<C-c>", "y", { desc = "Copy text" })
 map("n", "<C-c>", 'yy', { desc = "Copy text" })
 
+map("n", "<leader>yy", '<cmd>%y+<cr>', { desc = "Copy full file" })
+map("n", "<leader>yp", '<cmd>CApath<cr>', { desc = "Copy Absolute Path" })
+map("n", "<leader>yP", '<cmd>CRpath<cr>', { desc = "Copy Relative Path" })
+
 -- ============================== Window Management ==============================
 map("n", "<leader>q", "<cmd>x<cr>", { desc = "Quit and save" })
 map("n", "<leader>Q", "<cmd>qa!<cr>", { desc = "Force quit and dont save" })
@@ -119,8 +123,8 @@ map("n", "<Leader>il", "i<C-O>40i=<ESC>i<Space><Space><C-O>40i=<Esc>b<Left>",
 -- map("n", "<C-Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" }) --Dont work
 -- map("n", "<S-Enter>", "O<ESC>", { desc = "Create new line in normal/insert mode" })
 
--- map("i", "<C-Del>", "<esc>hce", { desc = "Delete forward" })
--- map("i", "<BS>", "gg", { desc = "Delete forward" })
+map("i", "<C-Del>", "<esc>lce", { desc = "Delete forward" })
+map("i", "<C-BS>", "<esc>lcb", { desc = "Delete forward" })
 map("i", "<A-Del>", "<esc>lce", { desc = "Delete forward" })
 map("i", "<A-BS>", "<C-w>", { desc = "Delete forward" })
 
