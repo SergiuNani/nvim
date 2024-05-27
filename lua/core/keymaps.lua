@@ -98,6 +98,7 @@ map('v', '<C-A-j>', "yPgv", opts)
 map('v', '<C-A-k>', "yPgv", opts)
 
 map('n', '<leader>d', "cc<ESC>", opts)
+map('n', '<leader>D', "ggdG", opts)
 
 map('n', '<A-j>', ":m .+1<CR>==", opts)
 map('n', '<A-k>', ":m .-2<CR>==", opts)
