@@ -120,6 +120,9 @@ map("n", "<Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" }
 map("n", "<Leader>il", "i<C-O>40i=<ESC>i<Space><Space><C-O>40i=<Esc>b<Left>",
     { desc = "Insert line of ====" })
 
+map("n", "Q", "@q")
+map("x", "Q", ":norm @q<CR>")
+-- ============================== Other ==============================
 
 -- map("n", "<C-Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" }) --Dont work
 -- map("n", "<S-Enter>", "O<ESC>", { desc = "Create new line in normal/insert mode" })
