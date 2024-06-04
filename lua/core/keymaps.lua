@@ -73,6 +73,7 @@ map("n", "gh", "H", { desc = "go High" })
 map("n", "gl", "L", { desc = "go Low" })
 map("n", "gm", "M", { desc = "go Middle" })
 map("n", "gt", "%", { desc = "goto tag" })
+map("v", "gt", "%", { desc = "goto tag" })
 
 map("n", "<A-d>", "<C-d>zz", { desc = "Move half screen down" })
 map("n", "<A-e>", "<C-u>zz", { desc = "Move half screen up" })
