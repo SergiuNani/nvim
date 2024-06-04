@@ -54,7 +54,6 @@ gitsigns.setup({
     preview_config = { border = 'single', style = 'minimal', relative = 'cursor', row = 0, col = 1 },
     yadm = { enable = false },
     on_attach = function(bufnr)
-
         local function map(mode, l, r, opts)
             opts = opts or {}
             opts.buffer = bufnr
@@ -68,7 +67,7 @@ gitsigns.setup({
         map('n', '<leader>gg', '<cmd>Fterm lazygit<cr>', { desc = 'Lazygit' })
         map('n', ']c', '<cmd>Gitsigns next_hunk<cr>', { desc = 'Next Hunk' })
         map('n', '[c', '<cmd>Gitsigns prev_hunk<cr>', { desc = 'Previous Hunk' })
-        map('n', '<leader>gd', '<cmd>Gitsigns diffthis HEAD<cr>', { desc = 'Diff on current buffer' })
+        -- map('n', '<leader>gd', '<cmd>Gitsigns diffthis HEAD<cr>', { desc = 'Diff on current buffer' })
 
         map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk<cr>', { desc = 'Preview Hunk' })
         map('n', '<leader>gs', '<cmd>Telescope git_status<cr>', { desc = 'Changed files' })

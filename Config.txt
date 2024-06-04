@@ -2,7 +2,7 @@ Inspiration: #From nvim 2k
 https://github.com/2KAbhishek/nvim2k
 https://github.com/josean-dev/dev-environment-files
 https://github.com/exosyphon/nvim
-
+https://github.com/elijahmanor/dotfiles -- maybe investigate
 
 Terminal config:
 Search : NerdFont git, on the right there will be releases

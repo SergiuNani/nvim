@@ -10,6 +10,24 @@ local plugins2 = require('plugins.otherPlugins').plugins2
 local plugins = {
     ---- ======================== first priority  =======================
     -- Telescope
+    --
+    {
+
+        "sindrets/diffview.nvim",
+        cmd = {
+            "DiffviewOpen",
+            "DiffviewClose",
+            "DiffviewToggleFiles",
+            "DiffviewFocusFiles",
+            "DiffviewRefresh",
+            "DiffviewFileHistory",
+        },
+        -- config = load_config('tools.test'),
+        event = { 'VimEnter' },
+
+        dependencies = { "nvim-lua/plenary.nvim" },
+        keys = { { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview Open" } },
+    },
     {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
