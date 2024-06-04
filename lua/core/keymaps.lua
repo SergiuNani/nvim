@@ -118,8 +118,16 @@ map({ 'v', 'x' }, '<A-Up>', ":move '<-2<CR>gv=gv", opts)
 
 map("n", "<Enter>", "o<ESC>", { desc = "Create new line in normal/insert mode" })
 
-map("n", "<Leader>il", "i<C-O>40i=<ESC>i<Space><Space><C-O>40i=<Esc>b<Left>",
+map("n", "<Leader>i1", "i<C-O>40i=<ESC>i<Space><Space><C-O>40i=<Esc>b<Left>",
     { desc = "Insert line of ====" })
+map("n", "<Leader>i2", "i<C-O>30i=<ESC>i<Space><Space><C-O>30i=<Esc>b<Left>",
+    { desc = "Insert line of ====" })
+map("n", "<Leader>i3", "i<C-O>20i=<ESC>i<Space><Space><C-O>20i=<Esc>b<Left>",
+    { desc = "Insert line of ====" })
+map("n", "<Leader>i4", "i<C-O>10i=<ESC>i<Space><Space><C-O>10i=<Esc>b<Left>",
+    { desc = "Insert line of ====" })
+
+map("n", "gJ", ":s/ \\([a-zA-Z0-9]\\)/\\r\\1/g<CR>:noh<CR>")
 
 map("n", "Q", "@q")
 map("x", "Q", ":norm @q<CR>")
