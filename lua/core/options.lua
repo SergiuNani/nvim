@@ -46,7 +46,7 @@ local options = {
     smartcase = false, -- smart case
     inccommand = 'split', -- preview incremental substitute
     laststatus = 3,
-    listchars = { trail = '', tab = '', nbsp = '_', extends = '>', precedes = '<' }, -- highlight
+    listchars = { trail = '', tab = '', nbsp = '%', extends = '>', precedes = '<', eol = '$' }, -- highlight
     -- list = true, --This is the genius parameter which sets the markings of empty characters etc
     mouse = 'a', -- allow the mouse to be used in neovim
     number = true, -- set numbered lines
