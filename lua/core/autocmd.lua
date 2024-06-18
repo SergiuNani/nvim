@@ -1,6 +1,18 @@
 local function augroup(name)
     return vim.api.nvim_create_augroup('Sergiu' .. name, { clear = true })
 end
+
+local function toggle_list()
+    if vim.o.list then
+        vim.o.list = false
+        print("Hide hidden characters")
+    else
+        vim.o.list = true
+        print("Show hidden characters")
+    end
+end
+
+vim.api.nvim_create_user_command('ToggleList', toggle_list, {})
 -- -- Strip trailing spaces before write
 -- vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 --     group = augroup('strip_space'),
@@ -54,4 +66,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 --         vim.fn.mkdir(vim.fn.fnamemodify(file, ':p:h'), 'p')
 --     end,
 -- })
-

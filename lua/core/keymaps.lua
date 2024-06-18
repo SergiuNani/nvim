@@ -173,13 +173,19 @@ map('n', '<leader>rr', "<cmd>Lspsaga rename<cr>", { desc = "Rename via LSP" })
 
 -- //Change current file
 
-map("n", "<leader>cm", "<cmd>e<cr>", { desc = "Remove ^M by Updating buffer" })
 map("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", { desc = "Format files" })
 map("n", "<leader>ce", [[<cmd>:%s/^\n\+/\r<cr>]], { desc = "Clean Empty Lines" })
+map("n", "<leader>ct", [[<cmd>:%s/\t/ /g<cr>]], { desc = "Replace tabs with spaces" })
+map("n", "<leader>cd", [[<cmd>:%s/^\(.*\)\(\n\1\)\+$/\2<cr>]], { desc = "Leave a specific nr of lines" })
+
+map("n", "<leader>cm", "<cmd>e<cr>", { desc = "Remove ^M by Updating buffer" })
 map("n", "<leader>cn", "<cmd>set relativenumber!<cr>", { desc = "Relative Numbers" })
 map("n", "<leader>cr", "<cmd>Telescope reloader<cr>", { desc = "Reload Module" })
 map("n", "<leader>cR", "<cmd>ReloadConfig<cr>", { desc = "Reload Configs" })
-map("n", "<leader>cd", [[<cmd>:%s/^\(.*\)\(\n\1\)\+$/\1<cr>]], { desc = "Reload Configs" })
+
+
+-- Function to toggle 'list' setting
+map('n', '<leader>cl', '<cmd>ToggleList<CR>', { desc = "toggle list" })
 
 map("n", "<leader>mm", "<cmd>MaximizerToggle<CR>", { desc = "Toggle current window in full view" })
 
@@ -201,3 +207,5 @@ map("n", "<leader>mm", "<cmd>MaximizerToggle<CR>", { desc = "Toggle current wind
 --map <leader>sa zg " Add word under cursor to the good words file
 --nnoremap <leader>s? z=  " Suggest correct word for word under the cursor
 -- " Insert commented horizontal line
+--
+--
