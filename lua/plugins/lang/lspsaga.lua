@@ -34,6 +34,7 @@ local opts = { noremap = true, silent = true }
 --L SPsaga Finder: o -open, s-split
 
 map('n', '<F12>', "<cmd>Lspsaga goto_definition<cr>", { desc = "Goto Type Definition" })
+map('n', 'gd', "<cmd>Lspsaga goto_definition<cr>", { desc = "Goto Type Definition" })
 map('n', '<S-F12>', "<cmd>Telescope lsp_references<cr>", { desc = "References" })
 map('n', '<M-F12>', "<cmd>Lspsaga peek_definition<cr>", { desc = "Peek Type Definition" })
 map('n', 'gr', "<cmd>Lspsaga finder<cr>", { desc = "Find references in Telescope" })

@@ -85,12 +85,20 @@ map("n", "<s-h>", "^", { desc = "goto beginning of line" })
 map("n", "L", "$", { desc = "goto end of line" })
 map("n", "H", "^", { desc = "goto beginning of line" })
 
-map("i", "<C-h>", "<Esc>I", { desc = "goto start of line in Insert mode" })
-map("i", "<C-l>", "<Esc>A", { desc = "goto end of line in Insert mode" })
+map("i", "<C-h>", "<Left>", { desc = "Left" })
+map("i", "<C-l>", "<Right>", { desc = "Right" })
+map("i", "<C-j>", "<Down>", { desc = "Down" })
+map("i", "<C-k>", "<Up>", { desc = "Up" })
 
+map("i", "<C-A-h>", "<C-Left>", { desc = "Skip forward word in InsetMode" })
+map("i", "<C-A-l>", "<C-Right>", { desc = "Skip backwards word in InsetMode" })
+
+map("i", "<C-A-j>", "<Esc>I", { desc = "goto start of line in Insert mode" })
+map("i", "<C-A-k>", "<Esc>A", { desc = "goto end of line in Insert mode" })
 
 
 -- ============================== Editing Keymaps ==============================
+
 
 -- Duplicate line or block
 map('n', '<C-A-j>', "yyp", opts)
