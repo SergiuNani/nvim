@@ -101,8 +101,9 @@ map("i", "<C-A-k>", "<Esc>A", { desc = "goto end of line in Insert mode" })
 
 
 -- Duplicate line or block
-map('n', '<C-A-j>', "yyp", opts)
-map('n', '<C-A-k>', "yyP", opts)
+-- map('n', '<C-A-j>', "yyp", opts)
+map('n', '<C-A-j>', '"ayy"ap', opts)
+map('n', '<C-A-k>', '"ayy"aP', opts)
 map('v', '<C-A-j>', "yPgv", opts)
 map('v', '<C-A-k>', "yPgv", opts)
 

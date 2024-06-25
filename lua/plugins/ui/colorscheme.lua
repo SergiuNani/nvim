@@ -1,8 +1,8 @@
 require('onedark').setup {
-    style = 'darker',
+    style = 'warmer',
     --warmer, dark, darker
 }
-
+require("catppuccin").setup({})
 require("gruvbox").setup({})
 require("ayu").setup({})
 -- require("vim-colors-xcode").setup({})
@@ -61,15 +61,18 @@ end
 local opts = { noremap = true, silent = true }
 
 
-
 map("n", "<Leader>1", [[:colorscheme ayu-mirage<CR>]], { desc = "Colorscheme 1" })
-map("n", "<Leader>2", [[:colorscheme tokyonight-moon<CR>]], { desc = "Colorscheme 2" })
 map("n", "<Leader>2", [[:colorscheme xcodedarkhc <CR>]], { desc = "Colorscheme 2" })
+map("n", "<Leader>3", [[:colorscheme tokyonight-moon<CR>]], { desc = "Colorscheme 3" })
 
-map("n", "<Leader>3", [[:colorscheme tokyonight-night<CR>]], { desc = "Colorscheme 3" })
-map("n", "<Leader>4", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 4" })
-map("n", "<Leader>5", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 5" })
+map("n", "<Leader>4", [[:colorscheme gruvbox<CR>]], { desc = "Colorscheme 4" })
+map("n", "<Leader>5", [[:colorscheme onedark<CR>]], { desc = "Colorscheme 5" })
+map("n", "<Leader>6", [[:colorscheme ayu-dark<CR>]], { desc = "Colorscheme 6" })
 
-map("n", "<Leader>6", [[:colorscheme gruvbox<CR>]], { desc = "Colorscheme 6" })
-map("n", "<Leader>7", [[:colorscheme tokyonight-day<CR>]], { desc = "Colorscheme 7" })
-map("n", "<Leader>8", [[:colorscheme ayu-light<CR>]], { desc = "Colorscheme 8" })
+map("n", "<Leader>7", [[:colorscheme xcodelighthc<CR>]], { desc = "Colorscheme 7" })
+map("n", "<Leader>8", [[:colorscheme tokyonight-day<CR>]], { desc = "Colorscheme 8" })
+map("n", "<Leader>9", [[:colorscheme ayu-light<CR>]], { desc = "Colorscheme 9" })
+
+
+-- //Maybe  rose-moon
+-- //Maybe  kanagawa-wave

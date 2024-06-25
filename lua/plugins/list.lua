@@ -106,12 +106,11 @@ local plugins = {
             'navarasu/onedark.nvim',
             "ellisonleao/gruvbox.nvim", --7/10
             "lunacookies/vim-colors-xcode",
-            -- "bluz71/vim-nightfly-guicolors",--ehh
-            -- 'olimorris/onedarkpro.nvim',
-            -- "rebelot/kanagawa.nvim", --5/10
-            -- "ribru17/bamboo.nvim", --6/10
-            -- "rose-pine/neovim", --3/10
-            -- "marko-cerovac/material.nvim", --2/10
+            "catppuccin/nvim",
+            "Mofiqul/dracula.nvim",
+
+            "rebelot/kanagawa.nvim", --5/10
+
         },
         config = load_config('ui.colorscheme'),
         lazy = false,
