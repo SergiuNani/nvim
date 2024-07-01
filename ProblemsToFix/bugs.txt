@@ -1,0 +1,13 @@
+1. I want a shortcut to search a word inside the current doc
+
+
+Replate.txt - replace ` to "
+Format.html - format the damn html
+Functions.js - z0 - save -  extend one - save - it folds back 
+
+
+Shityfold.js - fucking if pressing za - folding the current fold if there is somewhere  a "else if" it musnt be folded
+
+
+
+Ctrl+Backspace - try to delete the word
