@@ -190,7 +190,7 @@ export function Extract_MSGs_from_text(text, ProtocolGlobal) {
         return Extract_MSGs_from_text_RS232(text)
     }
 }
-
+// Great text that will bae the perfect example for your
 export function Check4PotentialCobID(row) {
     //returns [cobid, index_in_the_row]
     var temp

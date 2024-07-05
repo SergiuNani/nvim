@@ -90,8 +90,8 @@ map("i", "<C-l>", "<Right>", { desc = "Right" })
 map("i", "<C-j>", "<Down>", { desc = "Down" })
 map("i", "<C-k>", "<Up>", { desc = "Up" })
 
-map("i", "<C-A-h>", "<C-Left>", { desc = "Skip forward word in InsetMode" })
-map("i", "<C-A-l>", "<C-Right>", { desc = "Skip backwards word in InsetMode" })
+map("i", "<C-A-h>", "<C-o>b", { desc = "Skip forward word in InsetMode" })
+map("i", "<C-A-l>", "<C-o>e<right>", { desc = "Skip backwards word in InsetMode" })
 
 map("i", "<C-A-j>", "<Esc>I", { desc = "goto start of line in Insert mode" })
 map("i", "<C-A-k>", "<Esc>A", { desc = "goto end of line in Insert mode" })
