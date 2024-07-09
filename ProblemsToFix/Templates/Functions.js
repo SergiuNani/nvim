@@ -197,6 +197,6 @@ export function ExtractUsefulInfo(bodyHTML) {
         }
     });
     RefactorObjects(TempTable);
-
+    //suka tu esti prost
     return MainObject4_DocxTemplater;
 }

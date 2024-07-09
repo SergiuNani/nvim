@@ -11,3 +11,7 @@ Shityfold.js - fucking if pressing za - folding the current fold if there is som
 
 
 Ctrl+Backspace - try to delete the word
+
+
+
+When i get over an element it will be nice if we can highlight all the fucking similar words dont u think 
