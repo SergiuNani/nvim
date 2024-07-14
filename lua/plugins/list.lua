@@ -12,7 +12,7 @@ local plugins = {
     -- Telescope
     --
     {
-
+        -- This plugin is a better git file difference shower
         "sindrets/diffview.nvim",
         cmd = {
             "DiffviewOpen",
@@ -175,8 +175,6 @@ local plugins = {
 
 }
 
-
-
 for _, plugin in ipairs(plugins2) do
     table.insert(plugins, plugin)
 end
@@ -191,7 +189,6 @@ local lsp_servers = {
     'clangd',
     'tsserver',
 }
-
 
 local ts_parsers = {
     -- 'css',

@@ -85,16 +85,6 @@ local branch = {
     color = { fg = colors.green, gui = 'bold' },
 }
 
-local diff_icons = {
-    'diff',
-    symbols = { added = icons.git.AddAlt, modified = icons.git.DiffAlt, removed = icons.git.RemoveAlt },
-    diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-    },
-    cond = conditions.hide_in_width,
-}
 
 local diagnostics = {
     'diagnostics',
@@ -209,10 +199,11 @@ lualine.setup({
                 },
             }
         },
-        lualine_b = { mode(icons.ui.Electric), mode(icons.ui.Fire), 'location', progress, filename },
-        lualine_c = {},
-        lualine_x = { branch, diff_icons, diagnostics, lsp, filetype, filesize, fileformat, encoding, separator },
-        lualine_y = {},
-        lualine_z = { "tabs" },
+        -- lualine_b = { "branch", 'location', progress, filename },
+        lualine_b = { lsp, diagnostics, filetype },
+        lualine_c = { 'location' },
+        lualine_x = { branch, "diff", progress, },
+        lualine_y = { filesize, fileformat, encoding, separator },
+        lualine_z = {},
     },
 })
