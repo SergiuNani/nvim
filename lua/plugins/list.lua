@@ -110,6 +110,9 @@ local plugins = {
             "Mofiqul/dracula.nvim",
 
             "rebelot/kanagawa.nvim", --5/10
+            'nyoom-engineering/oxocarbon.nvim',
+            "bluz71/vim-moonfly-colors"
+
 
         },
         config = load_config('ui.colorscheme'),
