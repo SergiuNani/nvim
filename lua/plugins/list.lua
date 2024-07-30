@@ -191,6 +191,7 @@ local lsp_servers = {
     'lua_ls',
     'clangd',
     'tsserver',
+    'html-lsp',
 }
 
 local ts_parsers = {
